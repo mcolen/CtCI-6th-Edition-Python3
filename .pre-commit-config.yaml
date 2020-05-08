@@ -1,4 +1,11 @@
 repos:
+-   repo: local
+    hooks:
+    -   id: unittest
+        name: unittest
+        entry: python3 -m unittest discover
+        language: python
+        pass_filenames: false
 -   repo: https://github.com/PyCQA/pylint
     rev: pylint-2.5.0
     hooks:

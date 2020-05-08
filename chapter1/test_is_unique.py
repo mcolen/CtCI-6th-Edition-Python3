@@ -2,7 +2,7 @@
 
 import unittest
 
-import is_unique
+from chapter1.is_unique import is_unique1, is_unique2
 
 
 def make_test_case(impl):
@@ -27,11 +27,11 @@ def make_test_case(impl):
     return TestIsUnique
 
 
-class TestIsUnique1(make_test_case(is_unique.is_unique1)):
+class TestIsUnique1(make_test_case(is_unique1)):
     """Simple tests of uniqueness for is_unique1 implementation."""
 
 
-class TestIsUnique2(make_test_case(is_unique.is_unique2)):
+class TestIsUnique2(make_test_case(is_unique2)):
     """Simple tests of uniqueness for is_unique2 implementation."""
 
 

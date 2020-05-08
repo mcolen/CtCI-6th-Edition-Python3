@@ -2,7 +2,7 @@
 
 import unittest
 
-from check_permutation import are_permutations
+from chapter1.check_permutation import are_permutations
 
 
 class TestCheckPermutation(unittest.TestCase):

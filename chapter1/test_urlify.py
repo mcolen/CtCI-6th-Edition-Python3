@@ -2,7 +2,7 @@
 
 import unittest
 
-from urlify import urlify
+from chapter1.urlify import urlify
 
 
 class TestURLify(unittest.TestCase):
