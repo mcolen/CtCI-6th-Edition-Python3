@@ -44,6 +44,9 @@ class TestOneAway(unittest.TestCase):
     def test_pkle_and_pable_are_not_one_away(self):
         self.assertFalse(are_one_away('pkle', 'pable'))
 
+    def test_a_and_abc_are_not_one_away(self):
+        self.assertFalse(are_one_away('a', 'abc'))
+
 
 if __name__ == '__main__':
     unittest.main()
