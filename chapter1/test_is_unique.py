@@ -9,6 +9,7 @@ def make_test_case(impl):
     """Returns a test case for provided impl to be tested."""
     class TestIsUnique(unittest.TestCase):
         """Simple tests of uniqueness."""
+
         def test_abcde_is_unique(self):
             self.assertTrue(impl('abcde'))
 

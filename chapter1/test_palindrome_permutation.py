@@ -7,6 +7,7 @@ from chapter1.palindrome_permutation import is_palindrome_permutation
 
 class TestPalindromePermutation(unittest.TestCase):
     """Simple tests of palindrome permutability."""
+
     def test_rats_live_on_no_evil_star_is_palindrome_permutation(self):
         self.assertTrue(is_palindrome_permutation('Rats live on no evil star'))
 

@@ -7,6 +7,7 @@ from chapter1.one_away import are_one_away
 
 class TestOneAway(unittest.TestCase):
     """Simple tests of whether two given strings are one edit away."""
+
     def test_empty_string_and_d_are_one_away(self):
         self.assertTrue(are_one_away('', 'd'))
 

@@ -7,6 +7,7 @@ from chapter1.urlify import urlify
 
 class TestURLify(unittest.TestCase):
     """Simple tests of URLify."""
+
     def test_mr_john_smith(self):
         s = list('mr john smith    ')
         urlify(s, len(''.join(s).strip()))
