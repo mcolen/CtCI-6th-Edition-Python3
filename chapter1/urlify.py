@@ -21,7 +21,7 @@ def urlify(s: Sequence[str], length: int) -> None:
     s is assumed to have sufficient space at the end to hold the
     additional characters. length is the "true" length of s.
     """
-    num_spaces = sum(1 for char in islice(s, length) if char == ' ')
+    num_spaces = sum(1 for c in islice(s, length) if c == ' ')
     j = length - 1 + 2*num_spaces
     for i in range(length - 1, -1, -1):
         if s[i] == ' ':

@@ -8,10 +8,10 @@ characters. What if you cannot use additional data structures?
 def is_unique1(s: str) -> bool:
     """Returns True if s has all unique characters."""
     seen = set()
-    for char in s:
-        if char in seen:
+    for c in s:
+        if c in seen:
             return False
-        seen.add(char)
+        seen.add(c)
     return True
 
 
