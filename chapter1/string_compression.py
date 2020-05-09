@@ -17,7 +17,7 @@ def compressed(s: str) -> str:
     If the "compressed" string would not become smaller than s, simply
     returns s. Assumes s has only uppercase and lowercase letters.
     """
-    if sum(c1 == c2 for c1, c2 in zip(s, islice(s, 1, None))) <= len(s) // 2:
+    if sum(s[i] == s[i + 1] for i in range(len(s) - 1)) <= len(s) // 2:
         return s
     counts, prev_char, count = [], s[0], 1
     for c in islice(s, 1, None):
