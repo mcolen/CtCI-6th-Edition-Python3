@@ -15,7 +15,7 @@ class TestZeroMatrix(unittest.TestCase):
             [16, 0, 18, 19, 20],
             [21, 22, 23, 24, 25],
         ]
-        zerod = [
+        zeroed = [
             [0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0],
             [11, 0, 13, 14, 0],
@@ -23,7 +23,7 @@ class TestZeroMatrix(unittest.TestCase):
             [21, 0, 23, 24, 0],
         ]
         zero_matrix(matrix)
-        self.assertEqual(zerod, matrix)
+        self.assertEqual(zeroed, matrix)
 
 
 if __name__ == '__main__':
