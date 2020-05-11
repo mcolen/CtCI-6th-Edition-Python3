@@ -8,7 +8,6 @@ from chapter1.is_unique import is_unique1, is_unique2
 def make_test_case(impl):
     """Returns a test case for provided impl to be tested."""
     class TestIsUnique(unittest.TestCase):
-        """Simple tests of uniqueness."""
 
         def test_abcde_is_unique(self):
             self.assertTrue(impl('abcde'))
@@ -29,11 +28,11 @@ def make_test_case(impl):
 
 
 class TestIsUnique1(make_test_case(is_unique1)):
-    """Simple tests of uniqueness for is_unique1 implementation."""
+    pass
 
 
 class TestIsUnique2(make_test_case(is_unique2)):
-    """Simple tests of uniqueness for is_unique2 implementation."""
+    pass
 
 
 if __name__ == '__main__':

@@ -6,7 +6,6 @@ from chapter1.string_rotation import is_rotation
 
 
 class TestStringRotation(unittest.TestCase):
-    """Basics tests of string rotation."""
 
     def test_apple_is_rotation_of_pleap(self):
         self.assertTrue(is_rotation('pleap', 'apple'))

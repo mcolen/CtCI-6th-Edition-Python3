@@ -6,7 +6,6 @@ from chapter1.check_permutation import are_permutations
 
 
 class TestCheckPermutation(unittest.TestCase):
-    """Simple tests of string permutability."""
 
     def test_apple_papel_are_permutations(self):
         self.assertTrue(are_permutations('apple', 'papel'))

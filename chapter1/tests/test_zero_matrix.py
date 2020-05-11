@@ -6,7 +6,6 @@ from chapter1.zero_matrix import zero_matrix
 
 
 class TestZeroMatrix(unittest.TestCase):
-    """Simple tests of zero matrix."""
 
     def test_five_by_five_matrix(self):
         matrix = [

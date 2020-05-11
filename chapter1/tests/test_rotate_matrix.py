@@ -6,7 +6,6 @@ from chapter1.rotate_matrix import rotate_matrix
 
 
 class TestRotateMatrix(unittest.TestCase):
-    """Simple tests of matrix rotation."""
 
     def test_five_by_five_matrix(self):
         matrix = [
