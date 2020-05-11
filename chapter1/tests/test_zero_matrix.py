@@ -1,4 +1,4 @@
-"""Tests for solution to 1.8 Zero Matrix."""
+"""Tests for chapter1.zero_matrix."""
 
 import unittest
 

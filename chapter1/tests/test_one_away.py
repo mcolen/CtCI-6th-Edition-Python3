@@ -1,4 +1,4 @@
-"""Tests for solution to 1.5 One Away."""
+"""Tests for chapter1.one_away."""
 
 import unittest
 

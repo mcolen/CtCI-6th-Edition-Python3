@@ -1,4 +1,4 @@
-"""Tests for solution to 1.3 URLify."""
+"""Tests for chapter1.urlify."""
 
 import unittest
 

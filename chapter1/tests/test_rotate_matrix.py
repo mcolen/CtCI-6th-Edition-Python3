@@ -1,4 +1,4 @@
-"""Tests for solution to 1.7 Rotate Matrix."""
+"""Tests for chapter1.rotate_matrix."""
 
 import unittest
 

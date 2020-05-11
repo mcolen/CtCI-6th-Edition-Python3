@@ -1,4 +1,4 @@
-"""Tests for solution to 1.9 String Rotation."""
+"""Tests for chapter1.string_rotation."""
 
 import unittest
 

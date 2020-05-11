@@ -1,4 +1,4 @@
-"""Tests for solution to 1.2 Check Permutation."""
+"""Tests for chapter1.check_permutation."""
 
 import unittest
 
