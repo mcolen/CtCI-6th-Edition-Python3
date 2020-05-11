@@ -7,7 +7,7 @@ from chapter1.rotate_matrix import rotate_matrix
 
 class TestRotateMatrix(unittest.TestCase):
 
-    def test_five_by_five_matrix(self):
+    def test_five_by_five(self):
         matrix = [
             [1, 2, 3, 4, 5],
             [6, 7, 8, 9, 10],

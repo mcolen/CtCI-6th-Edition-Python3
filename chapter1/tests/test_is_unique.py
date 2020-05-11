@@ -9,19 +9,19 @@ def make_test_case(impl):
     """Returns a test case for provided impl to be tested."""
     class TestIsUnique(unittest.TestCase):
 
-        def test_abcde_is_unique(self):
+        def test_abcde(self):
             self.assertTrue(impl('abcde'))
 
-        def test_hello_is_not_unique(self):
+        def test_hello(self):
             self.assertFalse(impl('hello'))
 
-        def test_apple_is_not_unique(self):
+        def test_apple(self):
             self.assertFalse(impl('apple'))
 
-        def test_kite_is_unique(self):
+        def test_kite(self):
             self.assertTrue(impl('kite'))
 
-        def test_padle_is_unique(self):
+        def test_padle(self):
             self.assertTrue(impl('padle'))
 
     return TestIsUnique
