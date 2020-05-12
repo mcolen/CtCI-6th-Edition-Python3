@@ -1,11 +1,12 @@
 """Tests for chapter1.is_unique."""
 
+from typing import Callable
 import unittest
 
 from chapter1.is_unique import is_unique1, is_unique2
 
 
-def make_test_case(impl):
+def make_test_case(impl: Callable[[str], bool]):
     """Returns a test case for provided impl to be tested."""
     class TestIsUnique(unittest.TestCase):
 
@@ -27,11 +28,11 @@ def make_test_case(impl):
     return TestIsUnique
 
 
-class TestIsUnique1(make_test_case(is_unique1)):
+class TestIsUnique1(make_test_case(is_unique1)):  # type: ignore
     pass
 
 
-class TestIsUnique2(make_test_case(is_unique2)):
+class TestIsUnique2(make_test_case(is_unique2)):  # type: ignore
     pass
 
 

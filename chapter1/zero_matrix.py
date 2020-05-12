@@ -4,10 +4,10 @@ Write an algorithm such that if an element in an M x N matrix is 0, its
 entire row and column are set to 0.
 """
 
-from typing import Sequence
+from typing import MutableSequence, Sequence
 
 
-def zero_matrix(matrix: Sequence[Sequence[int]]) -> None:
+def zero_matrix(matrix: Sequence[MutableSequence[int]]) -> None:
     """Sets entire row and column to 0 for all 0 elements in matrix."""
     m, n = len(matrix), len(matrix[0])
     first_row_zero = 0 in matrix[0]

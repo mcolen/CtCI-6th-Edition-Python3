@@ -5,10 +5,10 @@ image is represented by an integer, write a method to rotate the image
 by 90 degrees. Can you do this in place?
 """
 
-from typing import Sequence
+from typing import MutableSequence, Sequence
 
 
-def rotate_matrix(matrix: Sequence[Sequence[int]]) -> None:
+def rotate_matrix(matrix: Sequence[MutableSequence[int]]) -> None:
     """Rotates matrix by 90 degrees in place."""
     n = len(matrix)
     for i in range((n + 1) // 2):

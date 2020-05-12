@@ -4,10 +4,12 @@ Implement an algorithm to determine if a string has all unique
 characters. What if you cannot use additional data structures?
 """
 
+from typing import MutableSet
+
 
 def is_unique1(s: str) -> bool:
     """Returns True if s has all unique characters."""
-    seen = set()
+    seen: MutableSet[str] = set()
     for c in s:
         if c in seen:
             return False
@@ -20,5 +22,5 @@ def is_unique2(s: str) -> bool:
 
     Does not use any additional data structures.
     """
-    s = sorted(s)
-    return not any(s[i] == s[i + 1] for i in range(len(s) - 1))
+    sorted_s = sorted(s)
+    return not any(sorted_s[i] == sorted_s[i + 1] for i in range(len(s) - 1))
