@@ -19,7 +19,8 @@ def partition(head: Node, x: int) -> None:
     """Partitions linked list with given head around value x.
 
     All nodes less than x come before all nodes greater than or equal to
-    x."""
+    x.
+    """
     next_less = curr = head
     while curr:
         if curr.data < x:
