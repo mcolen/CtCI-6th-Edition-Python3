@@ -7,6 +7,7 @@ from chapter2.node import Node
 
 
 class TestIntersection(unittest.TestCase):
+
     def test_0_1_2_3_4_5_6_7_8_and_12_14_4_5_6_7_8(self):
         head1 = Node(0)
         head1.next = Node(1)

@@ -7,6 +7,7 @@ from chapter2.palindrome import is_palindrome
 
 
 class TestPalindrome(unittest.TestCase):
+
     def test_1_2_3_4_5_4_3_2_1(self):
         head = Node(1)
         head.next = Node(2)

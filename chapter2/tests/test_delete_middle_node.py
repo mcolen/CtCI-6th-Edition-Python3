@@ -7,6 +7,7 @@ from chapter2.node import Node
 
 
 class TestDeleteMiddleNode(unittest.TestCase):
+
     def test_delete_c_from_abcdef(self):
         head = Node('a')
         head.next = Node('b')

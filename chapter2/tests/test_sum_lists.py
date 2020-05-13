@@ -7,6 +7,7 @@ from chapter2.sum_lists import sum_reverse_lists, sum_forward_lists
 
 
 class TestSumReverseLists(unittest.TestCase):
+
     def test_999_plus_001(self):
         head_999 = Node(9)
         head_999.next = Node(9)
@@ -25,6 +26,7 @@ class TestSumReverseLists(unittest.TestCase):
 
 
 class TestSumForwardLists(unittest.TestCase):
+
     def test_31_plus_591(self):
         head_31 = Node(3)
         head_31.next = Node(1)
