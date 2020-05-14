@@ -11,11 +11,11 @@ class Error(Exception):
 
 
 class EmptyStackError(Error):
-    """Raised when attempting to peek at or pop from an empty stack."""
+    """Raised when attempting to access an item from an empty stack."""
 
 
 class FullStackError(Error):
-    """Raised when attempting to write to push to a full stack."""
+    """Raised when attempting to add an item to a full stack."""
 
 
 class FixedMultiStack:
