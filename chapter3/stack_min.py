@@ -32,12 +32,14 @@ class StackWithMin:
 
     def pop(self) -> Any:
         """Removes and returns the top item from the stack."""
-        if not self.stack:
+        try:
+            return self.stack.pop().item
+        except IndexError:
             raise EmptyStackError
-        return self.stack.pop().item
 
     def min(self) -> Any:
         """Returns minimum item in the stack."""
-        if not self.stack:
+        try:
+            return self.stack[-1].min
+        except IndexError:
             raise EmptyStackError
-        return self.stack[-1].min
