@@ -6,15 +6,11 @@ Describe how you could use a single array to implement three stacks.
 from typing import Any
 
 
-class Error(Exception):
-    """Base class for exceptions in this module."""
-
-
-class EmptyStackError(Error):
+class EmptyStackError(Exception):
     """Raised when attempting to access an item from an empty stack."""
 
 
-class FullStackError(Error):
+class FullStackError(Exception):
     """Raised when attempting to add an item to a full stack."""
 
 

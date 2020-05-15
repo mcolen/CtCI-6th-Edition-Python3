@@ -18,10 +18,6 @@ on a specific sub-stack.
 from typing import Any, List
 
 
-class Error(Exception):
-    """Base class for exceptions in this module."""
-
-
 class EmptyStackError(Exception):
     """Raised when attempting to access an item from an empty stack."""
 
