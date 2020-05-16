@@ -27,22 +27,22 @@ class SetOfStacks:
 
     def __init__(self, capacity: int):
         self.capacity = capacity
-        self.stacks: List[Any] = []
+        self._stacks: List[Any] = []
 
     def _pop_empty(self):
-        while self.stacks and not self.stacks[-1]:
-            self.stacks.pop()
+        while self._stacks and not self._stacks[-1]:
+            self._stacks.pop()
 
     def push(self, item: Any) -> None:
         """Adds given item to the top of the stack."""
-        if not self.stacks or len(self.stacks[-1]) > self.capacity:
-            self.stacks.append([])
-        self.stacks[-1].append(item)
+        if not self._stacks or len(self._stacks[-1]) > self.capacity:
+            self._stacks.append([])
+        self._stacks[-1].append(item)
 
     def pop(self) -> Any:
         """Removes and returns the top item from the stack."""
         try:
-            item = self.stacks[-1].pop()
+            item = self._stacks[-1].pop()
         except IndexError:
             raise EmptyStackError
         self._pop_empty()
@@ -51,17 +51,17 @@ class SetOfStacks:
     def peek(self) -> Any:
         """Returns the top item of the stack."""
         try:
-            return self.stacks[-1][-1]
+            return self._stacks[-1][-1]
         except IndexError:
             raise EmptyStackError
 
     def is_empty(self) -> bool:
         """Returns True if the stack is empty."""
-        return not self.stacks
+        return not self._stacks
 
     def pop_at(self, index: int) -> Any:
         """Removes and returns top item from stack at given index."""
-        stack = self.stacks[index]
+        stack = self._stacks[index]
         try:
             item = stack.pop()
         except IndexError:
