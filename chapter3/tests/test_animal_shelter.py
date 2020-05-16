@@ -1,4 +1,4 @@
-"""Tests for 3.6 Animal Shelter."""
+"""Tests for chapter3.animal_shelter."""
 
 import unittest
 

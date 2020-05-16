@@ -1,4 +1,4 @@
-"""Tests for 3.5 Sort Stack."""
+"""Tests for chapter3.short_stack"""
 
 import unittest
 
