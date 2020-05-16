@@ -1,4 +1,4 @@
-"""Implementation of a basic node class for use in chapter 2 solutions."""
+"""Implementation of a basic node for use in chapter 2 solutions."""
 
 from __future__ import annotations
 
