@@ -19,23 +19,23 @@ class StackWithMin:
     Node = collections.namedtuple('Node', ['item', 'min'])
 
     def __init__(self) -> None:
-        self.stack: List[Any] = []
+        self._stack: List[Any] = []
 
     def push(self, item: Any) -> None:
         """Adds given item to the top of the stack."""
-        min_ = min(item, self.stack[-1].min) if self.stack else item
-        self.stack.append(StackWithMin.Node(item, min_))
+        min_ = min(item, self._stack[-1].min) if self._stack else item
+        self._stack.append(StackWithMin.Node(item, min_))
 
     def pop(self) -> Any:
         """Removes and returns the top item from the stack."""
         try:
-            return self.stack.pop().item
+            return self._stack.pop().item
         except IndexError:
             raise EmptyStackError
 
     def min(self) -> Any:
         """Returns minimum item in the stack."""
         try:
-            return self.stack[-1].min
+            return self._stack[-1].min
         except IndexError:
             raise EmptyStackError
