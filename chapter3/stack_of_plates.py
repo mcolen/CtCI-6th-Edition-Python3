@@ -53,10 +53,6 @@ class SetOfStacks:
         except IndexError:
             raise EmptyStackError
 
-    def is_empty(self) -> bool:
-        """Returns True if the stack is empty."""
-        return not self._stacks
-
     def pop_at(self, index: int) -> Any:
         """Removes and returns top item from stack at given index."""
         item = self._stacks[index].pop()

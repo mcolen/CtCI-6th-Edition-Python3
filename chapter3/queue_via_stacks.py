@@ -19,6 +19,9 @@ class MyQueue:
         self._new_items = Stack()
         self._old_items = Stack()
 
+    def __len__(self):
+        return len(self._new_items) + len(self._old_items)
+
     def _shift_stacks(self):
         """Pops everything off self._new_items onto self._old_items.
 
@@ -49,7 +52,3 @@ class MyQueue:
             return self._old_items.peek()
         except IndexError:
             raise EmptyQueueError
-
-    def is_empty(self):
-        """Returns True if the queue is empty."""
-        return self._new_items.is_empty() and self._old_items.is_empty()

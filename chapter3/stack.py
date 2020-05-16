@@ -33,7 +33,3 @@ class Stack:
             return self._items[-1]
         except IndexError:
             raise EmptyStackError
-
-    def is_empty(self) -> bool:
-        """Returns True if the stack is empty."""
-        return not self
