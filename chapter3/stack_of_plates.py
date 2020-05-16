@@ -17,9 +17,7 @@ on a specific sub-stack.
 
 from typing import Any, List
 
-
-class EmptyStackError(Exception):
-    """Raised when attempting to access an item from an empty stack."""
+from chapter3.stack import EmptyStackError, Stack
 
 
 class SetOfStacks:
@@ -27,7 +25,7 @@ class SetOfStacks:
 
     def __init__(self, capacity: int):
         self.capacity = capacity
-        self._stacks: List[Any] = []
+        self._stacks: List[Stack] = []
 
     def _pop_empty(self):
         while self._stacks and not self._stacks[-1]:
@@ -36,8 +34,8 @@ class SetOfStacks:
     def push(self, item: Any) -> None:
         """Adds given item to the top of the stack."""
         if not self._stacks or len(self._stacks[-1]) > self.capacity:
-            self._stacks.append([])
-        self._stacks[-1].append(item)
+            self._stacks.append(Stack())
+        self._stacks[-1].push(item)
 
     def pop(self) -> Any:
         """Removes and returns the top item from the stack."""
@@ -51,7 +49,7 @@ class SetOfStacks:
     def peek(self) -> Any:
         """Returns the top item of the stack."""
         try:
-            return self._stacks[-1][-1]
+            return self._stacks[-1].peek()
         except IndexError:
             raise EmptyStackError
 
@@ -61,10 +59,6 @@ class SetOfStacks:
 
     def pop_at(self, index: int) -> Any:
         """Removes and returns top item from stack at given index."""
-        stack = self._stacks[index]
-        try:
-            item = stack.pop()
-        except IndexError:
-            raise EmptyStackError
+        item = self._stacks[index].pop()
         self._pop_empty()
         return item

@@ -2,7 +2,8 @@
 
 import unittest
 
-from chapter3.stack_min import EmptyStackError, StackWithMin
+from chapter3.stack import EmptyStackError
+from chapter3.stack_min import StackWithMin
 
 
 class TestStackWithMin(unittest.TestCase):

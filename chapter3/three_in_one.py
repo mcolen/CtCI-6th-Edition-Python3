@@ -5,9 +5,7 @@ Describe how you could use a single array to implement three stacks.
 
 from typing import Any
 
-
-class EmptyStackError(Exception):
-    """Raised when attempting to access an item from an empty stack."""
+from chapter3.stack import EmptyStackError
 
 
 class FullStackError(Exception):

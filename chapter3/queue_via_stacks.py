@@ -3,7 +3,9 @@
 Implement a `MyQueue` class which implements a queue using two stacks.
 """
 
-from typing import Any, List
+from typing import Any
+
+from chapter3.stack import Stack
 
 
 class EmptyQueueError(Exception):
@@ -14,40 +16,40 @@ class MyQueue:
     """Queue implemented using two stacks."""
 
     def __init__(self):
-        self._push_stack: List[Any] = []
-        self._pop_stack: List[Any] = []
+        self._new_items = Stack()
+        self._old_items = Stack()
 
     def _shift_stacks(self):
-        """Pops everything off self._push_stack onto self._pop_stack.
+        """Pops everything off self._new_items onto self._old_items.
 
-        This can be done when self._pop_stack is empty to put the oldest
-        items in the queue on top of self._pop_stack.
+        This can be done when self._old_items is empty to put the oldest
+        items in the queue on top of self._old_items.
         """
-        while self._push_stack:
-            self._pop_stack.append(self._push_stack.pop())
+        while self._new_items:
+            self._old_items.push(self._new_items.pop())
 
     def add(self, item: Any):
         """Adds item to end of the queue."""
-        self._push_stack.append(item)
+        self._new_items.push(item)
 
     def remove(self):
         """Removes and returns the first item in the queue."""
-        if not self._pop_stack:
+        if not self._old_items:
             self._shift_stacks()
         try:
-            return self._pop_stack.pop()
+            return self._old_items.pop()
         except IndexError:
             raise EmptyQueueError
 
     def peek(self):
         """Returns the first item in the queue."""
-        if not self._pop_stack:
+        if not self._old_items:
             self._shift_stacks()
         try:
-            return self._pop_stack[-1]
+            return self._old_items.peek()
         except IndexError:
             raise EmptyQueueError
 
     def is_empty(self):
         """Returns True if the queue is empty."""
-        return len(self._push_stack) == len(self._pop_stack) == 0
+        return self._new_items.is_empty() and self._old_items.is_empty()

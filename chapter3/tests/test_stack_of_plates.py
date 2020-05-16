@@ -2,7 +2,8 @@
 
 import unittest
 
-from chapter3.stack_of_plates import EmptyStackError, SetOfStacks
+from chapter3.stack import EmptyStackError
+from chapter3.stack_of_plates import SetOfStacks
 
 
 class TestSetOfStacks(unittest.TestCase):

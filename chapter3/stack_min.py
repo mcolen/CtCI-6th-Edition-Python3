@@ -6,36 +6,29 @@ a function `min` which returns the minimum element? `push`, `pop`, and
 """
 
 import collections
-from typing import Any, List
+from typing import Any
+
+from chapter3.stack import Stack
 
 
-class EmptyStackError(Exception):
-    """Raised when attempting to access an item from an empty stack."""
-
-
-class StackWithMin:
+class StackWithMin(Stack):
     """Stack which gives access to minimum element in constant time."""
 
     Node = collections.namedtuple('Node', ['item', 'min'])
 
-    def __init__(self) -> None:
-        self._stack: List[Any] = []
-
     def push(self, item: Any) -> None:
         """Adds given item to the top of the stack."""
-        min_ = min(item, self._stack[-1].min) if self._stack else item
-        self._stack.append(StackWithMin.Node(item, min_))
+        min_ = min(item, self._items[-1].min) if self else item
+        super().push(StackWithMin.Node(item, min_))
 
     def pop(self) -> Any:
         """Removes and returns the top item from the stack."""
-        try:
-            return self._stack.pop().item
-        except IndexError:
-            raise EmptyStackError
+        return super().pop().item
+
+    def peek(self) -> Any:
+        """Returns the top item of the stack."""
+        return super().peek().item
 
     def min(self) -> Any:
         """Returns minimum item in the stack."""
-        try:
-            return self._stack[-1].min
-        except IndexError:
-            raise EmptyStackError
+        return super().peek().min
