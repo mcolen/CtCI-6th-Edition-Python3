@@ -14,40 +14,40 @@ class MyQueue:
     """Queue implemented using two stacks."""
 
     def __init__(self):
-        self.push_stack: List[Any] = []
-        self.pop_stack: List[Any] = []
+        self._push_stack: List[Any] = []
+        self._pop_stack: List[Any] = []
 
     def _shift_stacks(self):
-        """Pops everything off self.push_stack onto self.pop_stack.
+        """Pops everything off self._push_stack onto self._pop_stack.
 
-        This can be done when self.pop_stack is empty to put the oldest
-        items in the queue on top of self.pop_stack.
+        This can be done when self._pop_stack is empty to put the oldest
+        items in the queue on top of self._pop_stack.
         """
-        while self.push_stack:
-            self.pop_stack.append(self.push_stack.pop())
+        while self._push_stack:
+            self._pop_stack.append(self._push_stack.pop())
 
     def add(self, item: Any):
         """Adds item to end of the queue."""
-        self.push_stack.append(item)
+        self._push_stack.append(item)
 
     def remove(self):
         """Removes and returns the first item in the queue."""
-        if not self.pop_stack:
+        if not self._pop_stack:
             self._shift_stacks()
         try:
-            return self.pop_stack.pop()
+            return self._pop_stack.pop()
         except IndexError:
             raise EmptyQueueError
 
     def peek(self):
         """Returns the first item in the queue."""
-        if not self.pop_stack:
+        if not self._pop_stack:
             self._shift_stacks()
         try:
-            return self.pop_stack[-1]
+            return self._pop_stack[-1]
         except IndexError:
             raise EmptyQueueError
 
     def is_empty(self):
         """Returns True if the queue is empty."""
-        return len(self.push_stack) == len(self.pop_stack) == 0
+        return len(self._push_stack) == len(self._pop_stack) == 0
