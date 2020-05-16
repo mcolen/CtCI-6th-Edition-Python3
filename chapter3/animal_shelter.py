@@ -11,6 +11,7 @@ system and implement operations such as `enqueue`, `dequeueAny`,
 data structure.
 """
 
+import collections
 from enum import Enum
 from typing import Any
 
@@ -28,73 +29,41 @@ class PetType(Enum):
 class AnimalShelter:
     """Adoption service for cats and dogs."""
 
-    class Node:
-        """Node with links for any pet and pets of same type."""
-
-        def __init__(self, pet: Any = None, next_=None, prev=None):
-            self.pet = pet
-            self.next = next_
-            self.prev = prev
-            self.next_same_type = self.prev_same_type = None
-
-        def splice_out(self):
-            """Removes self out of enclosing linked list."""
-            self.prev.next = self.next
-            self.next.prev = self.prev
-            self.next_same_type.prev_same_type = self.prev_same_type
-            self.prev_same_type.next_same_type = self.next_same_type
-
-        def update_neighbors(self):
-            """Updates neighbors of self to point to self."""
-            self.prev.next = self
-            self.next.prev = self
-            self.prev_same_type.next_same_type = self
-            self.next_same_type.prev_same_type = self
+    Node = collections.namedtuple('Node', ['pet', 'order'])
 
     def __init__(self):
-        self.head, self.tail = self.Node(), self.Node()
-        self.head.next = self.tail
-        self.tail.prev = self.head
-
-        self.head_dog, self.tail_dog = self.Node(), self.Node()
-        self.head_dog.next_same_type = self.tail_dog
-        self.tail_dog.prev_same_type = self.head_dog
-
-        self.head_cat, self.tail_cat = self.Node(), self.Node()
-        self.head_cat.next_same_type = self.tail_cat
-        self.tail_cat.prev_same_type = self.head_cat
+        self.dogs = collections.deque()
+        self.cats = collections.deque()
+        self.num_seen = 0
 
     def enqueue(self, pet: Any, type_: PetType) -> None:
         """Put pet of given type_ up for adoption."""
-        node = self.Node(pet, next_=self.tail, prev=self.tail.prev)
+        node, self.num_seen = self.Node(pet, self.num_seen), self.num_seen + 1
         if type_ == PetType.DOG:
-            node.next_same_type = self.tail_dog
-            node.prev_same_type = self.tail_dog.prev_same_type
+            self.dogs.append(node)
         else:
-            node.next_same_type = self.tail_cat
-            node.prev_same_type = self.tail_cat.prev_same_type
-        node.update_neighbors()
+            self.cats.append(node)
 
     def dequeue_any(self) -> Any:
         """Returns "oldest" (based on arrival time) pet for adoption."""
-        node = self.head.next
-        if node is self.tail:
-            raise NoAvailablePetError
-        node.splice_out()
-        return node.pet
+        if not self.dogs:
+            return self.dequeue_cat()
+        if not self.cats:
+            return self.dequeue_dog()
+        if self.dogs[0].order < self.cats[0].order:
+            return self.dequeue_dog()
+        return self.dequeue_cat()
 
     def dequeue_dog(self) -> Any:
         """Returns "oldest" (based on arrival time) dog for adoption."""
-        node = self.head_dog.next_same_type
-        if node is self.tail_dog:
+        try:
+            return self.dogs.popleft().pet
+        except IndexError:
             raise NoAvailablePetError
-        node.splice_out()
-        return node.pet
 
     def dequeue_cat(self) -> Any:
         """Returns "oldest" (based on arrival time) cat for adoption."""
-        node = self.head_cat.next_same_type
-        if node is self.tail_cat:
+        try:
+            return self.cats.popleft().pet
+        except IndexError:
             raise NoAvailablePetError
-        node.splice_out()
-        return node.pet
