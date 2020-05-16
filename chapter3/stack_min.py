@@ -19,7 +19,7 @@ class StackWithMin(Stack):
     def push(self, item: Any) -> None:
         """Adds given item to the top of the stack."""
         min_ = min(item, self._items[-1].min) if self else item
-        super().push(StackWithMin.Node(item, min_))
+        super().push(self.Node(item, min_))
 
     def pop(self) -> Any:
         """Removes and returns the top item from the stack."""
