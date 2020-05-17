@@ -18,7 +18,7 @@ def _set_of_data(node: ListNode) -> Set[int]:
 class TestListOfDepths(unittest.TestCase):
 
     def test_1_2_3_4_5_6_7_8_9_10(self) -> None:
-        root = TreeNode(
+        tree = TreeNode(
             value=1,
             left=TreeNode(
                 value=2,
@@ -39,7 +39,7 @@ class TestListOfDepths(unittest.TestCase):
                 right=TreeNode(7, None, None)
             )
         )
-        lists = depth_lists(root)
+        lists = depth_lists(tree)
         self.assertEqual(4, len(lists))
         self.assertEqual({1}, _set_of_data(lists[0]))
         self.assertEqual({2, 3}, _set_of_data(lists[1]))
