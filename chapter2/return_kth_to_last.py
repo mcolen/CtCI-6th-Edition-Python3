@@ -4,16 +4,21 @@ Implement an algorithm to find the kth to last element of a singly
 linked list.
 """
 
-from chapter2.node import Node
+from typing import Optional
+
+from chapter2.node import LinkedList, Node
 
 
-def kth_to_last(head: Node, k: int) -> Node:
-    """Returns kth to last node of linked list with given head.
+def kth_to_last(head: LinkedList, k: int) -> Optional[Node]:
+    """Returns kth to last node of the linked list.
 
-    We will return the last node if k is 1. k may not be 0."""
+    We will return the last node if k is 1. k may not be 0.
+    """
     runner = head
     for _ in range(k):
+        if not runner:
+            raise ValueError('Fewer than k nodes in list')
         runner = runner.next
     while runner:
-        head, runner = head.next, runner.next
+        head, runner = head.next, runner.next  # type: ignore
     return head

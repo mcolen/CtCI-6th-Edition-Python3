@@ -16,6 +16,7 @@ repos:
     rev: v0.770
     hooks:
     -   id: mypy
+        args: [--disallow-untyped-defs]
 -   repo: https://gitlab.com/pycqa/flake8
     rev: 3.8.0a2
     hooks:

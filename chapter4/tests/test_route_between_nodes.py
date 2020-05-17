@@ -7,7 +7,7 @@ from chapter4.route_between_nodes import exists_route, Node
 
 class TestRouteBetweenNodes(unittest.TestCase):
 
-    def test_route_exists(self):
+    def test_route_exists(self) -> None:
         node_a = Node(name='a', neighbors=[])
         node_b = Node(name='b', neighbors=[])
         node_c = Node(name='c', neighbors=[])

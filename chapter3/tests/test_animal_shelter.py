@@ -7,7 +7,7 @@ from chapter3.animal_shelter import AnimalShelter, NoAvailablePetError, PetType
 
 class TestAnimalShelter(unittest.TestCase):
 
-    def test_many_dequeue_any(self):
+    def test_many_dequeue_any(self) -> None:
         shelter = AnimalShelter()
         shelter.enqueue('Callie', PetType.CAT)
         shelter.enqueue('Kiki', PetType.CAT)

@@ -23,11 +23,11 @@ from chapter3.stack import EmptyStackError, Stack
 class SetOfStacks:
     """Stack implemented as a set of stacks."""
 
-    def __init__(self, capacity: int):
+    def __init__(self, capacity: int) -> None:
         self.capacity = capacity
         self._stacks: List[Stack] = []
 
-    def _pop_empty(self):
+    def _pop_empty(self) -> None:
         while self._stacks and not self._stacks[-1]:
             self._stacks.pop()
 

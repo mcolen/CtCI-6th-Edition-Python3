@@ -8,7 +8,7 @@ from chapter3.stack_min import StackWithMin
 
 class TestStackWithMin(unittest.TestCase):
 
-    def test_2_1_3_1(self):
+    def test_2_1_3_1(self) -> None:
         stack = StackWithMin()
         stack.push(2)
         stack.push(1)

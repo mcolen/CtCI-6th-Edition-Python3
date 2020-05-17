@@ -8,7 +8,7 @@ from chapter2.palindrome import is_palindrome
 
 class TestPalindrome(unittest.TestCase):
 
-    def test_1_2_3_4_5_4_3_2_1(self):
+    def test_1_2_3_4_5_4_3_2_1(self) -> None:
         head = Node(1)
         head.next = Node(2)
         head.next.next = Node(3)
@@ -20,7 +20,7 @@ class TestPalindrome(unittest.TestCase):
         head.next.next.next.next.next.next.next.next = Node(1)
         self.assertTrue(is_palindrome(head))
 
-    def test_1_2_3_4_5_6_7_8_9(self):
+    def test_1_2_3_4_5_6_7_8_9(self) -> None:
         head = Node(1)
         head.next = Node(2)
         head.next.next = Node(3)

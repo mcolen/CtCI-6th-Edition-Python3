@@ -8,7 +8,7 @@ from chapter3.stack_of_plates import SetOfStacks
 
 class TestSetOfStacks(unittest.TestCase):
 
-    def test_34_items_5_capacity(self):
+    def test_34_items_5_capacity(self) -> None:
         stack = SetOfStacks(capacity=5)
         for i in range(34):
             stack.push(i)

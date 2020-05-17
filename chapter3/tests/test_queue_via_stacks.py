@@ -7,7 +7,7 @@ from chapter3.queue_via_stacks import MyQueue
 
 class TestMyQueue(unittest.TestCase):
 
-    def test_alternating_three_add_two_remove(self):
+    def test_alternating_three_add_two_remove(self) -> None:
         queue = MyQueue()
         queue.add(0)
         queue.add(1)

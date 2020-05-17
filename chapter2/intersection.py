@@ -9,14 +9,16 @@ the second linked list, then they are intersecting.
 
 from typing import Optional
 
-from chapter2.node import Node
+from chapter2.node import LinkedList, Node
 
 
-def intersection(head1: Node, head2: Node) -> Optional[Node]:
+def intersection(head1: LinkedList, head2: LinkedList) -> Optional[Node]:
     """Returns first node of intersection between given linked lists.
 
     If there is no intersecting node, returns None.
     """
+    if not head1 or not head2:
+        return None
     length1, length2 = 1, 1
     tail1, tail2 = head1, head2
     while tail1.next:
@@ -27,9 +29,9 @@ def intersection(head1: Node, head2: Node) -> Optional[Node]:
         return None
 
     for _ in range(length1 - length2):
-        head1 = head1.next
+        head1 = head1.next  # type: ignore
     for _ in range(length2 - length1):
-        head2 = head2.next
+        head2 = head2.next  # type: ignore
     while head1 is not head2:
-        head1, head2 = head1.next, head2.next
+        head1, head2 = head1.next, head2.next  # type: ignore
     return head1

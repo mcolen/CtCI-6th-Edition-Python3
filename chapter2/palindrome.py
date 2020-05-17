@@ -3,11 +3,11 @@
 Implement a function to check if a linked list is a palindrome.
 """
 
-from chapter2.node import Node
+from chapter2.node import LinkedList
 
 
-def is_palindrome(head: Node) -> bool:
-    """Returns True if linked list with given head is a palindrome."""
+def is_palindrome(head: LinkedList) -> bool:
+    """Returns True if given linked list is a palindrome."""
     data = []
     while head:
         data.append(head.data)

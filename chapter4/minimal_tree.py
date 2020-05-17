@@ -4,11 +4,11 @@ Given a sorted (increasing order) array with unique integer elments,
 write an algorithm to create a binary search tree with minimal height.
 """
 
-import collections
+from collections import namedtuple
 from typing import Optional, Sequence
 
 
-Node = collections.namedtuple('Node', ['value', 'left', 'right'])
+Node = namedtuple('Node', ['value', 'left', 'right'])
 
 
 def minimal_bst(array: Sequence[int]) -> Optional[Node]:

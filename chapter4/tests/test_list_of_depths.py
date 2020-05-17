@@ -16,7 +16,7 @@ def _set_of_data(node: ListNode) -> Set[int]:
 
 class TestListOfDepths(unittest.TestCase):
 
-    def test_1_2_3_4_5_6_7_8_9_10(self):
+    def test_1_2_3_4_5_6_7_8_9_10(self) -> None:
         root = TreeNode(
             value=1,
             left=TreeNode(

@@ -10,18 +10,18 @@ Output: C
 
 from typing import Optional
 
-from chapter2.node import Node
+from chapter2.node import LinkedList, Node
 
 
-def loop_detection(head: Node) -> Optional[Node]:
-    """Returns first node in loop of linked list with given head."""
+def loop_detection(head: LinkedList) -> Optional[Node]:
+    """Returns first node in loop of linked list."""
     slow = fast = head
     while fast and fast.next:
-        slow, fast = slow.next, fast.next.next
+        slow, fast = slow.next, fast.next.next  # type: ignore
         if slow is fast:
             break
     else:
         return None
     while head is not slow:
-        head, slow = head.next, slow.next
+        head, slow = head.next, slow.next  # type: ignore
     return head

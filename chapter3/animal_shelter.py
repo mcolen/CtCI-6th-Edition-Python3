@@ -11,7 +11,7 @@ system and implement operations such as `enqueue`, `dequeueAny`,
 data structure.
 """
 
-import collections
+from collections import deque, namedtuple
 from enum import Enum
 from typing import Any
 
@@ -29,11 +29,11 @@ class PetType(Enum):
 class AnimalShelter:
     """Adoption service for cats and dogs."""
 
-    Node = collections.namedtuple('Node', ['pet', 'order'])
+    Node = namedtuple('Node', ['pet', 'order'])
 
-    def __init__(self):
-        self.dogs = collections.deque()
-        self.cats = collections.deque()
+    def __init__(self) -> None:
+        self.dogs: deque = deque()
+        self.cats: deque = deque()
         self.num_seen = 0
 
     def enqueue(self, pet: Any, type_: PetType) -> None:

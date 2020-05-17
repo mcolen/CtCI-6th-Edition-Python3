@@ -7,7 +7,7 @@ from chapter3.three_in_one import FixedMultiStack
 
 class TestFixedMultiStack(unittest.TestCase):
 
-    def test_all_operations(self):
+    def test_all_operations(self) -> None:
         stacks = FixedMultiStack(num_stacks=3, stack_capacity=4)
         stacks.push(0, 10)
         stacks.push(1, 20)

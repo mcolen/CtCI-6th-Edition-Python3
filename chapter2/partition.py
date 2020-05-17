@@ -12,18 +12,18 @@ Input:  3->5->8->5->10->2->1 [partition = 5]
 Output: 3->1->2    ->    10->5->5->8
 """
 
-from chapter2.node import Node
+from chapter2.node import LinkedList
 
 
-def partition(head: Node, x: int) -> None:
-    """Partitions linked list with given head around value x.
+def partition(head: LinkedList, x: int) -> None:
+    """Partitions linked list around value x.
 
     All nodes less than x come before all nodes greater than or equal to
     x.
     """
-    next_less = curr = head
-    while curr:
-        if curr.data < x:
-            next_less.data, curr.data = curr.data, next_less.data
-            next_less = next_less.next
-        curr = curr.next
+    swap = head
+    while head:
+        if head.data < x:
+            swap.data, head.data = head.data, swap.data  # type: ignore
+            swap = swap.next  # type: ignore
+        head = head.next

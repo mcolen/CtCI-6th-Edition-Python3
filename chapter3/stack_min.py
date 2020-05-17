@@ -5,7 +5,7 @@ a function `min` which returns the minimum element? `push`, `pop`, and
 `min` should all operate in O(1) time.
 """
 
-import collections
+from collections import namedtuple
 from typing import Any
 
 from chapter3.stack import Stack
@@ -14,7 +14,7 @@ from chapter3.stack import Stack
 class StackWithMin(Stack):
     """Stack which gives access to minimum element in constant time."""
 
-    Node = collections.namedtuple('Node', ['item', 'min'])
+    Node = namedtuple('Node', ['item', 'min'])
 
     def push(self, item: Any) -> None:
         """Adds given item to the top of the stack."""

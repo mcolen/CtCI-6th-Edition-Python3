@@ -10,10 +10,10 @@ class EmptyStackError(Exception):
 class Stack:
     """A minimal stack implementation."""
 
-    def __init__(self):
+    def __init__(self) -> None:
         self._items: List[Any] = []
 
-    def __len__(self):
+    def __len__(self) -> int:
         return len(self._items)
 
     def push(self, item: Any) -> None:

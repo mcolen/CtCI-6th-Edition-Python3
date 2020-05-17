@@ -7,7 +7,7 @@ from chapter1.string_compression import compressed
 
 class TestStringCompression(unittest.TestCase):
 
-    def test_aaaaabbbbaaaabbddc(self):
+    def test_aaaaabbbbaaaabbddc(self) -> None:
         self.assertEqual('a5b4a4b2d2c1', compressed('aaaaabbbbaaaabbddc'))
 
 

@@ -19,10 +19,10 @@ Input: (6 -> 1 -> 7) + (2 -> 9 -> 5). That is, 617 + 295.
 Output: 9 -> 1 -> 2. That is, 912
 """
 
-from chapter2.node import Node
+from chapter2.node import LinkedList, Node
 
 
-def sum_reverse_lists(head1: Node, head2: Node) -> Node:
+def sum_reverse_lists(head1: LinkedList, head2: LinkedList) -> LinkedList:
     """Returns sum of given lists as a linked list.
 
     The digits are stored in /reverse/ order.
@@ -43,7 +43,9 @@ def sum_reverse_lists(head1: Node, head2: Node) -> Node:
     return sentinel.next
 
 
-def _reverse_list(head: Node) -> Node:
+def _reverse_list(head: LinkedList) -> LinkedList:
+    if not head:
+        return None
     curr = head.next
     head.next = None
     prev = head
@@ -54,7 +56,7 @@ def _reverse_list(head: Node) -> Node:
     return prev
 
 
-def sum_forward_lists(head1: Node, head2: Node) -> Node:
+def sum_forward_lists(head1: LinkedList, head2: LinkedList) -> LinkedList:
     """Returns sum of given lists as a linked list.
 
     The digits are stored in forward order.

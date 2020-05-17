@@ -8,7 +8,7 @@ from chapter3.stack import EmptyStackError, Stack
 
 class TestSortStack(unittest.TestCase):
 
-    def test_2_6_1_7_4_3_10_8_9_5(self):
+    def test_2_6_1_7_4_3_10_8_9_5(self) -> None:
         stack = Stack()
         stack.push(2)
         stack.push(6)

@@ -7,13 +7,13 @@ from chapter1.check_permutation import are_permutations
 
 class TestCheckPermutation(unittest.TestCase):
 
-    def test_apple_papel(self):
+    def test_apple_papel(self) -> None:
         self.assertTrue(are_permutations('apple', 'papel'))
 
-    def test_carrot_tarroc(self):
+    def test_carrot_tarroc(self) -> None:
         self.assertTrue(are_permutations('carrot', 'tarroc'))
 
-    def test_hello_llloh(self):
+    def test_hello_llloh(self) -> None:
         self.assertFalse(are_permutations('hello', 'llloh'))
 
 

@@ -8,7 +8,7 @@ from chapter2.partition import partition
 
 class TestPartition(unittest.TestCase):
 
-    def test_partition_3_5_8_10_2_1_around_5(self):
+    def test_partition_3_5_8_10_2_1_around_5(self) -> None:
         head = Node(3)
         head.next = Node(5)
         head.next.next = Node(8)

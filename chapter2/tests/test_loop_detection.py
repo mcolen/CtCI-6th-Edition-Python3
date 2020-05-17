@@ -8,7 +8,7 @@ from chapter2.node import Node
 
 class TestLoopDetection(unittest.TestCase):
 
-    def test_a_b_c_d_e_c(self):
+    def test_a_b_c_d_e_c(self) -> None:
         head = Node('a')
         head.next = Node('b')
         head.next.next = Node('c')

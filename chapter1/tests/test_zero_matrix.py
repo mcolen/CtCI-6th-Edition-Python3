@@ -7,7 +7,7 @@ from chapter1.zero_matrix import zero_matrix
 
 class TestZeroMatrix(unittest.TestCase):
 
-    def test_some_zeros(self):
+    def test_some_zeros(self) -> None:
         matrix = [
             [1, 2, 3, 4, 0],
             [6, 0, 8, 9, 10],

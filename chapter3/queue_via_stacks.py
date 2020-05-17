@@ -15,14 +15,14 @@ class EmptyQueueError(Exception):
 class MyQueue:
     """Queue implemented using two stacks."""
 
-    def __init__(self):
+    def __init__(self) -> None:
         self._new_items = Stack()
         self._old_items = Stack()
 
-    def __len__(self):
+    def __len__(self) -> int:
         return len(self._new_items) + len(self._old_items)
 
-    def _shift_stacks(self):
+    def _shift_stacks(self) -> None:
         """Pops everything off self._new_items onto self._old_items.
 
         This can be done when self._old_items is empty to put the oldest
@@ -31,11 +31,11 @@ class MyQueue:
         while self._new_items:
             self._old_items.push(self._new_items.pop())
 
-    def add(self, item: Any):
+    def add(self, item: Any) -> None:
         """Adds item to end of the queue."""
         self._new_items.push(item)
 
-    def remove(self):
+    def remove(self) -> Any:
         """Removes and returns the first item in the queue."""
         if not self._old_items:
             self._shift_stacks()
@@ -44,7 +44,7 @@ class MyQueue:
         except IndexError:
             raise EmptyQueueError
 
-    def peek(self):
+    def peek(self) -> Any:
         """Returns the first item in the queue."""
         if not self._old_items:
             self._shift_stacks()
