@@ -4,12 +4,12 @@ Given a sorted (increasing order) array with unique integer elments,
 write an algorithm to create a binary search tree with minimal height.
 """
 
-from typing import Optional, Sequence
+from typing import Sequence
 
-from chapter4.tree_node import TreeNode
+from chapter4.tree_node import Tree, TreeNode
 
 
-def minimal_bst(array: Sequence[int]) -> Optional[TreeNode]:
+def minimal_bst(array: Sequence[int]) -> Tree:
     """Returns bst with minimal height from given sorted array."""
     if not array:
         return None
