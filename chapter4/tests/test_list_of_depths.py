@@ -4,7 +4,8 @@ from typing import Set
 import unittest
 
 from chapter2.node import Node as ListNode
-from chapter4.list_of_depths import depth_lists, TreeNode
+from chapter4.list_of_depths import depth_lists
+from chapter4.tree_node import TreeNode
 
 
 def _set_of_data(node: ListNode) -> Set[int]:

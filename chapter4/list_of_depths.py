@@ -5,13 +5,11 @@ all the nodes at each depth (e.g., if you have a tree with depth `D`,
 you'll have `D` linked lists).
 """
 
-from collections import deque, namedtuple
+from collections import deque
 from typing import Dict
 
 from chapter2.node import Node as ListNode
-
-
-TreeNode = namedtuple('TreeNode', ['value', 'left', 'right'])
+from chapter4.tree_node import TreeNode
 
 
 def depth_lists(root: TreeNode) -> Dict[int, ListNode]:
