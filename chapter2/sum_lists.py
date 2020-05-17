@@ -27,7 +27,7 @@ def sum_reverse_lists(head1: Node, head2: Node) -> Node:
 
     The digits are stored in /reverse/ order.
     """
-    sentinel = tail = Node()
+    sentinel = tail = Node(0)
     carry = 0
     while head1 or head2 or carry:
         sum_ = carry

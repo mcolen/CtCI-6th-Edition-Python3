@@ -6,7 +6,7 @@ from __future__ import annotations
 class Node:
     """Node in a singly linked list."""
 
-    def __init__(self, data=None, next_=None) -> None:
+    def __init__(self, data, next_=None) -> None:
         self.data = data
         self.next = next_
 
