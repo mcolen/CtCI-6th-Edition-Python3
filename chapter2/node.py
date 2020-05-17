@@ -2,11 +2,13 @@
 
 from __future__ import annotations
 
+from typing import Optional
+
 
 class Node:
     """Node in a singly linked list."""
 
-    def __init__(self, data, next_=None) -> None:
+    def __init__(self, data, next_: Optional[Node] = None) -> None:
         self.data = data
         self.next = next_
 
