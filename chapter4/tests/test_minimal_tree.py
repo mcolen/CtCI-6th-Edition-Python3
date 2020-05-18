@@ -1,19 +1,19 @@
 """Test for chapter4.minimal_tree."""
 
+from typing import Any
 import unittest
 
 from chapter4.minimal_tree import minimal_bst
 from chapter4.tree_node import Tree
 
 
-def _is_bst(root: Tree) -> bool:
+def _is_bst(root: Tree, mini: Any = None, maxi: Any = None) -> bool:
     if not root:
         return True
-    if root.left and root.left.value > root.value:
+    if (mini and root.value < mini) or (maxi and root.value > maxi):
         return False
-    if root.right and root.right.value < root.value:
-        return False
-    return _is_bst(root.left) and _is_bst(root.right)
+    return (_is_bst(root.left, mini, root.value)
+            and _is_bst(root.right, root.value, maxi))
 
 
 def _height(root: Tree) -> int:
