@@ -10,10 +10,15 @@ from chapter4.tree_node import Tree
 def _is_bst(root: Tree, mini: Any = None, maxi: Any = None) -> bool:
     if not root:
         return True
-    if (mini and root.value < mini) or (maxi and root.value > maxi):
+    if mini is not None and root.value < mini:
         return False
-    return (_is_bst(root.left, mini, root.value)
-            and _is_bst(root.right, root.value, maxi))
+    if maxi is not None and root.value > maxi:
+        return False
+    if not _is_bst(root.left, mini, root.value):
+        return False
+    if not _is_bst(root.right, root.value, maxi):
+        return False
+    return True
 
 
 def _height(root: Tree) -> int:
