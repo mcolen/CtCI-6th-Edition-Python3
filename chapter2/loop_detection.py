@@ -17,11 +17,13 @@ def loop_detection(head: LinkedList) -> Optional[Node]:
     """Returns first node in loop of linked list."""
     slow = fast = head
     while fast and fast.next:
-        slow, fast = slow.next, fast.next.next  # type: ignore
+        assert slow
+        slow, fast = slow.next, fast.next.next
         if slow is fast:
             break
     else:
         return None
     while head is not slow:
-        head, slow = head.next, slow.next  # type: ignore
+        assert head and slow
+        head, slow = head.next, slow.next
     return head

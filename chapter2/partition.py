@@ -24,6 +24,7 @@ def partition(head: LinkedList, x: int) -> None:
     swap = head
     while head:
         if head.data < x:
-            swap.data, head.data = head.data, swap.data  # type: ignore
-            swap = swap.next  # type: ignore
+            assert swap
+            swap.data, head.data = head.data, swap.data
+            swap = swap.next
         head = head.next

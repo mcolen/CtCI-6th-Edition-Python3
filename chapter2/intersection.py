@@ -29,9 +29,12 @@ def intersection(head1: LinkedList, head2: LinkedList) -> Optional[Node]:
         return None
 
     for _ in range(length1 - length2):
-        head1 = head1.next  # type: ignore
+        assert head1
+        head1 = head1.next
     for _ in range(length2 - length1):
-        head2 = head2.next  # type: ignore
+        assert head2
+        head2 = head2.next
     while head1 is not head2:
-        head1, head2 = head1.next, head2.next  # type: ignore
+        assert head1 and head2
+        head1, head2 = head1.next, head2.next
     return head1
