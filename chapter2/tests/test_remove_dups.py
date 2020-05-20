@@ -2,8 +2,8 @@
 
 import unittest
 
-from ..node import Node
-from ..remove_dups import remove_dups1, remove_dups2
+from chapter2.node import Node
+from chapter2.remove_dups import remove_dups1, remove_dups2
 
 
 def _make_list_01010101() -> Node:
