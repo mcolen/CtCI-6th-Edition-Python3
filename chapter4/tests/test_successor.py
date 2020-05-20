@@ -5,16 +5,18 @@ import unittest
 
 from chapter4.minimal_tree import minimal_bst
 from chapter4.successor import successor
-from chapter4.tree_node import Tree, TreeNode
+from chapter4.tree_node import TreeNode
 
 
-def _find_or_die(root: Tree, value: int) -> TreeNode:
-    def find(root: Tree, value: int) -> Optional[TreeNode]:
-        if not root:
-            return None
+def _find_or_die(root: TreeNode, value: int) -> TreeNode:
+    def find(root: TreeNode, value: int) -> Optional[TreeNode]:
         if root.value == value:
             return root
-        return find(root.left if root.value > value else root.right, value)
+        if root.left and root.value > value:
+            return find(root.left, value)
+        if root.right and root.value < value:
+            return find(root.right, value)
+        return None
 
     node = find(root, value)
     assert node
