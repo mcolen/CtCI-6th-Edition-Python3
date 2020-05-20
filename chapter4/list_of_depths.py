@@ -9,12 +9,14 @@ from collections import deque
 from typing import Dict
 
 from chapter2.node import Node as ListNode
-from chapter4.tree_node import TreeNode
+from chapter4.tree_node import Tree
 
 
-def depth_lists(root: TreeNode) -> Dict[int, ListNode]:
+def depth_lists(root: Tree) -> Dict[int, ListNode]:
     """Returns map from depth to linked list of values at that depth."""
     ret: Dict[int, ListNode] = {}
+    if not root:
+        return ret
     nodes_and_depths = deque([(root, 0)])
     while nodes_and_depths:
         tree_node, depth = nodes_and_depths.popleft()
