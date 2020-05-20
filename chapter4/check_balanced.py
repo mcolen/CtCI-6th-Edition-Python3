@@ -25,4 +25,4 @@ def is_balanced(root: Tree) -> bool:
         balanced = l_balanced and r_balanced and abs(l_height - r_height) <= 1
         height = max(l_height, r_height) + 1
         return balanced, height
-    return helper(root)[0] if root else True
+    return helper(root)[0]
