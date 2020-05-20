@@ -10,16 +10,14 @@ from typing import Optional
 from chapter4.tree_node import TreeNode
 
 
-def _leftmost_child(node: TreeNode) -> TreeNode:
-    while node.left:
-        node = node.left
-    return node
-
-
 def successor(node: TreeNode) -> Optional[TreeNode]:
     """Returns the in-order successor of given node in a BST."""
+    def leftmost_child(node: TreeNode) -> TreeNode:
+        while node.left:
+            node = node.left
+        return node
     if node.right:
-        return _leftmost_child(node.right)
+        return leftmost_child(node.right)
     parent = node.parent
     while parent is not None and node is not parent.left:
         node, parent = parent, parent.parent

@@ -43,26 +43,24 @@ def sum_reverse_lists(head1: LinkedList, head2: LinkedList) -> LinkedList:
     return sentinel.next
 
 
-def _reverse_list(head: LinkedList) -> LinkedList:
-    if not head:
-        return None
-    curr = head.next
-    head.next = None
-    prev = head
-    while curr:
-        next_ = curr.next
-        curr.next = prev
-        prev, curr = curr, next_
-    return prev
-
-
 def sum_forward_lists(head1: LinkedList, head2: LinkedList) -> LinkedList:
     """Returns sum of given lists as a linked list.
 
     The digits are stored in forward order.
     """
-    tail1, tail2 = _reverse_list(head1), _reverse_list(head2)
-    ret = _reverse_list(sum_reverse_lists(tail1, tail2))
-    _reverse_list(tail1)
-    _reverse_list(tail2)
+    def reverse_list(head: LinkedList) -> LinkedList:
+        if not head:
+            return None
+        curr = head.next
+        head.next = None
+        prev = head
+        while curr:
+            next_ = curr.next
+            curr.next = prev
+            prev, curr = curr, next_
+        return prev
+    tail1, tail2 = reverse_list(head1), reverse_list(head2)
+    ret = reverse_list(sum_reverse_lists(tail1, tail2))
+    reverse_list(tail1)
+    reverse_list(tail2)
     return ret
