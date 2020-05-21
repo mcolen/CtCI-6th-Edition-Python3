@@ -24,12 +24,12 @@ class Stack:
         """Removes and returns the top item from the stack."""
         try:
             return self._items.pop()
-        except IndexError:
-            raise EmptyStackError
+        except IndexError as e:
+            raise EmptyStackError from e
 
     def peek(self) -> Any:
         """Returns the top item of the stack."""
         try:
             return self._items[-1]
-        except IndexError:
-            raise EmptyStackError
+        except IndexError as e:
+            raise EmptyStackError from e

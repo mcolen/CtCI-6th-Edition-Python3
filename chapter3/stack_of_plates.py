@@ -42,8 +42,8 @@ class SetOfStacks:
         """Removes and returns the top item from the stack."""
         try:
             item = self._stacks[-1].pop()
-        except IndexError:
-            raise EmptyStackError
+        except IndexError as e:
+            raise EmptyStackError from e
         self._pop_empty()
         return item
 
@@ -51,8 +51,8 @@ class SetOfStacks:
         """Returns the top item of the stack."""
         try:
             return self._stacks[-1].peek()
-        except IndexError:
-            raise EmptyStackError
+        except IndexError as e:
+            raise EmptyStackError from e
 
     def pop_at(self, index: int) -> Any:
         """Removes and returns top item from stack at given index."""

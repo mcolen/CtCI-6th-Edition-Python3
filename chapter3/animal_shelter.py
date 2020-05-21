@@ -58,12 +58,12 @@ class AnimalShelter:
         """Returns "oldest" (based on arrival time) dog for adoption."""
         try:
             return self.dogs.popleft().pet
-        except IndexError:
-            raise NoAvailablePetError
+        except IndexError as e:
+            raise NoAvailablePetError from e
 
     def dequeue_cat(self) -> Any:
         """Returns "oldest" (based on arrival time) cat for adoption."""
         try:
             return self.cats.popleft().pet
-        except IndexError:
-            raise NoAvailablePetError
+        except IndexError as e:
+            raise NoAvailablePetError from e

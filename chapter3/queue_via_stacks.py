@@ -37,8 +37,8 @@ class MyQueue:
             self._shift_stacks()
         try:
             return self._old_items.pop()
-        except IndexError:
-            raise EmptyQueueError
+        except IndexError as e:
+            raise EmptyQueueError from e
 
     def peek(self) -> Any:
         """Returns the first item in the queue."""
@@ -46,5 +46,5 @@ class MyQueue:
             self._shift_stacks()
         try:
             return self._old_items.peek()
-        except IndexError:
-            raise EmptyQueueError
+        except IndexError as e:
+            raise EmptyQueueError from e
