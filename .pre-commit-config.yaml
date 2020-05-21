@@ -18,7 +18,7 @@ repos:
     -   id: mypy
         args: [--disallow-untyped-defs, --show-error-codes]
 -   repo: https://gitlab.com/pycqa/flake8
-    rev: 3.8.0a2
+    rev: 3.8.1
     hooks:
     -   id: flake8
 -   repo: https://github.com/PyCQA/pylint
