@@ -15,18 +15,21 @@ from itertools import islice
 from typing import MutableSequence
 
 
-def urlify(s: MutableSequence[str], length: int) -> None:
-    """Replace all spaces in s of given length with `%20`.
+def urlify(chars: MutableSequence[str], length: int) -> None:
+    """Replace all spaces in chars with `%20`.
 
-    s is assumed to have sufficient space at the end to hold the
-    additional characters. length is the "true" length of s.
+    :param chars: Mutable sequence of characters to be urlified. Assumed
+        to have sufficient space at the end to hold the additional
+        caracters.
+    :param length: The "true" length of chars not including additional
+        space at the end.
     """
-    num_spaces = sum(1 for c in islice(s, length) if c == ' ')
-    j = length - 1 + 2*num_spaces
-    for i in range(length - 1, -1, -1):
-        if s[i] == ' ':
-            s[j-2:j+1] = '%20'
+    num_spaces = sum(char == ' ' for char in islice(chars, length))
+    j = length - 1 + 2*num_spaces  # last index of urlified chars
+    for char in islice(reversed(chars), len(chars) - length, None):
+        if char == ' ':
+            chars[j-2:j+1] = '%20'
             j -= 3
         else:
-            s[j] = s[i]
+            chars[j] = char
             j -= 1
