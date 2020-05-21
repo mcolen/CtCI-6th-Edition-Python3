@@ -16,7 +16,7 @@ from itertools import islice
 
 
 def are_one_away(s1: str, s2: str) -> bool:
-    """Returns True if s1 and s2 are one edit (or zero edits) away."""
+    """Return True if s1 and s2 are one edit (or zero edits) away."""
     if abs(len(s1) - len(s2)) > 1:
         return False
     if len(s1) == len(s2):

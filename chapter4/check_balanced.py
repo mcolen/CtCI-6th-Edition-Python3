@@ -12,13 +12,13 @@ from chapter4.tree_node import Tree
 
 
 def is_balanced(root: Tree) -> bool:
-    """Returns True if given tree is balanced.
+    """Return True if given tree is balanced.
 
     A balanced tree is defined to be a tree such that the heights of the
     two subtrees of any node never differ by more than one.
     """
     def helper(root: Tree) -> Tuple[bool, int]:
-        # Returns whether balanced and tree height.
+        # Return whether balanced and tree height.
         if not root:
             return True, 0
         l_balanced, l_height = helper(root.left)

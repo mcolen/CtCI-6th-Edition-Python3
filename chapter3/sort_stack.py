@@ -10,7 +10,7 @@ from chapter3.stack import Stack
 
 
 def sort_stack(stack: Stack) -> None:
-    """Sorts stack such that the smallest items are on the top."""
+    """Sort stack such that the smallest items are on the top."""
     sorted_stack = Stack()
     while stack:
         curr = stack.pop()

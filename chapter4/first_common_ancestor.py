@@ -12,7 +12,7 @@ from chapter4.tree_node import TreeNode
 
 def first_common_ancestor(node1: TreeNode,
                           node2: TreeNode) -> Optional[TreeNode]:
-    """Returns first common ancestor of node1 and node2."""
+    """Return first common ancestor of node1 and node2."""
     depth1, depth2 = 0, 0
     float1, float2 = node1, node2
     while float1.parent:

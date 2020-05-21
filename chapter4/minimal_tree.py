@@ -11,9 +11,9 @@ from chapter4.tree_node import TreeNode
 
 def minimal_bst(array: Sequence[int],
                 parent: Optional[TreeNode] = None) -> TreeNode:
-    """Returns bst with minimal height from given sorted array.
+    """Return bst with minimal height from given sorted array.
 
-    array must not be empty.
+    Raise ValueError if array is empty.
     """
     if not array:
         raise ValueError('array is empty')

@@ -45,7 +45,7 @@ class AnimalShelter:
             self.cats.append(node)
 
     def dequeue_any(self) -> Any:
-        """Returns "oldest" (based on arrival time) pet for adoption."""
+        """Return "oldest" (based on arrival time) pet for adoption."""
         if not self.dogs:
             return self.dequeue_cat()
         if not self.cats:
@@ -55,14 +55,14 @@ class AnimalShelter:
         return self.dequeue_cat()
 
     def dequeue_dog(self) -> Any:
-        """Returns "oldest" (based on arrival time) dog for adoption."""
+        """Return "oldest" (based on arrival time) dog for adoption."""
         try:
             return self.dogs.popleft().pet
         except IndexError as e:
             raise NoAvailablePetError from e
 
     def dequeue_cat(self) -> Any:
-        """Returns "oldest" (based on arrival time) cat for adoption."""
+        """Return "oldest" (based on arrival time) cat for adoption."""
         try:
             return self.cats.popleft().pet
         except IndexError as e:

@@ -8,5 +8,5 @@ from collections import Counter
 
 
 def are_permutations(s1: str, s2: str) -> bool:
-    """Returns True if s1 is a permutation of s2."""
+    """Return True if s1 is a permutation of s2."""
     return Counter(s1) == Counter(s2)

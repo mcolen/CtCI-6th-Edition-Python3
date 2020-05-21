@@ -13,9 +13,9 @@ from chapter2.node import LinkedList, Node
 
 
 def intersection(head1: LinkedList, head2: LinkedList) -> Optional[Node]:
-    """Returns first node of intersection between given linked lists.
+    """Return first node of intersection between given linked lists.
 
-    If there is no intersecting node, returns None.
+    If there is no intersecting node, return None.
     """
     if not head1 or not head2:
         return None

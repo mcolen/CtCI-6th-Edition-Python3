@@ -23,7 +23,7 @@ from chapter2.node import LinkedList, Node
 
 
 def sum_reverse_lists(head1: LinkedList, head2: LinkedList) -> LinkedList:
-    """Returns sum of given lists as a linked list.
+    """Return sum of given lists as a linked list.
 
     The digits are stored in /reverse/ order.
     """
@@ -44,7 +44,7 @@ def sum_reverse_lists(head1: LinkedList, head2: LinkedList) -> LinkedList:
 
 
 def sum_forward_lists(head1: LinkedList, head2: LinkedList) -> LinkedList:
-    """Returns sum of given lists as a linked list.
+    """Return sum of given lists as a linked list.
 
     The digits are stored in forward order.
     """

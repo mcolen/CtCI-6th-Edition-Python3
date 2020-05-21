@@ -12,7 +12,7 @@ Node = namedtuple('Node', ['name', 'neighbors'])
 
 
 def exists_route(start: Node, end: Node) -> bool:
-    """Returns True if there is a route from start to end."""
+    """Return True if there is a route from start to end."""
     nodes = deque([start])
     visited: MutableSet[str] = set()
     while nodes:

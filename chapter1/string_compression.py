@@ -12,10 +12,10 @@ from itertools import islice
 
 
 def compressed(s: str) -> str:
-    """Returns a compressed s using the counts of repeated characters.
+    """Return a compressed s using the counts of repeated characters.
 
     If the "compressed" string would not become smaller than s, simply
-    returns s. Assumes s has only uppercase and lowercase letters.
+    return s. Assume s has only uppercase and lowercase letters.
     """
     if sum(s[i] == s[i + 1] for i in range(len(s) - 1)) <= len(s) // 2:
         return s

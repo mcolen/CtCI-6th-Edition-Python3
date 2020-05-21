@@ -8,10 +8,10 @@ check if `s2` is a rotation of `s1` using only one call to `isSubstring`
 
 
 def _is_substring(s1: str, s2: str) -> bool:
-    """Returns True if s2 is a substring of s1."""
+    """Return True if s2 is a substring of s1."""
     return s2 in s1
 
 
 def is_rotation(s1: str, s2: str) -> bool:
-    """Returns True if s2 is a rotation of s1."""
+    """Return True if s2 is a rotation of s1."""
     return len(s1) == len(s2) and _is_substring(s1 + s1, s2)

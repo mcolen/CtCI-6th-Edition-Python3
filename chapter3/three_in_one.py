@@ -26,11 +26,11 @@ class FixedMultiStack:
         self.lengths = [0] * num_stacks
 
     def _tail(self, stack_num: int) -> int:
-        # Returns index of last item in stack numbered stack_num..
+        # Return index of last item in stack numbered stack_num..
         return stack_num * self.stack_capacity + self.lengths[stack_num] - 1
 
     def pop(self, stack_num: int) -> Any:
-        """Removes and returns the top item from the given stack."""
+        """Remove and return the top item from the given stack."""
         if self.is_empty(stack_num):
             raise EmptyStackError
         item = self.array[self._tail(stack_num)]
@@ -46,11 +46,11 @@ class FixedMultiStack:
         self.lengths[stack_num] += 1
 
     def peek(self, stack_num: int) -> Any:
-        """Returns the top of the given stack."""
+        """Return the top of the given stack."""
         if self.is_empty(stack_num):
             raise EmptyStackError
         return self.array[self._tail(stack_num)]
 
     def is_empty(self, stack_num: int) -> bool:
-        """Returns True if the given stack is empty."""
+        """Return True if the given stack is empty."""
         return self.lengths[stack_num] == 0

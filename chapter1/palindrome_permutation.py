@@ -16,6 +16,6 @@ from collections import Counter
 
 
 def is_palindrome_permutation(s: str) -> bool:
-    """Returns True if s is a permutaton of a palindrome."""
+    """Return True if s is a permutaton of a palindrome."""
     counts = Counter(c.lower() for c in s if c.isalpha())
     return sum(count % 2 for count in counts.values()) <= 1

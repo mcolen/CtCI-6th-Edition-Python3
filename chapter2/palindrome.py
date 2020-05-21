@@ -7,7 +7,7 @@ from chapter2.node import LinkedList
 
 
 def is_palindrome(head: LinkedList) -> bool:
-    """Returns True if given linked list is a palindrome."""
+    """Return True if given linked list is a palindrome."""
     data = []
     while head:
         data.append(head.data)

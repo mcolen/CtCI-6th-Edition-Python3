@@ -17,7 +17,7 @@ from chapter4.tree_node import Tree
 
 
 def bst_sequences(root: Tree) -> List[List[Any]]:
-    """Returns all possible sequences that could have led to given Tree.
+    """Return all possible sequences that could have led to given Tree.
 
     The Tree is assumed to be created by iterating through a sequence
     and inserting each element.
@@ -26,7 +26,7 @@ def bst_sequences(root: Tree) -> List[List[Any]]:
         return [[]]
 
     def permute(left: Sequence[Any], right: Sequence[Any]) -> List[List[Any]]:
-        # Returns all possible weavings of left and right.
+        # Return all possible weavings of left and right.
         assert root
         sequences: List[List[Any]] = []
         for permutation in permutations([1] * len(left) + [0] * len(right)):

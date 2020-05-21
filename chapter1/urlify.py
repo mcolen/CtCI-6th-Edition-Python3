@@ -16,7 +16,7 @@ from typing import MutableSequence
 
 
 def urlify(s: MutableSequence[str], length: int) -> None:
-    """Replaces all spaces in s of given length with `%20`.
+    """Replace all spaces in s of given length with `%20`.
 
     s is assumed to have sufficient space at the end to hold the
     additional characters. length is the "true" length of s.

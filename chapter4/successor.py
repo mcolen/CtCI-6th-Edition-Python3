@@ -11,9 +11,9 @@ from chapter4.tree_node import TreeNode
 
 
 def successor(node: TreeNode) -> Optional[TreeNode]:
-    """Returns the in-order successor of given node in a BST."""
+    """Return the in-order successor of given node in a BST."""
     def leftmost_child(node: TreeNode) -> TreeNode:
-        # Returns leftmost child of given node.
+        # Return leftmost child of given node.
         while node.left:
             node = node.left
         return node

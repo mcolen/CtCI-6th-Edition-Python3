@@ -13,7 +13,7 @@ from chapter4.tree_node import Tree
 
 
 def depth_lists(root: Tree) -> Dict[int, ListNode]:
-    """Returns map from depth to linked list of values at that depth."""
+    """Return map from depth to linked list of values at that depth."""
     ret: Dict[int, ListNode] = {}
     if not root:
         return ret

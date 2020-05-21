@@ -16,7 +16,7 @@ from chapter2.node import LinkedList
 
 
 def partition(head: LinkedList, x: int) -> None:
-    """Partitions linked list around value x.
+    """Partition linked list around value x.
 
     All nodes less than x come before all nodes greater than or equal to
     x.

@@ -17,18 +17,18 @@ class Stack:
         return len(self._items)
 
     def push(self, item: Any) -> None:
-        """Adds given item to the top of the stack."""
+        """Add given item to the top of the stack."""
         self._items.append(item)
 
     def pop(self) -> Any:
-        """Removes and returns the top item from the stack."""
+        """Remove and returns the top item from the stack."""
         try:
             return self._items.pop()
         except IndexError as e:
             raise EmptyStackError from e
 
     def peek(self) -> Any:
-        """Returns the top item of the stack."""
+        """Return the top item of the stack."""
         try:
             return self._items[-1]
         except IndexError as e:

@@ -8,7 +8,7 @@ from chapter4.validate_bst import is_bst
 
 
 def _height(root: Tree) -> int:
-    # Returns height of given tree.
+    # Return height of given tree.
     if not root:
         return 0
     return max(_height(root.left), _height(root.right)) + 1

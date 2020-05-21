@@ -9,7 +9,7 @@ from chapter4.tree_node import Tree
 
 
 def is_bst(root: Tree, mini: Any = None, maxi: Any = None) -> bool:
-    """Returns true if given binary tree is a binary search tree.
+    """Return true if given binary tree is a binary search tree.
 
     Duplicates are not allowed.
     """

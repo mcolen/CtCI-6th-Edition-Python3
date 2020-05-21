@@ -14,7 +14,7 @@ from chapter2.node import LinkedList, Node
 
 
 def loop_detection(head: LinkedList) -> Optional[Node]:
-    """Returns first node in loop of linked list."""
+    """Return first node in loop of linked list."""
     slow = fast = head
     while fast and fast.next:
         assert slow

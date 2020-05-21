@@ -17,18 +17,18 @@ class StackWithMin(Stack):
     Node = namedtuple('Node', ['item', 'min'])
 
     def push(self, item: Any) -> None:
-        """Adds given item to the top of the stack."""
+        """Add given item to the top of the stack."""
         min_ = min(item, self._items[-1].min) if self else item
         super().push(self.Node(item, min_))
 
     def pop(self) -> Any:
-        """Removes and returns the top item from the stack."""
+        """Remove and returns the top item from the stack."""
         return super().pop().item
 
     def peek(self) -> Any:
-        """Returns the top item of the stack."""
+        """Return the top item of the stack."""
         return super().peek().item
 
     def min(self) -> Any:
-        """Returns minimum item in the stack."""
+        """Return minimum item in the stack."""
         return super().peek().min

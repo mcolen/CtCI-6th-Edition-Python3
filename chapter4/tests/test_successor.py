@@ -9,11 +9,11 @@ from chapter4.tree_node import TreeNode
 
 
 def _find_or_die(root: TreeNode, value: int) -> TreeNode:
-    # Returns TreeNode with given value in tree given by root.  Asserts
+    # Return TreeNode with given value in tree given by root.  Assert
     # that such a node exists.
     def find(root: TreeNode, value: int) -> Optional[TreeNode]:
-        # Returns TreeNode with given value in tree given by root.  If
-        # there is no such node, returns None.
+        # Return TreeNode with given value in tree given by root.  If
+        # there is no such node, return None.
         if root.value == value:
             return root
         if root.left and root.value > value:

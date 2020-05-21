@@ -28,11 +28,11 @@ class MyQueue:
             self._old_items.push(self._new_items.pop())
 
     def add(self, item: Any) -> None:
-        """Adds item to end of the queue."""
+        """Add item to end of the queue."""
         self._new_items.push(item)
 
     def remove(self) -> Any:
-        """Removes and returns the first item in the queue."""
+        """Remove and return the first item in the queue."""
         if not self._old_items:
             self._shift_stacks()
         try:
@@ -41,7 +41,7 @@ class MyQueue:
             raise EmptyQueueError from e
 
     def peek(self) -> Any:
-        """Returns the first item in the queue."""
+        """Return the first item in the queue."""
         if not self._old_items:
             self._shift_stacks()
         try:
