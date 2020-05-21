@@ -40,3 +40,7 @@ class TestSumForwardLists(unittest.TestCase):
         head_622.next.next = Node(2)
 
         self.assertEqual(head_622, sum_forward_lists(head_31, head_591))
+
+
+if __name__ == '__main__':
+    unittest.main()
