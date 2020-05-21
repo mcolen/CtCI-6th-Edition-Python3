@@ -6,7 +6,23 @@ from chapter2.node import Node
 from chapter2.remove_dups import remove_dups1, remove_dups2
 
 
-def _make_list_01010101() -> Node:
+class TestRemoveDups1(unittest.TestCase):
+
+    def test_01010101(self) -> None:
+        head = _linked_list_01010101()
+        remove_dups1(head)
+        self.assertEqual(_linked_list_01(), head)
+
+
+class TestRemoveDups2(unittest.TestCase):
+
+    def test_01010101(self) -> None:
+        head = _linked_list_01010101()
+        remove_dups2(head)
+        self.assertEqual(_linked_list_01(), head)
+
+
+def _linked_list_01010101() -> Node:
     # Construct and return linked list 0->1->0->1->0->1->0->1.
     head = Node(0)
     head.next = Node(1)
@@ -19,27 +35,11 @@ def _make_list_01010101() -> Node:
     return head
 
 
-def _make_list_01() -> Node:
+def _linked_list_01() -> Node:
     # Construct and return linked list 0>1.
     head = Node(0)
     head.next = Node(1)
     return head
-
-
-class TestRemoveDups1(unittest.TestCase):
-
-    def test_01010101(self) -> None:
-        head = _make_list_01010101()
-        remove_dups1(head)
-        self.assertEqual(_make_list_01(), head)
-
-
-class TestRemoveDups2(unittest.TestCase):
-
-    def test_01010101(self) -> None:
-        head = _make_list_01010101()
-        remove_dups2(head)
-        self.assertEqual(_make_list_01(), head)
 
 
 if __name__ == '__main__':

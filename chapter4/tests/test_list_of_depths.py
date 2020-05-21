@@ -8,14 +8,6 @@ from chapter4.list_of_depths import depth_lists
 from chapter4.tree_node import TreeNode
 
 
-def _set_of_data(node: ListNode) -> Set[int]:
-    # Return the set of all data in linked list with given head node.
-    ret = {node.data}
-    if node.next:
-        ret |= _set_of_data(node.next)
-    return ret
-
-
 class TestListOfDepths(unittest.TestCase):
 
     def test_1_2_3_4_5_6_7_8_9_10(self) -> None:
@@ -46,6 +38,14 @@ class TestListOfDepths(unittest.TestCase):
         self.assertEqual({2, 3}, _set_of_data(lists[1]))
         self.assertEqual({4, 5, 6, 7}, _set_of_data(lists[2]))
         self.assertEqual({8, 9, 10}, _set_of_data(lists[3]))
+
+
+def _set_of_data(node: ListNode) -> Set[int]:
+    # Return the Set of all data in linked list with given head node.
+    ret = {node.data}
+    if node.next:
+        ret |= _set_of_data(node.next)
+    return ret
 
 
 if __name__ == '__main__':
