@@ -11,9 +11,9 @@ system and implement operations such as `enqueue`, `dequeueAny`,
 data structure.
 """
 
-from collections import deque, namedtuple
+from collections import deque
 from enum import Enum
-from typing import Any
+from typing import Any, NamedTuple
 
 
 class NoAvailablePetError(Exception):
@@ -29,7 +29,9 @@ class PetType(Enum):
 class AnimalShelter:
     """Adoption service for cats and dogs."""
 
-    Node = namedtuple('Node', ['pet', 'order'])
+    class _Node(NamedTuple):
+        pet: Any
+        order: int
 
     def __init__(self) -> None:
         self.dogs: deque = deque()
@@ -38,7 +40,7 @@ class AnimalShelter:
 
     def enqueue(self, pet: Any, type_: PetType) -> None:
         """Put pet of given type_ up for adoption."""
-        node, self.num_seen = self.Node(pet, self.num_seen), self.num_seen + 1
+        node, self.num_seen = self._Node(pet, self.num_seen), self.num_seen + 1
         if type_ == PetType.DOG:
             self.dogs.append(node)
         else:

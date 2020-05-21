@@ -8,12 +8,12 @@ from chapter4.route_between_nodes import exists_route, Node
 class TestRouteBetweenNodes(unittest.TestCase):
 
     def test_route_exists(self) -> None:
-        node_a = Node(name='a', neighbors=[])
-        node_b = Node(name='b', neighbors=[])
-        node_c = Node(name='c', neighbors=[])
-        node_d = Node(name='d', neighbors=[])
-        node_e = Node(name='e', neighbors=[])
-        node_f = Node(name='f', neighbors=[])
+        node_a = Node('a')
+        node_b = Node('b')
+        node_c = Node('c')
+        node_d = Node('d')
+        node_e = Node('e')
+        node_f = Node('f')
 
         node_a.neighbors.append(node_b)
         node_a.neighbors.append(node_c)
