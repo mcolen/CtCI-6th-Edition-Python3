@@ -7,6 +7,7 @@ from chapter2.remove_dups import remove_dups1, remove_dups2
 
 
 def _make_list_01010101() -> Node:
+    # Constructs and returns linked list 0->1->0->1->0->1->0->1.
     head = Node(0)
     head.next = Node(1)
     head.next.next = Node(0)
@@ -19,6 +20,7 @@ def _make_list_01010101() -> Node:
 
 
 def _make_list_01() -> Node:
+    # Constructs and returns linked list 0>1.
     head = Node(0)
     head.next = Node(1)
     return head

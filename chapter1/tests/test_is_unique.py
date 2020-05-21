@@ -6,6 +6,7 @@ from chapter1.is_unique import is_unique1, is_unique2
 
 
 class TestIsUnique1(unittest.TestCase):
+
     def test_abcde(self) -> None:
         self.assertTrue(is_unique1('abcde'))
 
@@ -23,6 +24,7 @@ class TestIsUnique1(unittest.TestCase):
 
 
 class TestIsUnique2(unittest.TestCase):
+
     def test_abcde(self) -> None:
         self.assertTrue(is_unique2('abcde'))
 

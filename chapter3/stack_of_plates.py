@@ -28,6 +28,7 @@ class SetOfStacks:
         self._stacks: List[Stack] = []
 
     def _pop_empty(self) -> None:
+        # Pops empty stacks from self._stacks.
         while self._stacks and not self._stacks[-1]:
             self._stacks.pop()
 

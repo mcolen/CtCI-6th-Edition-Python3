@@ -9,6 +9,7 @@ from chapter4.tree_node import TreeNode
 
 
 def _set_of_data(node: ListNode) -> Set[int]:
+    # Returns the set of all data in linked list with given head node.
     ret = {node.data}
     if node.next:
         ret |= _set_of_data(node.next)

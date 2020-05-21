@@ -18,6 +18,7 @@ def is_balanced(root: Tree) -> bool:
     two subtrees of any node never differ by more than one.
     """
     def helper(root: Tree) -> Tuple[bool, int]:
+        # Returns whether balanced and tree height.
         if not root:
             return True, 0
         l_balanced, l_height = helper(root.left)

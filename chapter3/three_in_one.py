@@ -26,6 +26,7 @@ class FixedMultiStack:
         self.lengths = [0] * num_stacks
 
     def _tail(self, stack_num: int) -> int:
+        # Returns index of last item in stack numbered stack_num..
         return stack_num * self.stack_capacity + self.lengths[stack_num] - 1
 
     def pop(self, stack_num: int) -> Any:

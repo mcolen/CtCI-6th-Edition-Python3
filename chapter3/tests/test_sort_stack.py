@@ -20,7 +20,9 @@ class TestSortStack(unittest.TestCase):
         stack.push(8)
         stack.push(9)
         stack.push(5)
+
         sort_stack(stack)
+
         self.assertEqual(1, stack.pop())
         self.assertEqual(2, stack.pop())
         self.assertEqual(3, stack.pop())

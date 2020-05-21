@@ -23,11 +23,7 @@ class MyQueue:
         return len(self._new_items) + len(self._old_items)
 
     def _shift_stacks(self) -> None:
-        """Pops everything off self._new_items onto self._old_items.
-
-        This can be done when self._old_items is empty to put the oldest
-        items in the queue on top of self._old_items.
-        """
+        # Pops everything off self._new_items onto self._old_items.
         while self._new_items:
             self._old_items.push(self._new_items.pop())
 

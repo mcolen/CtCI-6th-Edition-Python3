@@ -26,6 +26,7 @@ def bst_sequences(root: Tree) -> List[List[Any]]:
         return [[]]
 
     def permute(left: Sequence[Any], right: Sequence[Any]) -> List[List[Any]]:
+        # Returns all possible weavings of left and right.
         assert root
         sequences: List[List[Any]] = []
         for permutation in permutations([1] * len(left) + [0] * len(right)):

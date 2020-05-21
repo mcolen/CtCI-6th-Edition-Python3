@@ -14,6 +14,7 @@ class TestStackWithMin(unittest.TestCase):
         stack.push(1)
         stack.push(3)
         stack.push(1)
+
         self.assertEqual(1, stack.pop())
         self.assertEqual(1, stack.min())
         self.assertEqual(3, stack.pop())
