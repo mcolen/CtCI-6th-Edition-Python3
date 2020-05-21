@@ -6,7 +6,7 @@ write an algorithm to create a binary search tree with minimal height.
 
 from typing import Optional, Sequence
 
-from chapter4.tree_node import TreeNode
+from chapter4.tree import TreeNode
 
 
 def minimal_bst(array: Sequence[int],

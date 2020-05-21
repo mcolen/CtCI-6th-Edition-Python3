@@ -2,7 +2,7 @@
 
 import unittest
 
-from chapter4.tree_node import TreeNode
+from chapter4.tree import TreeNode
 from chapter4.validate_bst import is_bst
 
 

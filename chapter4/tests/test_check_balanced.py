@@ -3,7 +3,7 @@
 import unittest
 
 from chapter4.check_balanced import is_balanced
-from chapter4.tree_node import TreeNode
+from chapter4.tree import TreeNode
 
 
 class TestCheckBalanced(unittest.TestCase):

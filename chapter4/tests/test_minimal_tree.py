@@ -3,7 +3,7 @@
 import unittest
 
 from chapter4.minimal_tree import minimal_bst
-from chapter4.tree_node import Tree
+from chapter4.tree import Tree
 from chapter4.validate_bst import is_bst
 
 

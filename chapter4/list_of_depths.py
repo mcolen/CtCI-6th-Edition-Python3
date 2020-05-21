@@ -9,7 +9,7 @@ from collections import deque
 from typing import Dict
 
 from chapter2.node import Node as ListNode
-from chapter4.tree_node import Tree
+from chapter4.tree import Tree
 
 
 def depth_lists(root: Tree) -> Dict[int, ListNode]:

@@ -8,7 +8,7 @@ than one.
 
 from typing import Tuple
 
-from chapter4.tree_node import Tree
+from chapter4.tree import Tree
 
 
 def is_balanced(root: Tree) -> bool:

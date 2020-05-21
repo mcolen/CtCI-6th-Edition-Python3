@@ -7,7 +7,7 @@ structure. NOTE: This is not necessarily a binary search tree.
 
 from typing import Optional
 
-from chapter4.tree_node import TreeNode
+from chapter4.tree import TreeNode
 
 
 def first_common_ancestor(node1: TreeNode,

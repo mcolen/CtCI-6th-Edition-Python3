@@ -7,7 +7,7 @@ a link to its parent.
 
 from typing import Optional
 
-from chapter4.tree_node import TreeNode
+from chapter4.tree import TreeNode
 
 
 def successor(node: TreeNode) -> Optional[TreeNode]:

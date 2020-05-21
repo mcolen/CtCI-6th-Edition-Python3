@@ -5,7 +5,7 @@ import unittest
 
 from chapter2.node import Node as ListNode
 from chapter4.list_of_depths import depth_lists
-from chapter4.tree_node import TreeNode
+from chapter4.tree import TreeNode
 
 
 class TestListOfDepths(unittest.TestCase):

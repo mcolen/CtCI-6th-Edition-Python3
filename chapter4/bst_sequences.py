@@ -13,7 +13,7 @@ Output: {2, 1, 3}, {2, 3, 1}
 from itertools import permutations
 from typing import Any, List, Sequence
 
-from chapter4.tree_node import Tree
+from chapter4.tree import Tree
 
 
 def bst_sequences(root: Tree) -> List[List[Any]]:
