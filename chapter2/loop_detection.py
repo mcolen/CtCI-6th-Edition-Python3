@@ -1,6 +1,6 @@
 """Solution to 2.8 Loop Detection.
 
-Given a linked list which might contain a loop, implemente an algorithm
+Given a linked list which might contain a loop, implement an algorithm
 that returns the node at the beginning of the loop (if one exists).
 
 EXAMPLE
