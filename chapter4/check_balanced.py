@@ -17,15 +17,15 @@ def is_balanced(root: tree.Tree) -> bool:
     A balanced tree is defined to be a tree such that the heights of the
     two subtrees of any node never differ by more than one.
     """
+    return _helper(root)[0]
 
-    def helper(root: tree.Tree) -> Tuple[bool, int]:
-        # Return whether balanced and tree height.
-        if not root:
-            return True, 0
-        l_balanced, l_height = helper(root.left)
-        r_balanced, r_height = helper(root.right)
-        balanced = l_balanced and r_balanced and abs(l_height - r_height) <= 1
-        height = max(l_height, r_height) + 1
-        return balanced, height
 
-    return helper(root)[0]
+def _helper(root: tree.Tree) -> Tuple[bool, int]:
+    # Return whether balanced and tree height.
+    if not root:
+        return True, 0
+    l_balanced, l_height = _helper(root.left)
+    r_balanced, r_height = _helper(root.right)
+    balanced = l_balanced and r_balanced and abs(l_height - r_height) <= 1
+    height = max(l_height, r_height) + 1
+    return balanced, height

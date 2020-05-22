@@ -25,26 +25,27 @@ def bst_sequences(root: tree.Tree) -> List[List[Any]]:
     if not root:
         return [[]]
 
-    def permute(left: Sequence[Any], right: Sequence[Any]) -> List[List[Any]]:
-        # Return all possible weavings of left and right.
-        assert root
-        sequences: List[List[Any]] = []
-        for permutation in itertools.permutations([1] * len(left) +
-                                                  [0] * len(right)):
-            sequence = [root.value]
-            i = j = 0
-            for bit in permutation:
-                if bit:
-                    sequence.append(left[i])
-                    i += 1
-                else:
-                    sequence.append(right[j])
-                    j += 1
-            sequences.append(sequence)
-        return sequences
-
     sequences: List[List[Any]] = []
     for left in bst_sequences(root.left):
         for right in bst_sequences(root.right):
-            sequences.extend(permute(left, right))
+            sequences.extend(_permute(root.value, left, right))
+    return sequences
+
+
+def _permute(root_value: Any, left: Sequence[Any],
+             right: Sequence[Any]) -> List[List[Any]]:
+    # Return all possible weavings of left and right after root_value.
+    sequences: List[List[Any]] = []
+    for permutation in itertools.permutations([1] * len(left) +
+                                              [0] * len(right)):
+        sequence = [root_value]
+        i = j = 0
+        for bit in permutation:
+            if bit:
+                sequence.append(left[i])
+                i += 1
+            else:
+                sequence.append(right[j])
+                j += 1
+        sequences.append(sequence)
     return sequences

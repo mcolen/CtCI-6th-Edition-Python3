@@ -50,22 +50,22 @@ def sum_forward_lists(head1: llist.LinkedList,
 
     The digits are stored in forward order.
     """
-
-    def reverse_list(head: llist.LinkedList) -> llist.LinkedList:
-        # Reverses list with given head and returns new head.
-        if not head:
-            return None
-        curr = head.next
-        head.next = None
-        prev = head
-        while curr:
-            next_ = curr.next
-            curr.next = prev
-            prev, curr = curr, next_
-        return prev
-
-    tail1, tail2 = reverse_list(head1), reverse_list(head2)
-    ret = reverse_list(sum_reverse_lists(tail1, tail2))
-    reverse_list(tail1)
-    reverse_list(tail2)
+    tail1, tail2 = _reverse_list(head1), _reverse_list(head2)
+    ret = _reverse_list(sum_reverse_lists(tail1, tail2))
+    _reverse_list(tail1)
+    _reverse_list(tail2)
     return ret
+
+
+def _reverse_list(head: llist.LinkedList) -> llist.LinkedList:
+    # Reverses list with given head and returns new head.
+    if not head:
+        return None
+    curr = head.next
+    head.next = None
+    prev = head
+    while curr:
+        next_ = curr.next
+        curr.next = prev
+        prev, curr = curr, next_
+    return prev
