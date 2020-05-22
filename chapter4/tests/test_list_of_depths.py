@@ -17,19 +17,19 @@ class TestListOfDepths(unittest.TestCase):
                 value=2,
                 left=TreeNode(
                     value=4,
-                    left=TreeNode(8, None, None),
-                    right=TreeNode(9, None, None)
+                    left=TreeNode(8),
+                    right=TreeNode(9)
                 ),
                 right=TreeNode(
                     value=5,
-                    left=TreeNode(10, None, None),
+                    left=TreeNode(10),
                     right=None
                 )
             ),
             right=TreeNode(
                 value=3,
-                left=TreeNode(6, None, None),
-                right=TreeNode(7, None, None)
+                left=TreeNode(6),
+                right=TreeNode(7)
             )
         )
         lists = depth_lists(tree)

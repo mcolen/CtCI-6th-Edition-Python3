@@ -13,16 +13,16 @@ class TestValidateBST(unittest.TestCase):
             value=6,
             left=TreeNode(
                 value=3,
-                left=TreeNode(float('-inf'), None, None),
-                right=TreeNode(5, None, None)
+                left=TreeNode(float('-inf')),
+                right=TreeNode(5)
             ),
             right=TreeNode(
                 value=13,
-                left=TreeNode(10, None, None),
+                left=TreeNode(10),
                 right=TreeNode(
                     value=15,
                     left=None,
-                    right=TreeNode(float('inf'), None, None)
+                    right=TreeNode(float('inf'))
                 )
             )
         )
@@ -33,16 +33,16 @@ class TestValidateBST(unittest.TestCase):
             value=6,
             left=TreeNode(
                 value=6,
-                left=TreeNode(float('-inf'), None, None),
-                right=TreeNode(5, None, None)
+                left=TreeNode(float('-inf')),
+                right=TreeNode(5)
             ),
             right=TreeNode(
                 value=13,
-                left=TreeNode(10, None, None),
+                left=TreeNode(10),
                 right=TreeNode(
                     value=15,
                     left=None,
-                    right=TreeNode(float('inf'), None, None)
+                    right=TreeNode(float('inf'))
                 )
             )
         )

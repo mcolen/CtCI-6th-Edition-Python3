@@ -4,56 +4,71 @@ import unittest
 
 from chapter4.check_balanced import is_balanced
 from chapter4.tree import TreeNode
+from chapter4.validate_bst import is_bst
 
 
 class TestCheckBalanced(unittest.TestCase):
 
-    def test_balanced_1_2_3_4_5_6_7_8_9_10(self) -> None:
+    def test_bst_5_1_0_2_3_8_6_7_9_10(self) -> None:
         tree = TreeNode(
-            value=1,
+            value=5,
             left=TreeNode(
-                value=2,
+                value=1,
+                left=TreeNode(0),
+                right=TreeNode(
+                    value=2,
+                    left=None,
+                    right=TreeNode(3)
+                ),
+            ),
+            right=TreeNode(
+                value=8,
                 left=TreeNode(
-                    value=4,
-                    left=TreeNode(8, None, None),
-                    right=TreeNode(9, None, None)
+                    value=6,
+                    left=None,
+                    right=TreeNode(7)
                 ),
                 right=TreeNode(
-                    value=5,
-                    left=TreeNode(10, None, None),
-                    right=None
+                    value=9,
+                    left=None,
+                    right=TreeNode(10)
                 )
-            ),
-            right=TreeNode(
-                value=3,
-                left=TreeNode(6, None, None),
-                right=TreeNode(7, None, None)
             )
         )
+        assert is_bst(tree)
         self.assertTrue(is_balanced(tree))
 
-    def test_not_balanced_1_2_3_4_5_6_7_8_9_10(self) -> None:
+    def test_bst_5_1_0_2_3_4_8_6_7_9_10(self) -> None:
         tree = TreeNode(
-            value=1,
+            value=5,
             left=TreeNode(
-                value=2,
-                left=TreeNode(
-                    value=4,
-                    left=TreeNode(
-                        value=8,
-                        left=TreeNode(10, None, None),
-                        right=None
-                    ),
-                    right=TreeNode(9, None, None)
+                value=1,
+                left=TreeNode(0),
+                right=TreeNode(
+                    value=2,
+                    left=None,
+                    right=TreeNode(
+                        value=3,
+                        left=None,
+                        right=TreeNode(4)
+                    )
                 ),
-                right=TreeNode(5, None, None)
             ),
             right=TreeNode(
-                value=3,
-                left=TreeNode(6, None, None),
-                right=TreeNode(7, None, None)
+                value=8,
+                left=TreeNode(
+                    value=6,
+                    left=None,
+                    right=TreeNode(7)
+                ),
+                right=TreeNode(
+                    value=9,
+                    left=None,
+                    right=TreeNode(10)
+                )
             )
         )
+        assert is_bst(tree)
         self.assertFalse(is_balanced(tree))
 
 
