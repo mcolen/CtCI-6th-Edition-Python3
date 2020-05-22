@@ -32,8 +32,8 @@ class TestAnimalShelter(unittest.TestCase):
         self.assertEqual('Copa', shelter.dequeue_any())
         self.assertEqual('Dapa', shelter.dequeue_any())
         self.assertEqual('Kilo', shelter.dequeue_any())
-        self.assertRaises(animal_shelter.NoAvailablePetError,
-                          shelter.dequeue_any)
+        with self.assertRaises(animal_shelter.NoAvailablePetError):
+            shelter.dequeue_any()
 
 
 if __name__ == '__main__':

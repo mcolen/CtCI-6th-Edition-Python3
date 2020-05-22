@@ -14,7 +14,8 @@ class TestSetOfStacks(unittest.TestCase):
             stack.push(i)
         for i in reversed(range(34)):
             self.assertEqual(i, stack.pop())
-        self.assertRaises(chapter3.stack.EmptyStackError, stack.pop)
+        with self.assertRaises(chapter3.stack.EmptyStackError):
+            stack.pop()
 
 
 if __name__ == '__main__':

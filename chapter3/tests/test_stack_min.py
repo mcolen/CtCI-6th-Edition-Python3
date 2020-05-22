@@ -22,7 +22,8 @@ class TestStackWithMin(unittest.TestCase):
         self.assertEqual(1, stack.pop())
         self.assertEqual(2, stack.min())
         self.assertEqual(2, stack.pop())
-        self.assertRaises(chapter3.stack.EmptyStackError, stack.min)
+        with self.assertRaises(chapter3.stack.EmptyStackError):
+            stack.min()
 
 
 if __name__ == '__main__':

@@ -33,7 +33,8 @@ class TestSortStack(unittest.TestCase):
         self.assertEqual(8, stack.pop())
         self.assertEqual(9, stack.pop())
         self.assertEqual(10, stack.pop())
-        self.assertRaises(chapter3.stack.EmptyStackError, stack.pop)
+        with self.assertRaises(chapter3.stack.EmptyStackError):
+            stack.pop()
 
 
 if __name__ == '__main__':
