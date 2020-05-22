@@ -7,11 +7,12 @@ structure. NOTE: This is not necessarily a binary search tree.
 
 from typing import Optional
 
-from chapter4.tree import TreeNode
+from chapter4.tree import TreeNodeWithParent
 
 
-def first_common_ancestor(node1: TreeNode,
-                          node2: TreeNode) -> Optional[TreeNode]:
+def first_common_ancestor(
+        node1: TreeNodeWithParent,
+        node2: TreeNodeWithParent) -> Optional[TreeNodeWithParent]:
     """Return first common ancestor of node1 and node2."""
     depth1, depth2 = 0, 0
     float1, float2 = node1, node2

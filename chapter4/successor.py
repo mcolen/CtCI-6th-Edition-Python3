@@ -7,12 +7,12 @@ a link to its parent.
 
 from typing import Optional
 
-from chapter4.tree import TreeNode
+from chapter4.tree import TreeNodeWithParent
 
 
-def successor(node: TreeNode) -> Optional[TreeNode]:
+def successor(node: TreeNodeWithParent) -> Optional[TreeNodeWithParent]:
     """Return the in-order successor of given node in a BST."""
-    def leftmost_child(node: TreeNode) -> TreeNode:
+    def leftmost_child(node: TreeNodeWithParent) -> TreeNodeWithParent:
         # Return leftmost child of given node.
         while node.left:
             node = node.left
