@@ -30,7 +30,7 @@ class TestListOfDepths(unittest.TestCase):
 
 
 def _set_of_data(node: llist.Node) -> Set[int]:
-    # Return the Set of all data in linked list with given head node.
+    """Returns the Set of all data in given linked list."""
     ret = {node.data}
     if node.next:
         ret |= _set_of_data(node.next)

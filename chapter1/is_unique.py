@@ -8,7 +8,7 @@ from typing import MutableSet
 
 
 def is_unique1(s: str) -> bool:
-    """Return True if s has all unique characters."""
+    """Returns True if s has all unique characters."""
     seen: MutableSet[str] = set()
     for c in s:
         if c in seen:
@@ -18,9 +18,9 @@ def is_unique1(s: str) -> bool:
 
 
 def is_unique2(s: str) -> bool:
-    """Return True if s has all unique characters.
+    """Returns True if s has all unique characters.
 
-    Do not use any additional data structures.
+    Does not use any additional data structures.
     """
     sorted_s = sorted(s)
     return not any(sorted_s[i] == sorted_s[i + 1] for i in range(len(s) - 1))

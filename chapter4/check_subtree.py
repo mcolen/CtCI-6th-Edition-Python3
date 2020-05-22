@@ -13,7 +13,7 @@ from chapter4 import tree
 
 
 def is_subtree(T1: tree.Tree, T2: tree.Tree) -> bool:
-    """Return True if T2 is a subtree of T1."""
+    """Returns True if T2 is a subtree of T1."""
     if T1 is None or T2 is None:
         return T1 is None and T2 is None
     if T1 == T2:

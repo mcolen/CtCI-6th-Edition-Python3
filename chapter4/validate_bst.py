@@ -9,9 +9,18 @@ from chapter4 import tree
 
 
 def is_bst(root: tree.Tree, mini: Any = None, maxi: Any = None) -> bool:
-    """Return true if given binary tree is a binary search tree.
+    """Checks if a binary tree is a binary search tree.
 
-    Duplicates are not allowed.
+    Args:
+        root: The root node of a binary tree (or None).
+        mini: The binary search tree is not allowed to have any values
+            as small as mini.
+        maxi: The binary search tree is not allowed to have any values
+            as big as maxi.
+
+    Returns:
+        True if the given tree is a binary search tree. Duplicate values
+            are not allowed in our definition of a binary search tree.
     """
     if not root:
         return True

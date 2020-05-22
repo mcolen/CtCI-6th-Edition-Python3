@@ -39,7 +39,7 @@ class AnimalShelter:
         self.num_seen = 0
 
     def enqueue(self, pet: Any, type_: PetType) -> None:
-        """Put pet of given type_ up for adoption."""
+        """Puts pet of given type_ up for adoption."""
         node, self.num_seen = self._Node(pet, self.num_seen), self.num_seen + 1
         if type_ == PetType.DOG:
             self.dogs.append(node)
@@ -47,7 +47,11 @@ class AnimalShelter:
             self.cats.append(node)
 
     def dequeue_any(self) -> Any:
-        """Return "oldest" (based on arrival time) pet for adoption."""
+        """Returns "oldest" (based on arrival time) pet for adoption.
+
+        Raises:
+            NoAvailablePetError: There were no pets up for adoption.
+        """
         if not self.dogs:
             return self.dequeue_cat()
         if not self.cats:
@@ -57,14 +61,22 @@ class AnimalShelter:
         return self.dequeue_cat()
 
     def dequeue_dog(self) -> Any:
-        """Return "oldest" (based on arrival time) dog for adoption."""
+        """Returns "oldest" (based on arrival time) dog for adoption.
+
+        Raises:
+            NoAvailablePetError: There were no dogs up for adoption.
+        """
         try:
             return self.dogs.popleft().pet
         except IndexError as e:
             raise NoAvailablePetError() from e
 
     def dequeue_cat(self) -> Any:
-        """Return "oldest" (based on arrival time) cat for adoption."""
+        """Returns "oldest" (based on arrival time) cat for adoption.
+
+        Raises:
+            NoAvailablePetError: There were no pets up for adoption.
+        """
         try:
             return self.cats.popleft().pet
         except IndexError as e:

@@ -24,7 +24,7 @@ from chapter2 import llist
 
 def sum_reverse_lists(head1: llist.LinkedList,
                       head2: llist.LinkedList) -> llist.LinkedList:
-    """Return sum of given lists as a linked list.
+    """Returns sum of given lists as a linked list.
 
     The digits are stored in /reverse/ order.
     """
@@ -46,7 +46,7 @@ def sum_reverse_lists(head1: llist.LinkedList,
 
 def sum_forward_lists(head1: llist.LinkedList,
                       head2: llist.LinkedList) -> llist.LinkedList:
-    """Return sum of given lists as a linked list.
+    """Returns sum of given lists as a linked list.
 
     The digits are stored in forward order.
     """
@@ -58,7 +58,7 @@ def sum_forward_lists(head1: llist.LinkedList,
 
 
 def _reverse_list(head: llist.LinkedList) -> llist.LinkedList:
-    # Reverses list with given head and returns new head.
+    """Reverses given linked list and returns new head node."""
     if not head:
         return None
     curr = head.next

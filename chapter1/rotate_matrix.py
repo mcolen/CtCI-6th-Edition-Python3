@@ -9,7 +9,7 @@ from typing import MutableSequence, Sequence
 
 
 def rotate_matrix(matrix: Sequence[MutableSequence[int]]) -> None:
-    """Rotate matrix by 90 degrees in place."""
+    """Rotates matrix by 90 degrees in place."""
     n = len(matrix)
     for i in range((n + 1) // 2):
         for j in range(n // 2):

@@ -26,11 +26,15 @@ class Stack:
         self.lengths = [0] * num_stacks
 
     def _tail(self, stack_num: int) -> int:
-        # Return index of last item in stack numbered stack_num..
+        """Returns index of last item in stack numbered stack_num."""
         return stack_num * self.stack_capacity + self.lengths[stack_num] - 1
 
     def pop(self, stack_num: int) -> Any:
-        """Remove and return the top item from the given stack."""
+        """Removes and returns the top item from the given stack.
+
+        Raises:
+            EmptyStackError: The given stack was empty.
+        """
         if self.is_empty(stack_num):
             raise chapter3.stack.EmptyStackError()
         item = self.array[self._tail(stack_num)]
@@ -46,11 +50,15 @@ class Stack:
         self.lengths[stack_num] += 1
 
     def peek(self, stack_num: int) -> Any:
-        """Return the top of the given stack."""
+        """Returns (but does not remove) the top of the given stack.
+
+        Raises:
+            EmptyStackError: The given stack was empty.
+        """
         if self.is_empty(stack_num):
             raise chapter3.stack.EmptyStackError()
         return self.array[self._tail(stack_num)]
 
     def is_empty(self, stack_num: int) -> bool:
-        """Return True if the given stack is empty."""
+        """Returns True if the given stack is empty."""
         return self.lengths[stack_num] == 0

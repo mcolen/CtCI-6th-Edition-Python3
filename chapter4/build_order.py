@@ -22,12 +22,19 @@ class NoValidBuildOrderError(Exception):
 
 def build_order(projects: Sequence[Any],
                 dependencies: Sequence[Tuple[Any, Any]]) -> List[Any]:
-    """Return build order for projects subject to given dependencies.
+    """Finds a build order that will allow projects to be built.
 
-    Dependencies is a list of pairs of projects where the second project
-    is dependent on the first project.
+    Args:
+        projects: A sequence of "projects" (which could be anything).
+        dependencies: List of pairs of projects where the second project
+            is dependent on the first project.
 
-    Raise an Exception if there is no valid build order (due to cycle).
+    Returns:
+        List of projects in an order such that they could all be built
+            subject to given dependencies.
+
+    Raises:
+        NoValidBuildOrderError: There was a cycle in given dependencies.
     """
     order = []
     dep_count = {project: 0 for project in projects}

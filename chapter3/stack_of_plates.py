@@ -33,13 +33,17 @@ class Stack:
             self._stacks.pop()
 
     def push(self, item: Any) -> None:
-        """Add given item to the top of the stack."""
+        """Adds given item to the top of the stack."""
         if not self._stacks or len(self._stacks[-1]) > self.capacity:
             self._stacks.append(chapter3.stack.Stack())
         self._stacks[-1].push(item)
 
     def pop(self) -> Any:
-        """Remove and return the top item from the stack."""
+        """Removes and returns the top item from the stack.
+
+        Raises:
+            EmptyStackError: The stack was empty.
+        """
         try:
             item = self._stacks[-1].pop()
         except IndexError as e:
@@ -48,14 +52,22 @@ class Stack:
         return item
 
     def peek(self) -> Any:
-        """Return the top item of the stack."""
+        """Returns (but does not remove) the top item of the stack.
+
+        Raises:
+            EmptyStackError: The stack was empty.
+        """
         try:
             return self._stacks[-1].peek()
         except IndexError as e:
             raise chapter3.stack.EmptyStackError() from e
 
     def pop_at(self, index: int) -> Any:
-        """Remove and return top item from stack at given index."""
+        """Removes and returns the top item from stack at given index.
+
+        Raises:
+            EmptyStackError: The stack at given index was empty.
+        """
         item = self._stacks[index].pop()
         self._pop_empty()
         return item

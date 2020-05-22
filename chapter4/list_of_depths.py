@@ -13,7 +13,15 @@ from chapter4 import tree
 
 
 def depth_lists(root: tree.Tree) -> Dict[int, llist.Node]:
-    """Return map from depth to linked list of values at that depth."""
+    """Creates a linked list of all the nodes at each depth.
+
+    Args:
+        root: The root of a binary tree (or None).
+
+    Returns:
+        Mapping from each depth in the given tree to a linked list of
+            all the node values found at that depth.
+    """
     ret: Dict[int, llist.Node] = {}
     if not root:
         return ret

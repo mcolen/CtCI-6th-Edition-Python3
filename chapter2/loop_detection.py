@@ -14,7 +14,15 @@ from chapter2 import llist
 
 
 def find_loop_start(head: llist.LinkedList) -> Optional[llist.Node]:
-    """Return first node in loop of linked list."""
+    """Detects loop in a linked list.
+
+    Args:
+        head: First node of a linked list (or None).
+
+    Returns:
+        First node in the loop of given linked list. Or None if there is
+        no loop in given linked list.
+    """
     slow = fast = head
     while fast and fast.next:
         assert slow

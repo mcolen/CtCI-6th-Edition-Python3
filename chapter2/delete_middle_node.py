@@ -13,7 +13,7 @@ from chapter2 import llist
 
 
 def delete_middle_node(node: llist.Node) -> None:
-    """Delete given middle node from its linked list."""
+    """Deletes given middle node from its linked list."""
     if not node.next:
         raise ValueError('node not in middle of list')
     node.data, node.next = node.next.data, node.next.next

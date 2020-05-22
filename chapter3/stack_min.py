@@ -31,5 +31,5 @@ class Stack(chapter3.stack.Stack):
         return super().peek().item
 
     def min(self) -> Any:
-        """Return minimum item in the stack."""
+        """Returns minimum item in the stack."""
         return super().peek().mini

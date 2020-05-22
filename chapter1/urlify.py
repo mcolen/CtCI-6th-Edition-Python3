@@ -16,13 +16,14 @@ from typing import MutableSequence
 
 
 def urlify(chars: MutableSequence[str], length: int) -> None:
-    """Replace all spaces in chars with `%20`.
+    """Replaces all spaces in chars with '%20'.
 
-    :param chars: Mutable sequence of characters to be urlified. Assumed
-        to have sufficient space at the end to hold the additional
-        caracters.
-    :param length: The "true" length of chars not including additional
-        space at the end.
+    Args:
+        chars: Mutable sequence of characters to be urlified. Must have
+            sufficient space at the end to hold the additional
+            characters.
+        length: The "true" length of 'chars' not including additional
+            space at the end.
     """
     num_spaces = sum(char == ' ' for char in itertools.islice(chars, length))
     j = length - 1 + 2 * num_spaces  # last index of urlified chars

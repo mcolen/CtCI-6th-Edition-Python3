@@ -10,9 +10,9 @@ from chapter2 import llist
 
 
 def kth_to_last(head: llist.LinkedList, k: int) -> Optional[llist.Node]:
-    """Return kth to last node of the linked list.
+    """Returns kth to last node of the linked list.
 
-    Return the last node if k is 1. k may not be 0.
+    Returns the last node if k is 1. k may not be 0.
     """
     runner = head
     for _ in range(k):

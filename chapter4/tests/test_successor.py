@@ -6,7 +6,7 @@ from chapter4 import minimal_tree, successor
 
 
 class TestSuccessorInMinimalBST7(unittest.TestCase):
-    """Test `successor` using a minimal BST with 7 nodes .
+    """Tests `successor` using a minimal BST with 7 nodes .
 
     Use 7 nodes because there is only one minimal BST with 7 nodes.
     """

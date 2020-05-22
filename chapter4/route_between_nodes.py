@@ -19,7 +19,7 @@ class Node:
 
 
 def exists_route(start: Node, end: Node) -> bool:
-    """Return True if there is a route from start to end."""
+    """Returns True if there is a route from start to end."""
     nodes = collections.deque([start])
     visited: MutableSet[str] = set()
     while nodes:

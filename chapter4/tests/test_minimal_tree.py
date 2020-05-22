@@ -14,7 +14,6 @@ class TestMinimalTree(unittest.TestCase):
 
 
 def _height(root: tree.Tree) -> int:
-    # Return height of given tree.
     if not root:
         return 0
     return max(_height(root.left), _height(root.right)) + 1

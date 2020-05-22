@@ -22,7 +22,6 @@ class TestRemoveDups2(unittest.TestCase):
 
 
 def _linked_list_01010101() -> llist.Node:
-    # Construct and return linked list 0->1->0->1->0->1->0->1.
     head = llist.Node(0)
     head.next = llist.Node(1)
     head.next.next = llist.Node(0)
@@ -35,7 +34,6 @@ def _linked_list_01010101() -> llist.Node:
 
 
 def _linked_list_01() -> llist.Node:
-    # Construct and return linked list 0>1.
     head = llist.Node(0)
     head.next = llist.Node(1)
     return head

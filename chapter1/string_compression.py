@@ -12,10 +12,17 @@ import itertools
 
 
 def compressed(s: str) -> str:
-    """Return a compressed s using the counts of repeated characters.
+    """Performs basic string compression of repeated characters.
 
-    If the "compressed" string would not become smaller than s, simply
-    return s. Assume s has only uppercase and lowercase letters.
+    Args:
+        s: Any string
+
+    Returns:
+        A compression of s using the counts of repeated characters. For
+        example, the string 'aabcccccaaa' would become 'a2b1c5a3'.
+
+        If the "compressed" string would not become smaller than the
+        original string, returns the original string.
     """
     if sum(s[i] == s[i + 1] for i in range(len(s) - 1)) <= len(s) // 2:
         return s

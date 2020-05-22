@@ -17,18 +17,26 @@ class Stack:
         return len(self._items)
 
     def push(self, item: Any) -> None:
-        """Add given item to the top of the stack."""
+        """Adds given item to the top of the stack."""
         self._items.append(item)
 
     def pop(self) -> Any:
-        """Remove and returns the top item from the stack."""
+        """Removes and returns the top item from the stack.
+
+        Raises:
+            EmptyStackError: The stack was emtpy.
+        """
         try:
             return self._items.pop()
         except IndexError as e:
             raise EmptyStackError() from e
 
     def peek(self) -> Any:
-        """Return the top item of the stack."""
+        """Returns (but does not remove) the top item of the stack.
+
+        Raises:
+            EmptyStackError: The stack was emtpy.
+        """
         try:
             return self._items[-1]
         except IndexError as e:

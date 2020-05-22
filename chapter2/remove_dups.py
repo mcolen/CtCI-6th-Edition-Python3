@@ -10,7 +10,7 @@ from chapter2 import llist
 
 
 def remove_dups1(head: llist.LinkedList) -> None:
-    """Remove duplicates from the linked list."""
+    """Removes duplicates from the linked list."""
     if not head:
         return
     seen = {head.data}
@@ -23,9 +23,9 @@ def remove_dups1(head: llist.LinkedList) -> None:
 
 
 def remove_dups2(head: llist.LinkedList) -> None:
-    """Remove duplicates from the linked list.
+    """Removes duplicates from the linked list.
 
-    Do not use a temporary buffer.
+    Does not use a temporary buffer.
     """
     if not head:
         return

@@ -19,7 +19,6 @@ class TestCheckSubtree(unittest.TestCase):
 
 
 def _tree_1_2_1_3_1_1_5() -> tree.Node:
-    # Construct and return tree.
     return tree.Node(value=1,
                      left=tree.Node(value=2,
                                     left=tree.Node(3),

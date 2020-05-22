@@ -8,5 +8,5 @@ import collections
 
 
 def are_permutations(s1: str, s2: str) -> bool:
-    """Return True if s1 is a permutation of s2."""
+    """Returns True if s1 is a permutation of s2."""
     return collections.Counter(s1) == collections.Counter(s2)

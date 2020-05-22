@@ -11,7 +11,7 @@ from chapter4 import tree
 
 
 def successor(node: tree.NodeWithParent) -> Optional[tree.NodeWithParent]:
-    """Return the in-order successor of given node in a BST."""
+    """Returns the in-order successor of given node in a BST."""
     if node.right:
         return _leftmost_child(node.right)
     parent = node.parent

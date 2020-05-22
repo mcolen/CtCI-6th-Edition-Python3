@@ -14,9 +14,15 @@ from chapter2 import llist
 
 def find_intersection(head1: llist.LinkedList,
                       head2: llist.LinkedList) -> Optional[llist.Node]:
-    """Return first node of intersection between given linked lists.
+    """Determines if and where two linked lists intersect.
 
-    If there is no intersecting node, return None.
+    Args:
+        head1: First linked list.
+        head2: Second linked list.
+
+    Returns:
+        The first node of intersection. If there is no intersecting
+        node, returns None.
     """
     if not head1 or not head2:
         return None
