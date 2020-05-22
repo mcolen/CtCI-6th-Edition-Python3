@@ -11,27 +11,17 @@ from chapter4.tree import TreeNode
 class TestListOfDepths(unittest.TestCase):
 
     def test_1_2_3_4_5_6_7_8_9_10(self) -> None:
-        tree = TreeNode(
-            value=1,
-            left=TreeNode(
-                value=2,
-                left=TreeNode(
-                    value=4,
-                    left=TreeNode(8),
-                    right=TreeNode(9)
-                ),
-                right=TreeNode(
-                    value=5,
-                    left=TreeNode(10),
-                    right=None
-                )
-            ),
-            right=TreeNode(
-                value=3,
-                left=TreeNode(6),
-                right=TreeNode(7)
-            )
-        )
+        tree = TreeNode(value=1,
+                        left=TreeNode(value=2,
+                                      left=TreeNode(value=4,
+                                                    left=TreeNode(8),
+                                                    right=TreeNode(9)),
+                                      right=TreeNode(value=5,
+                                                     left=TreeNode(10),
+                                                     right=None)),
+                        right=TreeNode(value=3,
+                                       left=TreeNode(6),
+                                       right=TreeNode(7)))
         lists = depth_lists(tree)
         self.assertEqual(4, len(lists))
         self.assertEqual({1}, _set_of_data(lists[0]))

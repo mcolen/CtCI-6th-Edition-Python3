@@ -17,12 +17,12 @@ class TestPartition(unittest.TestCase):
         head.next.next.next.next.next = Node(1)
 
         partition(head, x=5)
-        self.assertEqual({1, 2, 3}, {head.data,
-                                     head.next.data,
-                                     head.next.next.data})
-        self.assertEqual({5, 8, 10}, {head.next.next.next.data,
-                                      head.next.next.next.next.data,
-                                      head.next.next.next.next.next.data})
+        self.assertEqual({1, 2, 3},
+                         {head.data, head.next.data, head.next.next.data})
+        self.assertEqual({5, 8, 10}, {
+            head.next.next.next.data, head.next.next.next.next.data,
+            head.next.next.next.next.next.data
+        })
 
 
 if __name__ == '__main__':

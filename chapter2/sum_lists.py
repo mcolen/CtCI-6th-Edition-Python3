@@ -48,6 +48,7 @@ def sum_forward_lists(head1: LinkedList, head2: LinkedList) -> LinkedList:
 
     The digits are stored in forward order.
     """
+
     def reverse_list(head: LinkedList) -> LinkedList:
         # Reverses list with given head and returns new head.
         if not head:
@@ -60,6 +61,7 @@ def sum_forward_lists(head1: LinkedList, head2: LinkedList) -> LinkedList:
             curr.next = prev
             prev, curr = curr, next_
         return prev
+
     tail1, tail2 = reverse_list(head1), reverse_list(head2)
     ret = reverse_list(sum_reverse_lists(tail1, tail2))
     reverse_list(tail1)

@@ -12,11 +12,13 @@ from chapter4.tree import TreeNodeWithParent
 
 def successor(node: TreeNodeWithParent) -> Optional[TreeNodeWithParent]:
     """Return the in-order successor of given node in a BST."""
+
     def leftmost_child(node: TreeNodeWithParent) -> TreeNodeWithParent:
         # Return leftmost child of given node.
         while node.left:
             node = node.left
         return node
+
     if node.right:
         return leftmost_child(node.right)
 

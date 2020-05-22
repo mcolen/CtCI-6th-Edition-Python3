@@ -13,7 +13,6 @@ Input:
 Output: f, e, a, b, d, c
 """
 
-
 from typing import Any, List, Tuple, Sequence
 
 
@@ -39,8 +38,10 @@ def build_order(projects: Sequence[Any],
     while unblocked:
         project = unblocked.pop()
         order.append(project)
-        dependants = [dependant for dependency, dependant in dependencies
-                      if dependency == project]
+        dependants = [
+            dependant for dependency, dependant in dependencies
+            if dependency == project
+        ]
         for dependant in dependants:
             dep_count[dependant] -= 1
             if not dep_count[dependant]:

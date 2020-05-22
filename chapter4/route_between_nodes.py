@@ -27,6 +27,6 @@ def exists_route(start: Node, end: Node) -> bool:
         if node is end:
             return True
         visited.add(node.name)
-        nodes.extend(
-            node for node in node.neighbors if node.name not in visited)
+        nodes.extend(node for node in node.neighbors
+                     if node.name not in visited)
     return False

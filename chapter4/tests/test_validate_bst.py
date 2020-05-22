@@ -9,43 +9,29 @@ from chapter4.validate_bst import is_bst
 class TestValidateBST(unittest.TestCase):
 
     def test_bst_min_3_5_6_10_13_15_max(self) -> None:
-        tree = TreeNode(
-            value=6,
-            left=TreeNode(
-                value=3,
-                left=TreeNode(float('-inf')),
-                right=TreeNode(5)
-            ),
-            right=TreeNode(
-                value=13,
-                left=TreeNode(10),
-                right=TreeNode(
-                    value=15,
-                    left=None,
-                    right=TreeNode(float('inf'))
-                )
-            )
-        )
+        tree = TreeNode(value=6,
+                        left=TreeNode(value=3,
+                                      left=TreeNode(float('-inf')),
+                                      right=TreeNode(5)),
+                        right=TreeNode(value=13,
+                                       left=TreeNode(10),
+                                       right=TreeNode(value=15,
+                                                      left=None,
+                                                      right=TreeNode(
+                                                          float('inf')))))
         self.assertTrue(is_bst(tree))
 
     def test_non_bst_min_6_5_6_10_13_15_max(self) -> None:
-        tree = TreeNode(
-            value=6,
-            left=TreeNode(
-                value=6,
-                left=TreeNode(float('-inf')),
-                right=TreeNode(5)
-            ),
-            right=TreeNode(
-                value=13,
-                left=TreeNode(10),
-                right=TreeNode(
-                    value=15,
-                    left=None,
-                    right=TreeNode(float('inf'))
-                )
-            )
-        )
+        tree = TreeNode(value=6,
+                        left=TreeNode(value=6,
+                                      left=TreeNode(float('-inf')),
+                                      right=TreeNode(5)),
+                        right=TreeNode(value=13,
+                                       left=TreeNode(10),
+                                       right=TreeNode(value=15,
+                                                      left=None,
+                                                      right=TreeNode(
+                                                          float('inf')))))
         self.assertFalse(is_bst(tree))
 
 

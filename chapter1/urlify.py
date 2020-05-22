@@ -25,10 +25,10 @@ def urlify(chars: MutableSequence[str], length: int) -> None:
         space at the end.
     """
     num_spaces = sum(char == ' ' for char in islice(chars, length))
-    j = length - 1 + 2*num_spaces  # last index of urlified chars
+    j = length - 1 + 2 * num_spaces  # last index of urlified chars
     for char in islice(reversed(chars), len(chars) - length, None):
         if char == ' ':
-            chars[j-2:j+1] = '%20'
+            chars[j - 2:j + 1] = '%20'
             j -= 3
         else:
             chars[j] = char

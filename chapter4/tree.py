@@ -15,8 +15,8 @@ class TreeNode:
 
     def __eq__(self, other: Any) -> bool:
         if isinstance(other, TreeNode):
-            return (self.value == other.value
-                    and self.left == other.left and self.right == other.right)
+            return (self.value == other.value and self.left == other.left
+                    and self.right == other.right)
         return NotImplemented
 
 

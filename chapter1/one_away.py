@@ -26,8 +26,8 @@ def are_one_away(s1: str, s2: str) -> bool:
     if len(s1) < len(s2):
         s1, s2 = s2, s1
     # Calculate index of first difference.
-    i = next((i for i, (c1, c2) in enumerate(
-        zip(s1, s2)) if c1 != c2), len(s2))
+    i = next((i for i, (c1, c2) in enumerate(zip(s1, s2)) if c1 != c2),
+             len(s2))
     # Compare rest of strings.
-    return all(c1 == c2 for c1, c2 in zip(
-        islice(s1, i + 1, None), islice(s2, i, None)))
+    return all(c1 == c2
+               for c1, c2 in zip(islice(s1, i + 1, None), islice(s2, i, None)))
