@@ -43,7 +43,7 @@ class Stack:
         try:
             item = self._stacks[-1].pop()
         except IndexError as e:
-            raise chapter3.stack.EmptyStackError from e
+            raise chapter3.stack.EmptyStackError() from e
         self._pop_empty()
         return item
 
@@ -52,7 +52,7 @@ class Stack:
         try:
             return self._stacks[-1].peek()
         except IndexError as e:
-            raise chapter3.stack.EmptyStackError from e
+            raise chapter3.stack.EmptyStackError() from e
 
     def pop_at(self, index: int) -> Any:
         """Remove and return top item from stack at given index."""

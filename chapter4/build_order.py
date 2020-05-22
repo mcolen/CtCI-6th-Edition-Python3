@@ -48,5 +48,5 @@ def build_order(projects: Sequence[Any],
                 unblocked.add(dependant)
 
     if len(order) < len(projects):
-        raise NoValidBuildOrderError
+        raise NoValidBuildOrderError()
     return order

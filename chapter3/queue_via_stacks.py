@@ -38,7 +38,7 @@ class MyQueue:
         try:
             return self._old_items.pop()
         except IndexError as e:
-            raise EmptyQueueError from e
+            raise EmptyQueueError() from e
 
     def peek(self) -> Any:
         """Return the first item in the queue."""
@@ -47,4 +47,4 @@ class MyQueue:
         try:
             return self._old_items.peek()
         except IndexError as e:
-            raise EmptyQueueError from e
+            raise EmptyQueueError() from e

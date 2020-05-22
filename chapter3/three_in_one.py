@@ -32,7 +32,7 @@ class Stack:
     def pop(self, stack_num: int) -> Any:
         """Remove and return the top item from the given stack."""
         if self.is_empty(stack_num):
-            raise chapter3.stack.EmptyStackError
+            raise chapter3.stack.EmptyStackError()
         item = self.array[self._tail(stack_num)]
         self.array[self._tail(stack_num)] = None
         self.lengths[stack_num] -= 1
@@ -41,14 +41,14 @@ class Stack:
     def push(self, stack_num: int, item: Any) -> None:
         """Adds given item to the top of given stack."""
         if self.lengths[stack_num] >= self.stack_capacity:
-            raise FullStackError
+            raise FullStackError()
         self.array[self._tail(stack_num) + 1] = item
         self.lengths[stack_num] += 1
 
     def peek(self, stack_num: int) -> Any:
         """Return the top of the given stack."""
         if self.is_empty(stack_num):
-            raise chapter3.stack.EmptyStackError
+            raise chapter3.stack.EmptyStackError()
         return self.array[self._tail(stack_num)]
 
     def is_empty(self, stack_num: int) -> bool:
