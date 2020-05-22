@@ -15,10 +15,9 @@ repos:
     rev: v3.1.0
     hooks:
     -   id: double-quote-string-fixer
-    -   id: end-of-file-fixer
-    -   id: trailing-whitespace
     -   id: name-tests-test
         args: [--django]
+    -   id: trailing-whitespace
 -   repo: https://github.com/pre-commit/mirrors-autopep8
     rev: v1.5.2
     hooks:
