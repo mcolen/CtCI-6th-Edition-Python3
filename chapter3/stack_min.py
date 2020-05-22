@@ -18,16 +18,16 @@ class Stack(chapter3.stack.Stack):
         mini: Any
 
     def push(self, item: Any) -> None:
-        """Extend method to push min as well as item."""
+        """See base class."""
         mini = min(item, self._items[-1].mini) if self else item
         super().push(self._Node(item, mini))
 
     def pop(self) -> Any:
-        """Extend method to unpack popped tuple."""
+        """See base class."""
         return super().pop().item
 
     def peek(self) -> Any:
-        """Extend method to unpack popped tuple."""
+        """See base class."""
         return super().peek().item
 
     def min(self) -> Any:
