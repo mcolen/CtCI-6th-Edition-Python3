@@ -11,7 +11,7 @@ Input:  "Mr John Smith    ", 13
 Output: "Mr%20John%20Smith"
 """
 
-from itertools import islice
+import itertools
 from typing import MutableSequence
 
 
@@ -24,9 +24,9 @@ def urlify(chars: MutableSequence[str], length: int) -> None:
     :param length: The "true" length of chars not including additional
         space at the end.
     """
-    num_spaces = sum(char == ' ' for char in islice(chars, length))
+    num_spaces = sum(char == ' ' for char in itertools.islice(chars, length))
     j = length - 1 + 2 * num_spaces  # last index of urlified chars
-    for char in islice(reversed(chars), len(chars) - length, None):
+    for char in itertools.islice(reversed(chars), len(chars) - length, None):
         if char == ' ':
             chars[j - 2:j + 1] = '%20'
             j -= 3

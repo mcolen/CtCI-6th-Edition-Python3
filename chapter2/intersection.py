@@ -9,10 +9,11 @@ the second linked list, then they are intersecting.
 
 from typing import Optional
 
-from chapter2.node import LinkedList, Node
+from chapter2 import llist
 
 
-def intersection(head1: LinkedList, head2: LinkedList) -> Optional[Node]:
+def find_intersection(head1: llist.LinkedList,
+                      head2: llist.LinkedList) -> Optional[llist.Node]:
     """Return first node of intersection between given linked lists.
 
     If there is no intersecting node, return None.

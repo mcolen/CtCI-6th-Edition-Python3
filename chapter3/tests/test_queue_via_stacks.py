@@ -2,13 +2,13 @@
 
 import unittest
 
-from chapter3.queue_via_stacks import MyQueue
+from chapter3 import queue_via_stacks
 
 
 class TestMyQueue(unittest.TestCase):
 
     def test_alternating_three_add_two_remove(self) -> None:
-        queue = MyQueue()
+        queue = queue_via_stacks.MyQueue()
         queue.add(0)
         queue.add(1)
         queue.add(2)

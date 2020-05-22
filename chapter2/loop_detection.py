@@ -10,10 +10,10 @@ Output: C
 
 from typing import Optional
 
-from chapter2.node import LinkedList, Node
+from chapter2 import llist
 
 
-def loop_detection(head: LinkedList) -> Optional[Node]:
+def find_loop_start(head: llist.LinkedList) -> Optional[llist.Node]:
     """Return first node in loop of linked list."""
     slow = fast = head
     while fast and fast.next:

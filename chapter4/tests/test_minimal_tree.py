@@ -2,20 +2,18 @@
 
 import unittest
 
-from chapter4.minimal_tree import minimal_bst
-from chapter4.tree import Tree
-from chapter4.validate_bst import is_bst
+from chapter4 import minimal_tree, tree, validate_bst
 
 
 class TestMinimalTree(unittest.TestCase):
 
     def test_1_2_3_4_5_6_7_8_9_10(self) -> None:
-        tree = minimal_bst([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
-        self.assertTrue(is_bst(tree))
-        self.assertEqual(4, _height(tree))
+        root = minimal_tree.minimal_bst([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+        self.assertTrue(validate_bst.is_bst(root))
+        self.assertEqual(4, _height(root))
 
 
-def _height(root: Tree) -> int:
+def _height(root: tree.Tree) -> int:
     # Return height of given tree.
     if not root:
         return 0

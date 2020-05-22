@@ -5,14 +5,14 @@ Describe how you could use a single array to implement three stacks.
 
 from typing import Any
 
-from chapter3.stack import EmptyStackError
+import chapter3.stack
 
 
 class FullStackError(Exception):
     """Raised when attempting to add an item to a full stack."""
 
 
-class FixedMultiStack:
+class Stack:
     """Multiple stacks implemented with one array."""
 
     def __init__(self, num_stacks: int, stack_capacity: int) -> None:
@@ -32,7 +32,7 @@ class FixedMultiStack:
     def pop(self, stack_num: int) -> Any:
         """Remove and return the top item from the given stack."""
         if self.is_empty(stack_num):
-            raise EmptyStackError
+            raise chapter3.stack.EmptyStackError
         item = self.array[self._tail(stack_num)]
         self.array[self._tail(stack_num)] = None
         self.lengths[stack_num] -= 1
@@ -48,7 +48,7 @@ class FixedMultiStack:
     def peek(self, stack_num: int) -> Any:
         """Return the top of the given stack."""
         if self.is_empty(stack_num):
-            raise EmptyStackError
+            raise chapter3.stack.EmptyStackError
         return self.array[self._tail(stack_num)]
 
     def is_empty(self, stack_num: int) -> bool:

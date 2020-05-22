@@ -2,43 +2,43 @@
 
 import unittest
 
-from chapter1.is_unique import is_unique1, is_unique2
+from chapter1 import is_unique
 
 
 class TestIsUnique1(unittest.TestCase):
 
     def test_abcde(self) -> None:
-        self.assertTrue(is_unique1('abcde'))
+        self.assertTrue(is_unique.is_unique1('abcde'))
 
     def test_hello(self) -> None:
-        self.assertFalse(is_unique1('hello'))
+        self.assertFalse(is_unique.is_unique1('hello'))
 
     def test_apple(self) -> None:
-        self.assertFalse(is_unique1('apple'))
+        self.assertFalse(is_unique.is_unique1('apple'))
 
     def test_kite(self) -> None:
-        self.assertTrue(is_unique1('kite'))
+        self.assertTrue(is_unique.is_unique1('kite'))
 
     def test_padle(self) -> None:
-        self.assertTrue(is_unique1('padle'))
+        self.assertTrue(is_unique.is_unique1('padle'))
 
 
 class TestIsUnique2(unittest.TestCase):
 
     def test_abcde(self) -> None:
-        self.assertTrue(is_unique2('abcde'))
+        self.assertTrue(is_unique.is_unique2('abcde'))
 
     def test_hello(self) -> None:
-        self.assertFalse(is_unique2('hello'))
+        self.assertFalse(is_unique.is_unique2('hello'))
 
     def test_apple(self) -> None:
-        self.assertFalse(is_unique2('apple'))
+        self.assertFalse(is_unique.is_unique2('apple'))
 
     def test_kite(self) -> None:
-        self.assertTrue(is_unique2('kite'))
+        self.assertTrue(is_unique.is_unique2('kite'))
 
     def test_padle(self) -> None:
-        self.assertTrue(is_unique2('padle'))
+        self.assertTrue(is_unique.is_unique2('padle'))
 
 
 if __name__ == '__main__':

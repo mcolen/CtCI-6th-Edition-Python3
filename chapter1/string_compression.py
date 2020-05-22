@@ -8,7 +8,7 @@ You can assume the string has only uppercase and lowercase letters
 (a-z).
 """
 
-from itertools import islice
+import itertools
 
 
 def compressed(s: str) -> str:
@@ -20,7 +20,7 @@ def compressed(s: str) -> str:
     if sum(s[i] == s[i + 1] for i in range(len(s) - 1)) <= len(s) // 2:
         return s
     counts, prev_char, count = [], s[0], 1
-    for c in islice(s, 1, None):
+    for c in itertools.islice(s, 1, None):
         if c == prev_char:
             count += 1
         else:

@@ -2,19 +2,19 @@
 
 import unittest
 
-from chapter1.check_permutation import are_permutations
+from chapter1 import check_permutation
 
 
 class TestCheckPermutation(unittest.TestCase):
 
     def test_apple_papel(self) -> None:
-        self.assertTrue(are_permutations('apple', 'papel'))
+        self.assertTrue(check_permutation.are_permutations('apple', 'papel'))
 
     def test_carrot_tarroc(self) -> None:
-        self.assertTrue(are_permutations('carrot', 'tarroc'))
+        self.assertTrue(check_permutation.are_permutations('carrot', 'tarroc'))
 
     def test_hello_llloh(self) -> None:
-        self.assertFalse(are_permutations('hello', 'llloh'))
+        self.assertFalse(check_permutation.are_permutations('hello', 'llloh'))
 
 
 if __name__ == '__main__':

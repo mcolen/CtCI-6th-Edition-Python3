@@ -2,7 +2,7 @@
 
 import unittest
 
-from chapter4.build_order import build_order
+from chapter4 import build_order
 
 
 class TestBuildOrder(unittest.TestCase):
@@ -23,7 +23,7 @@ class TestBuildOrder(unittest.TestCase):
             ('i', 'j'),
             ('g', 'j'),
         ]
-        order = build_order(projects, dependencies)
+        order = build_order.build_order(projects, dependencies)
         self.assertEqual(len(projects), len(order))
         self.assertEqual(set(projects), set(order))
         for dependency, dependant in dependencies:

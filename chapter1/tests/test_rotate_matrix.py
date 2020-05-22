@@ -2,7 +2,7 @@
 
 import unittest
 
-from chapter1.rotate_matrix import rotate_matrix
+from chapter1 import rotate_matrix
 
 
 class TestRotateMatrix(unittest.TestCase):
@@ -22,7 +22,7 @@ class TestRotateMatrix(unittest.TestCase):
             [24, 19, 14, 9, 4],
             [25, 20, 15, 10, 5],
         ]
-        rotate_matrix(matrix)
+        rotate_matrix.rotate_matrix(matrix)
         self.assertEqual(rotated, matrix)
 
 

@@ -5,10 +5,10 @@ Implement a function to check if a binary tree is a binary search tree.
 
 from typing import Any
 
-from chapter4.tree import Tree
+from chapter4 import tree
 
 
-def is_bst(root: Tree, mini: Any = None, maxi: Any = None) -> bool:
+def is_bst(root: tree.Tree, mini: Any = None, maxi: Any = None) -> bool:
     """Return true if given binary tree is a binary search tree.
 
     Duplicates are not allowed.

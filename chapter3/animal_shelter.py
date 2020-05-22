@@ -11,8 +11,8 @@ system and implement operations such as `enqueue`, `dequeueAny`,
 data structure.
 """
 
-from collections import deque
-from enum import Enum
+import collections
+import enum
 from typing import Any, NamedTuple
 
 
@@ -20,7 +20,7 @@ class NoAvailablePetError(Exception):
     """Raised when an adoption request cannot be fulfilled."""
 
 
-class PetType(Enum):
+class PetType(enum.Enum):
     """Type of pet in animal shelter."""
     DOG = 1
     CAT = 2
@@ -34,8 +34,8 @@ class AnimalShelter:
         order: int
 
     def __init__(self) -> None:
-        self.dogs: deque = deque()
-        self.cats: deque = deque()
+        self.dogs: collections.deque = collections.deque()
+        self.cats: collections.deque = collections.deque()
         self.num_seen = 0
 
     def enqueue(self, pet: Any, type_: PetType) -> None:

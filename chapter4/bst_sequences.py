@@ -10,13 +10,13 @@ Input: 1 <-- 2 --> 3
 Output: {2, 1, 3}, {2, 3, 1}
 """
 
-from itertools import permutations
+import itertools
 from typing import Any, List, Sequence
 
-from chapter4.tree import Tree
+from chapter4 import tree
 
 
-def bst_sequences(root: Tree) -> List[List[Any]]:
+def bst_sequences(root: tree.Tree) -> List[List[Any]]:
     """Return all possible sequences that could have led to given Tree.
 
     The Tree is assumed to be created by iterating through a sequence
@@ -29,7 +29,8 @@ def bst_sequences(root: Tree) -> List[List[Any]]:
         # Return all possible weavings of left and right.
         assert root
         sequences: List[List[Any]] = []
-        for permutation in permutations([1] * len(left) + [0] * len(right)):
+        for permutation in itertools.permutations([1] * len(left) +
+                                                  [0] * len(right)):
             sequence = [root.value]
             i = j = 0
             for bit in permutation:

@@ -2,14 +2,14 @@
 
 import unittest
 
-from chapter3.stack import EmptyStackError
-from chapter3.stack_min import StackWithMin
+import chapter3.stack
+from chapter3 import stack_min
 
 
 class TestStackWithMin(unittest.TestCase):
 
     def test_2_1_3_1(self) -> None:
-        stack = StackWithMin()
+        stack = stack_min.Stack()
         stack.push(2)
         stack.push(1)
         stack.push(3)
@@ -22,7 +22,7 @@ class TestStackWithMin(unittest.TestCase):
         self.assertEqual(1, stack.pop())
         self.assertEqual(2, stack.min())
         self.assertEqual(2, stack.pop())
-        self.assertRaises(EmptyStackError, stack.min)
+        self.assertRaises(chapter3.stack.EmptyStackError, stack.min)
 
 
 if __name__ == '__main__':

@@ -7,10 +7,10 @@ a function `min` which returns the minimum element? `push`, `pop`, and
 
 from typing import Any, NamedTuple
 
-from chapter3.stack import Stack
+import chapter3.stack
 
 
-class StackWithMin(Stack):
+class Stack(chapter3.stack.Stack):
     """Stack which gives access to minimum element in constant time."""
 
     class _Node(NamedTuple):

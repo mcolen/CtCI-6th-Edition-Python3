@@ -2,30 +2,30 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+import dataclasses
 from typing import Any, Optional
 
 
-@dataclass
-class TreeNode:
+@dataclasses.dataclass
+class Node:
     """A node in a binary tree."""
     value: Any
-    left: Optional[TreeNode] = None
-    right: Optional[TreeNode] = None
+    left: Optional[Node] = None
+    right: Optional[Node] = None
 
     def __eq__(self, other: Any) -> bool:
-        if isinstance(other, TreeNode):
+        if isinstance(other, Node):
             return (self.value == other.value and self.left == other.left
                     and self.right == other.right)
         return NotImplemented
 
 
-Tree = Optional[TreeNode]
+Tree = Optional[Node]
 
 
-@dataclass
-class TreeNodeWithParent(TreeNode):
+@dataclasses.dataclass
+class NodeWithParent(Node):
     """A node in a binary tree with a link to its parent."""
-    parent: Optional[TreeNodeWithParent] = None
-    left: Optional[TreeNodeWithParent] = None
-    right: Optional[TreeNodeWithParent] = None
+    parent: Optional[NodeWithParent] = None
+    left: Optional[NodeWithParent] = None
+    right: Optional[NodeWithParent] = None

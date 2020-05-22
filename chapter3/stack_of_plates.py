@@ -17,15 +17,15 @@ on a specific sub-stack.
 
 from typing import Any, List
 
-from chapter3.stack import EmptyStackError, Stack
+import chapter3.stack
 
 
-class SetOfStacks:
+class Stack:
     """Stack implemented as a set of stacks."""
 
     def __init__(self, capacity: int) -> None:
         self.capacity = capacity
-        self._stacks: List[Stack] = []
+        self._stacks: List[chapter3.stack.Stack] = []
 
     def _pop_empty(self) -> None:
         # Pops empty stacks from self._stacks.
@@ -35,7 +35,7 @@ class SetOfStacks:
     def push(self, item: Any) -> None:
         """Add given item to the top of the stack."""
         if not self._stacks or len(self._stacks[-1]) > self.capacity:
-            self._stacks.append(Stack())
+            self._stacks.append(chapter3.stack.Stack())
         self._stacks[-1].push(item)
 
     def pop(self) -> Any:
@@ -43,7 +43,7 @@ class SetOfStacks:
         try:
             item = self._stacks[-1].pop()
         except IndexError as e:
-            raise EmptyStackError from e
+            raise chapter3.stack.EmptyStackError from e
         self._pop_empty()
         return item
 
@@ -52,7 +52,7 @@ class SetOfStacks:
         try:
             return self._stacks[-1].peek()
         except IndexError as e:
-            raise EmptyStackError from e
+            raise chapter3.stack.EmptyStackError from e
 
     def pop_at(self, index: int) -> Any:
         """Remove and return top item from stack at given index."""

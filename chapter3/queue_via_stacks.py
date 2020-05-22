@@ -5,7 +5,7 @@ Implement a `MyQueue` class which implements a queue using two stacks.
 
 from typing import Any
 
-from chapter3.stack import Stack
+import chapter3.stack
 
 
 class EmptyQueueError(Exception):
@@ -16,8 +16,8 @@ class MyQueue:
     """Queue implemented using two stacks."""
 
     def __init__(self) -> None:
-        self._new_items = Stack()
-        self._old_items = Stack()
+        self._new_items = chapter3.stack.Stack()
+        self._old_items = chapter3.stack.Stack()
 
     def __len__(self) -> int:
         return len(self._new_items) + len(self._old_items)

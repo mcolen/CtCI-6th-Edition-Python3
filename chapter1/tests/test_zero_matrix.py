@@ -2,7 +2,7 @@
 
 import unittest
 
-from chapter1.zero_matrix import zero_matrix
+from chapter1 import zero_matrix
 
 
 class TestZeroMatrix(unittest.TestCase):
@@ -22,7 +22,7 @@ class TestZeroMatrix(unittest.TestCase):
             [0, 0, 0, 0, 0],
             [21, 0, 23, 24, 0],
         ]
-        zero_matrix(matrix)
+        zero_matrix.zero_matrix(matrix)
         self.assertEqual(zeroed, matrix)
 
 

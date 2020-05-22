@@ -9,10 +9,10 @@ Input: The node `c` from the linked list a->b->c->d->e->f
 Result: Nothing is returned, but the new list looks like a->b->d->e->f
 """
 
-from chapter2.node import Node
+from chapter2 import llist
 
 
-def delete_middle_node(node: Node) -> None:
+def delete_middle_node(node: llist.Node) -> None:
     """Delete given middle node from its linked list."""
     if not node.next:
         raise ValueError('node not in middle of list')

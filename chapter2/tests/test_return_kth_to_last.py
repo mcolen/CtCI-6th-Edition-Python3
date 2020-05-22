@@ -2,39 +2,40 @@
 
 import unittest
 
-from chapter2.node import Node
-from chapter2.return_kth_to_last import kth_to_last
+from chapter2 import return_kth_to_last, llist
 
 
 class TestReturnKthToLast(unittest.TestCase):
 
     def test_last(self) -> None:
-        head = Node(0)
-        head.next = Node(1)
-        head.next.next = Node(2)
-        head.next.next.next = Node(3)
-        self.assertEqual(head.next.next.next, kth_to_last(head, k=1))
+        head = llist.Node(0)
+        head.next = llist.Node(1)
+        head.next.next = llist.Node(2)
+        head.next.next.next = llist.Node(3)
+        self.assertEqual(head.next.next.next,
+                         return_kth_to_last.kth_to_last(head, k=1))
 
     def test_2nd_to_last(self) -> None:
-        head = Node(0)
-        head.next = Node(1)
-        head.next.next = Node(2)
-        head.next.next.next = Node(3)
-        self.assertEqual(head.next.next, kth_to_last(head, k=2))
+        head = llist.Node(0)
+        head.next = llist.Node(1)
+        head.next.next = llist.Node(2)
+        head.next.next.next = llist.Node(3)
+        self.assertEqual(head.next.next,
+                         return_kth_to_last.kth_to_last(head, k=2))
 
     def test_3rd_to_last(self) -> None:
-        head = Node(0)
-        head.next = Node(1)
-        head.next.next = Node(2)
-        head.next.next.next = Node(3)
-        self.assertEqual(head.next, kth_to_last(head, k=3))
+        head = llist.Node(0)
+        head.next = llist.Node(1)
+        head.next.next = llist.Node(2)
+        head.next.next.next = llist.Node(3)
+        self.assertEqual(head.next, return_kth_to_last.kth_to_last(head, k=3))
 
     def test_4th_to_last(self) -> None:
-        head = Node(0)
-        head.next = Node(1)
-        head.next.next = Node(2)
-        head.next.next.next = Node(3)
-        self.assertEqual(head, kth_to_last(head, k=4))
+        head = llist.Node(0)
+        head.next = llist.Node(1)
+        head.next.next = llist.Node(2)
+        head.next.next.next = llist.Node(3)
+        self.assertEqual(head, return_kth_to_last.kth_to_last(head, k=4))
 
 
 if __name__ == '__main__':

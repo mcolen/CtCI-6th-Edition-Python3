@@ -6,10 +6,10 @@ linked list.
 
 from typing import Optional
 
-from chapter2.node import LinkedList, Node
+from chapter2 import llist
 
 
-def kth_to_last(head: LinkedList, k: int) -> Optional[Node]:
+def kth_to_last(head: llist.LinkedList, k: int) -> Optional[llist.Node]:
     """Return kth to last node of the linked list.
 
     Return the last node if k is 1. k may not be 0.

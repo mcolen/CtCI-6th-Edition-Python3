@@ -6,21 +6,21 @@ to find out whether there is a route from `S` to `E`.
 
 from __future__ import annotations
 
-from collections import deque
-from dataclasses import dataclass, field
+import collections
+import dataclasses
 from typing import MutableSet, MutableSequence
 
 
-@dataclass
+@dataclasses.dataclass
 class Node:
     """A node in a graph with a name and list of neighbors."""
     name: str
-    neighbors: MutableSequence[Node] = field(default_factory=list)
+    neighbors: MutableSequence[Node] = dataclasses.field(default_factory=list)
 
 
 def exists_route(start: Node, end: Node) -> bool:
     """Return True if there is a route from start to end."""
-    nodes = deque([start])
+    nodes = collections.deque([start])
     visited: MutableSet[str] = set()
     while nodes:
         node = nodes.popleft()

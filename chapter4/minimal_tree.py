@@ -6,12 +6,12 @@ write an algorithm to create a binary search tree with minimal height.
 
 from typing import Optional, Sequence
 
-from chapter4.tree import TreeNodeWithParent
+from chapter4 import tree
 
 
 def minimal_bst(
         array: Sequence[int],
-        parent: Optional[TreeNodeWithParent] = None) -> TreeNodeWithParent:
+        parent: Optional[tree.NodeWithParent] = None) -> tree.NodeWithParent:
     """Return bst with minimal height from given sorted array.
 
     Raise ValueError if array is empty.
@@ -19,7 +19,7 @@ def minimal_bst(
     if not array:
         raise ValueError('array is empty')
     mid = len(array) // 2
-    node = TreeNodeWithParent(value=array[mid], parent=parent)
+    node = tree.NodeWithParent(value=array[mid], parent=parent)
     if len(array) > 1:
         node.left = minimal_bst(array[:mid], parent=node)
     if len(array) > 2:

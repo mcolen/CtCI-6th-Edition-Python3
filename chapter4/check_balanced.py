@@ -8,17 +8,17 @@ than one.
 
 from typing import Tuple
 
-from chapter4.tree import Tree
+from chapter4 import tree
 
 
-def is_balanced(root: Tree) -> bool:
+def is_balanced(root: tree.Tree) -> bool:
     """Return True if given tree is balanced.
 
     A balanced tree is defined to be a tree such that the heights of the
     two subtrees of any node never differ by more than one.
     """
 
-    def helper(root: Tree) -> Tuple[bool, int]:
+    def helper(root: tree.Tree) -> Tuple[bool, int]:
         # Return whether balanced and tree height.
         if not root:
             return True, 0

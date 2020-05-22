@@ -6,10 +6,10 @@ FOLLOW UP
 How would you solve this problem if a temporary buffer is not allowed?
 """
 
-from chapter2.node import LinkedList
+from chapter2 import llist
 
 
-def remove_dups1(head: LinkedList) -> None:
+def remove_dups1(head: llist.LinkedList) -> None:
     """Remove duplicates from the linked list."""
     if not head:
         return
@@ -22,7 +22,7 @@ def remove_dups1(head: LinkedList) -> None:
             seen.add(head.data)
 
 
-def remove_dups2(head: LinkedList) -> None:
+def remove_dups2(head: llist.LinkedList) -> None:
     """Remove duplicates from the linked list.
 
     Do not use a temporary buffer.

@@ -2,14 +2,14 @@
 
 import unittest
 
-from chapter3.sort_stack import sort_stack
-from chapter3.stack import EmptyStackError, Stack
+import chapter3.stack
+from chapter3 import sort_stack
 
 
 class TestSortStack(unittest.TestCase):
 
     def test_2_6_1_7_4_3_10_8_9_5(self) -> None:
-        stack = Stack()
+        stack = chapter3.stack.Stack()
         stack.push(2)
         stack.push(6)
         stack.push(1)
@@ -21,7 +21,7 @@ class TestSortStack(unittest.TestCase):
         stack.push(9)
         stack.push(5)
 
-        sort_stack(stack)
+        sort_stack.sort_stack(stack)
 
         self.assertEqual(1, stack.pop())
         self.assertEqual(2, stack.pop())
@@ -33,7 +33,7 @@ class TestSortStack(unittest.TestCase):
         self.assertEqual(8, stack.pop())
         self.assertEqual(9, stack.pop())
         self.assertEqual(10, stack.pop())
-        self.assertRaises(EmptyStackError, stack.pop)
+        self.assertRaises(chapter3.stack.EmptyStackError, stack.pop)
 
 
 if __name__ == '__main__':

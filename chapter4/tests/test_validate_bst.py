@@ -2,37 +2,36 @@
 
 import unittest
 
-from chapter4.tree import TreeNode
-from chapter4.validate_bst import is_bst
+from chapter4 import tree, validate_bst
 
 
 class TestValidateBST(unittest.TestCase):
 
     def test_bst_min_3_5_6_10_13_15_max(self) -> None:
-        tree = TreeNode(value=6,
-                        left=TreeNode(value=3,
-                                      left=TreeNode(float('-inf')),
-                                      right=TreeNode(5)),
-                        right=TreeNode(value=13,
-                                       left=TreeNode(10),
-                                       right=TreeNode(value=15,
-                                                      left=None,
-                                                      right=TreeNode(
-                                                          float('inf')))))
-        self.assertTrue(is_bst(tree))
+        root = tree.Node(value=6,
+                         left=tree.Node(value=3,
+                                        left=tree.Node(float('-inf')),
+                                        right=tree.Node(5)),
+                         right=tree.Node(value=13,
+                                         left=tree.Node(10),
+                                         right=tree.Node(value=15,
+                                                         left=None,
+                                                         right=tree.Node(
+                                                             float('inf')))))
+        self.assertTrue(validate_bst.is_bst(root))
 
     def test_non_bst_min_6_5_6_10_13_15_max(self) -> None:
-        tree = TreeNode(value=6,
-                        left=TreeNode(value=6,
-                                      left=TreeNode(float('-inf')),
-                                      right=TreeNode(5)),
-                        right=TreeNode(value=13,
-                                       left=TreeNode(10),
-                                       right=TreeNode(value=15,
-                                                      left=None,
-                                                      right=TreeNode(
-                                                          float('inf')))))
-        self.assertFalse(is_bst(tree))
+        root = tree.Node(value=6,
+                         left=tree.Node(value=6,
+                                        left=tree.Node(float('-inf')),
+                                        right=tree.Node(5)),
+                         right=tree.Node(value=13,
+                                         left=tree.Node(10),
+                                         right=tree.Node(value=15,
+                                                         left=None,
+                                                         right=tree.Node(
+                                                             float('inf')))))
+        self.assertFalse(validate_bst.is_bst(root))
 
 
 if __name__ == '__main__':
