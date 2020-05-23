@@ -43,7 +43,11 @@ class Stack:
         return item
 
     def push(self, stack_num: int, item: Any) -> None:
-        """Adds given item to the top of given stack."""
+        """Adds given item to the top of given stack.
+
+        Raises:
+            FullStackError: There was no room in array for new item.
+        """
         if self.lengths[stack_num] >= self.stack_capacity:
             raise FullStackError()
         self.array[self._tail(stack_num) + 1] = item
