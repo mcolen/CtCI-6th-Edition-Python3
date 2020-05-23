@@ -21,7 +21,6 @@ def successor(node: tree.NodeWithParent) -> Optional[tree.NodeWithParent]:
 
 
 def _leftmost_child(node: tree.NodeWithParent) -> tree.NodeWithParent:
-    # Return leftmost child of given node.
     while node.left:
         node = node.left
     return node
