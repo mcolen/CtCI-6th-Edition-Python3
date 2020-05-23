@@ -34,17 +34,18 @@ class AnimalShelter:
         order: int
 
     def __init__(self) -> None:
-        self.dogs: collections.deque = collections.deque()
-        self.cats: collections.deque = collections.deque()
-        self.num_seen = 0
+        self._dogs: collections.deque = collections.deque()
+        self._cats: collections.deque = collections.deque()
+        self._num_seen = 0
 
     def enqueue(self, pet: Any, type_: PetType) -> None:
         """Puts pet of given type_ up for adoption."""
-        node, self.num_seen = self._Node(pet, self.num_seen), self.num_seen + 1
+        node = self._Node(pet, self._num_seen)
         if type_ == PetType.DOG:
-            self.dogs.append(node)
+            self._dogs.append(node)
         else:
-            self.cats.append(node)
+            self._cats.append(node)
+        self._num_seen += 1
 
     def dequeue_any(self) -> Any:
         """Returns "oldest" (based on arrival time) pet for adoption.
@@ -52,11 +53,11 @@ class AnimalShelter:
         Raises:
             NoAvailablePetError: There were no pets up for adoption.
         """
-        if not self.dogs:
+        if not self._dogs:
             return self.dequeue_cat()
-        if not self.cats:
+        if not self._cats:
             return self.dequeue_dog()
-        if self.dogs[0].order < self.cats[0].order:
+        if self._dogs[0].order < self._cats[0].order:
             return self.dequeue_dog()
         return self.dequeue_cat()
 
@@ -67,7 +68,7 @@ class AnimalShelter:
             NoAvailablePetError: There were no dogs up for adoption.
         """
         try:
-            return self.dogs.popleft().pet
+            return self._dogs.popleft().pet
         except IndexError as e:
             raise NoAvailablePetError() from e
 
@@ -78,6 +79,6 @@ class AnimalShelter:
             NoAvailablePetError: There were no pets up for adoption.
         """
         try:
-            return self.cats.popleft().pet
+            return self._cats.popleft().pet
         except IndexError as e:
             raise NoAvailablePetError() from e

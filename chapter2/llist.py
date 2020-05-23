@@ -6,7 +6,12 @@ from typing import Any, Optional
 
 
 class Node:
-    """Node in a singly linked list."""
+    """Node in a singly linked list.
+
+    Attributes:
+        data: A value stored in this node (could be any type).
+        next: The following node in the linked list.
+    """
 
     def __init__(self, data: Any, next_: Optional[Node] = None) -> None:
         self.data = data

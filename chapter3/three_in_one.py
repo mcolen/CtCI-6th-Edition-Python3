@@ -21,13 +21,13 @@ class Stack:
             raise ValueError('num_stacks must be positive')
         if stack_capacity <= 0:
             raise ValueError('stack_capacity must be positive')
-        self.num_stacks, self.stack_capacity = num_stacks, stack_capacity
-        self.array = [None] * (num_stacks * stack_capacity)
-        self.lengths = [0] * num_stacks
+        self._num_stacks, self._stack_capacity = num_stacks, stack_capacity
+        self._array = [None] * (num_stacks * stack_capacity)
+        self._lengths = [0] * num_stacks
 
     def _tail(self, stack_num: int) -> int:
         """Returns index of last item in stack numbered stack_num."""
-        return stack_num * self.stack_capacity + self.lengths[stack_num] - 1
+        return stack_num * self._stack_capacity + self._lengths[stack_num] - 1
 
     def pop(self, stack_num: int) -> Any:
         """Removes and returns the top item from the given stack.
@@ -37,9 +37,9 @@ class Stack:
         """
         if self.is_empty(stack_num):
             raise chapter3.stack.EmptyStackError()
-        item = self.array[self._tail(stack_num)]
-        self.array[self._tail(stack_num)] = None
-        self.lengths[stack_num] -= 1
+        item = self._array[self._tail(stack_num)]
+        self._array[self._tail(stack_num)] = None
+        self._lengths[stack_num] -= 1
         return item
 
     def push(self, stack_num: int, item: Any) -> None:
@@ -48,10 +48,10 @@ class Stack:
         Raises:
             FullStackError: There was no room in array for new item.
         """
-        if self.lengths[stack_num] >= self.stack_capacity:
+        if self._lengths[stack_num] >= self._stack_capacity:
             raise FullStackError()
-        self.array[self._tail(stack_num) + 1] = item
-        self.lengths[stack_num] += 1
+        self._array[self._tail(stack_num) + 1] = item
+        self._lengths[stack_num] += 1
 
     def peek(self, stack_num: int) -> Any:
         """Returns (but does not remove) the top of the given stack.
@@ -61,8 +61,8 @@ class Stack:
         """
         if self.is_empty(stack_num):
             raise chapter3.stack.EmptyStackError()
-        return self.array[self._tail(stack_num)]
+        return self._array[self._tail(stack_num)]
 
     def is_empty(self, stack_num: int) -> bool:
         """Returns True if the given stack is empty."""
-        return self.lengths[stack_num] == 0
+        return self._lengths[stack_num] == 0

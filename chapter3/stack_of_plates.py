@@ -24,7 +24,7 @@ class Stack:
     """Stack implemented as a set of stacks."""
 
     def __init__(self, capacity: int) -> None:
-        self.capacity = capacity
+        self._capacity = capacity
         self._stacks: List[chapter3.stack.Stack] = []
 
     def _pop_empty(self) -> None:
@@ -34,7 +34,7 @@ class Stack:
 
     def push(self, item: Any) -> None:
         """Adds given item to the top of the stack."""
-        if not self._stacks or len(self._stacks[-1]) > self.capacity:
+        if not self._stacks or len(self._stacks[-1]) > self._capacity:
             self._stacks.append(chapter3.stack.Stack())
         self._stacks[-1].push(item)
 
