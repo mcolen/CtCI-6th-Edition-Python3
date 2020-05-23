@@ -10,8 +10,11 @@ import chapter3.stack
 
 
 def sort_stack(stack: chapter3.stack.Stack) -> None:
-    """Sorts stack such that the smallest items are on the top."""
-    sorted_stack = chapter3.stack.Stack()
+    """Sorts stack such that the smallest items are on the top.
+
+    Data in stack must be comparable.
+    """
+    sorted_stack: chapter3.stack.Stack = chapter3.stack.Stack()
     while stack:
         curr = stack.pop()
         while sorted_stack and curr < sorted_stack.peek():

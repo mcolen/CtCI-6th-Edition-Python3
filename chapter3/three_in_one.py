@@ -3,7 +3,7 @@
 Describe how you could use a single array to implement three stacks.
 """
 
-from typing import Any
+from typing import Generic, List, Optional, TypeVar
 
 import chapter3.stack
 
@@ -12,7 +12,10 @@ class FullStackError(Exception):
     """Raised when attempting to add an item to a full stack."""
 
 
-class Stack:
+T = TypeVar('T')
+
+
+class Stack(Generic[T]):
     """Multiple stacks implemented with one array."""
 
     def __init__(self, num_stacks: int, stack_capacity: int) -> None:
@@ -22,14 +25,14 @@ class Stack:
         if stack_capacity <= 0:
             raise ValueError('stack_capacity must be positive')
         self._num_stacks, self._stack_capacity = num_stacks, stack_capacity
-        self._array = [None] * (num_stacks * stack_capacity)
+        self._array: List[Optional[T]] = [None] * (num_stacks * stack_capacity)
         self._lengths = [0] * num_stacks
 
     def _tail(self, stack_num: int) -> int:
         """Returns index of last item in stack numbered stack_num."""
         return stack_num * self._stack_capacity + self._lengths[stack_num] - 1
 
-    def pop(self, stack_num: int) -> Any:
+    def pop(self, stack_num: int) -> T:
         """Removes and returns the top item from the given stack.
 
         Raises:
@@ -38,11 +41,12 @@ class Stack:
         if self.is_empty(stack_num):
             raise chapter3.stack.EmptyStackError()
         item = self._array[self._tail(stack_num)]
+        assert item is not None
         self._array[self._tail(stack_num)] = None
         self._lengths[stack_num] -= 1
         return item
 
-    def push(self, stack_num: int, item: Any) -> None:
+    def push(self, stack_num: int, item: T) -> None:
         """Adds given item to the top of given stack.
 
         Raises:
@@ -53,7 +57,7 @@ class Stack:
         self._array[self._tail(stack_num) + 1] = item
         self._lengths[stack_num] += 1
 
-    def peek(self, stack_num: int) -> Any:
+    def peek(self, stack_num: int) -> T:
         """Returns (but does not remove) the top of the given stack.
 
         Raises:
@@ -61,7 +65,9 @@ class Stack:
         """
         if self.is_empty(stack_num):
             raise chapter3.stack.EmptyStackError()
-        return self._array[self._tail(stack_num)]
+        item = self._array[self._tail(stack_num)]
+        assert item is not None
+        return item
 
     def is_empty(self, stack_num: int) -> bool:
         """Returns True if the given stack is empty."""

@@ -3,13 +3,15 @@
 from __future__ import annotations
 
 import dataclasses
-from typing import Any, Optional
+from typing import Any, Generic, TypeVar, Optional
+
+T = TypeVar('T')
 
 
 @dataclasses.dataclass
-class Node:
+class Node(Generic[T]):
     """A node in a binary tree."""
-    value: Any
+    value: T
     left: Optional[Node] = None
     right: Optional[Node] = None
 
@@ -20,11 +22,11 @@ class Node:
         return NotImplemented
 
 
-Tree = Optional[Node]
+Tree = Optional[Node[T]]
 
 
 @dataclasses.dataclass
-class NodeWithParent(Node):
+class NodeWithParent(Node[T]):
     """A node in a binary tree with a link to its parent."""
     parent: Optional[NodeWithParent] = None
     left: Optional[NodeWithParent] = None

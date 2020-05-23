@@ -12,7 +12,8 @@ def is_bst(root: tree.Tree, mini: Any = None, maxi: Any = None) -> bool:
     """Checks if a binary tree is a binary search tree.
 
     Args:
-        root: The root node of a binary tree (or None).
+        root: The root node of a binary tree (or None). All the data in
+            the tree must be comparable.
         mini: The binary search tree is not allowed to have any values
             as small as mini.
         maxi: The binary search tree is not allowed to have any values

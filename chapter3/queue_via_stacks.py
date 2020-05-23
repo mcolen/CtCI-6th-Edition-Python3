@@ -3,7 +3,7 @@
 Implement a `MyQueue` class which implements a queue using two stacks.
 """
 
-from typing import Any
+from typing import Generic, TypeVar
 
 import chapter3.stack
 
@@ -12,12 +12,15 @@ class EmptyQueueError(Exception):
     """Raised when attempting to access an item from an empty queue."""
 
 
-class MyQueue:
+T = TypeVar('T')
+
+
+class MyQueue(Generic[T]):
     """Queue implemented using two stacks."""
 
     def __init__(self) -> None:
-        self._new_items = chapter3.stack.Stack()
-        self._old_items = chapter3.stack.Stack()
+        self._new_items = chapter3.stack.Stack[T]()
+        self._old_items = chapter3.stack.Stack[T]()
 
     def __len__(self) -> int:
         return len(self._new_items) + len(self._old_items)
@@ -27,11 +30,11 @@ class MyQueue:
         while self._new_items:
             self._old_items.push(self._new_items.pop())
 
-    def add(self, item: Any) -> None:
+    def add(self, item: T) -> None:
         """Adds item to end of the queue."""
         self._new_items.push(item)
 
-    def remove(self) -> Any:
+    def remove(self) -> T:
         """Removes and returns the first item in the queue.
 
         Raises:
@@ -44,7 +47,7 @@ class MyQueue:
         except IndexError as e:
             raise EmptyQueueError() from e
 
-    def peek(self) -> Any:
+    def peek(self) -> T:
         """Returns (but does not remove) the first item in the queue.
 
         Raises:

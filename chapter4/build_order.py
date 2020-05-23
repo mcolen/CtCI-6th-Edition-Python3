@@ -13,15 +13,18 @@ Input:
 Output: f, e, a, b, d, c
 """
 
-from typing import Any, List, Tuple, Sequence
+from typing import List, Tuple, TypeVar, Sequence
 
 
 class NoValidBuildOrderError(Exception):
     """Raised when there is a circular dependency in given projects."""
 
 
-def build_order(projects: Sequence[Any],
-                dependencies: Sequence[Tuple[Any, Any]]) -> List[Any]:
+T = TypeVar('T')
+
+
+def build_order(projects: Sequence[T],
+                dependencies: Sequence[Tuple[T, T]]) -> List[T]:
     """Finds a build order that will allow projects to be built.
 
     Args:

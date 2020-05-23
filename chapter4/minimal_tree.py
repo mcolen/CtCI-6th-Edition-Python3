@@ -8,10 +8,12 @@ from typing import Optional, Sequence
 
 from chapter4 import tree
 
+IntNodeWithParent = tree.NodeWithParent[int]
+
 
 def minimal_bst(
         array: Sequence[int],
-        parent: Optional[tree.NodeWithParent] = None) -> tree.NodeWithParent:
+        parent: Optional[IntNodeWithParent] = None) -> IntNodeWithParent:
     """Creates a binary search tree with minimal height.
 
     Args:

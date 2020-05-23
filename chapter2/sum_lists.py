@@ -22,8 +22,8 @@ Output: 9 -> 1 -> 2. That is, 912
 from chapter2 import llist
 
 
-def sum_reverse_lists(head1: llist.LinkedList,
-                      head2: llist.LinkedList) -> llist.LinkedList:
+def sum_reverse_lists(head1: llist.LinkedList[int],
+                      head2: llist.LinkedList[int]) -> llist.LinkedList[int]:
     """Returns sum of given lists as a linked list.
 
     The digits are stored in /reverse/ order.
@@ -44,8 +44,8 @@ def sum_reverse_lists(head1: llist.LinkedList,
     return sentinel.next
 
 
-def sum_forward_lists(head1: llist.LinkedList,
-                      head2: llist.LinkedList) -> llist.LinkedList:
+def sum_forward_lists(head1: llist.LinkedList[int],
+                      head2: llist.LinkedList[int]) -> llist.LinkedList[int]:
     """Returns sum of given lists as a linked list.
 
     The digits are stored in forward order.

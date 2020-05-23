@@ -2,10 +2,12 @@
 
 from __future__ import annotations
 
-from typing import Any, Optional
+from typing import Any, Generic, Optional, TypeVar
+
+T = TypeVar('T')
 
 
-class Node:
+class Node(Generic[T]):
     """Node in a singly linked list.
 
     Attributes:
@@ -13,7 +15,7 @@ class Node:
         next: The following node in the linked list.
     """
 
-    def __init__(self, data: Any, next_: Optional[Node] = None) -> None:
+    def __init__(self, data: T, next_: Optional[Node[T]] = None) -> None:
         self.data = data
         self.next = next_
 
@@ -26,4 +28,4 @@ class Node:
         return NotImplemented
 
 
-LinkedList = Optional[Node]
+LinkedList = Optional[Node[T]]

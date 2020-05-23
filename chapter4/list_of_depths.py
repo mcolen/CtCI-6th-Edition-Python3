@@ -6,13 +6,15 @@ you'll have `D` linked lists).
 """
 
 import collections
-from typing import Dict
+from typing import Dict, TypeVar
 
 from chapter2 import llist
 from chapter4 import tree
 
+T = TypeVar('T')
 
-def depth_lists(root: tree.Tree) -> Dict[int, llist.Node]:
+
+def depth_lists(root: tree.Tree[T]) -> Dict[int, llist.Node[T]]:
     """Creates a linked list of all the nodes at each depth.
 
     Args:
@@ -22,7 +24,7 @@ def depth_lists(root: tree.Tree) -> Dict[int, llist.Node]:
         Mapping from each depth in the given tree to a linked list of
             all the node values found at that depth.
     """
-    ret: Dict[int, llist.Node] = {}
+    ret: Dict[int, llist.Node[T]] = {}
     if not root:
         return ret
     nodes_and_depths = collections.deque([(root, 0)])

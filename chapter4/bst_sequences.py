@@ -11,12 +11,14 @@ Output: {2, 1, 3}, {2, 3, 1}
 """
 
 import itertools
-from typing import Any, List, Sequence
+from typing import List, Sequence, TypeVar
 
 from chapter4 import tree
 
+T = TypeVar('T')
 
-def bst_sequences(root: tree.Tree) -> List[List[Any]]:
+
+def bst_sequences(root: tree.Tree[T]) -> List[List[T]]:
     """Returns all possible sequences that could have led to given tree.
 
     Args:
@@ -31,15 +33,15 @@ def bst_sequences(root: tree.Tree) -> List[List[Any]]:
     if not root:
         return [[]]
 
-    sequences: List[List[Any]] = []
+    sequences: List[List[T]] = []
     for left in bst_sequences(root.left):
         for right in bst_sequences(root.right):
             sequences.extend(_permute(root.value, left, right))
     return sequences
 
 
-def _permute(root_value: Any, left: Sequence[Any],
-             right: Sequence[Any]) -> List[List[Any]]:
+def _permute(root_value: T, left: Sequence[T],
+             right: Sequence[T]) -> List[List[T]]:
     """Weaves together given sequences in all possible orderings.
 
     Args:
@@ -60,7 +62,7 @@ def _permute(root_value: Any, left: Sequence[Any],
                 [0, -1, 1, 2],
             ]
     """
-    sequences: List[List[Any]] = []
+    sequences: List[List[T]] = []
     for permutation in itertools.permutations([1] * len(left) +
                                               [0] * len(right)):
         sequence = [root_value]
