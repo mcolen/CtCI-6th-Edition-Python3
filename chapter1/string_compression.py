@@ -15,11 +15,12 @@ def compressed(s: str) -> str:
     """Performs basic string compression of repeated characters.
 
     Args:
-        s: Any string
+        s: Any string.
 
     Returns:
-        A compression of s using the counts of repeated characters. For
-        example, the string 'aabcccccaaa' would become 'a2b1c5a3'.
+        A compression of the argument s using the counts of repeated
+        characters. For example, the string 'aabcccccaaa' would become
+        'a2b1c5a3'.
 
         If the "compressed" string would not become smaller than the
         original string, returns the original string.
