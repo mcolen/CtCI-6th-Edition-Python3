@@ -21,7 +21,7 @@ def is_balanced(root: tree.Tree) -> bool:
 
 
 def _helper(root: tree.Tree) -> Tuple[bool, int]:
-    # Return whether balanced and tree height.
+    """Returns whether balanced and tree height."""
     if not root:
         return True, 0
     l_balanced, l_height = _helper(root.left)
