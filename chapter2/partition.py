@@ -17,7 +17,7 @@ from typing import Any
 from chapter2 import llist
 
 
-def partition(head: llist.LinkedList, x: Any) -> None:
+def partition(head: llist.LinkedList[Any], x: Any) -> None:
     """Partitions linked list around value x.
 
     All nodes less than x come before all nodes greater than or equal to

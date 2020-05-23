@@ -5,14 +5,16 @@ two nodes in a binary tree. Avoid storing additional nodes in a data
 structure. NOTE: This is not necessarily a binary search tree.
 """
 
-from typing import Optional
+from typing import Optional, TypeVar
 
 from chapter4 import tree
 
+T = TypeVar('T')
+
 
 def first_common_ancestor(
-        node1: tree.NodeWithParent,
-        node2: tree.NodeWithParent) -> Optional[tree.NodeWithParent]:
+        node1: tree.NodeWithParent[T],
+        node2: tree.NodeWithParent[T]) -> Optional[tree.NodeWithParent[T]]:
     """Returns first common ancestor of node1 and node2."""
     depth1, depth2 = 0, 0
     float1, float2 = node1, node2

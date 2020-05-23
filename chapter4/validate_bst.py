@@ -8,7 +8,7 @@ from typing import Any
 from chapter4 import tree
 
 
-def is_bst(root: tree.Tree, mini: Any = None, maxi: Any = None) -> bool:
+def is_bst(root: tree.Tree[Any], mini: Any = None, maxi: Any = None) -> bool:
     """Checks if a binary tree is a binary search tree.
 
     Args:

@@ -6,11 +6,16 @@ FOLLOW UP
 How would you solve this problem if a temporary buffer is not allowed?
 """
 
+from typing import Any
+
 from chapter2 import llist
 
 
-def remove_dups1(head: llist.LinkedList) -> None:
-    """Removes duplicates from the linked list."""
+def remove_dups1(head: llist.LinkedList[Any]) -> None:
+    """Removes duplicates from the linked list.
+
+    Uniqueness is determined by the __hash__ of the node data.
+    """
     if not head:
         return
     seen = {head.data}
@@ -22,8 +27,10 @@ def remove_dups1(head: llist.LinkedList) -> None:
             seen.add(head.data)
 
 
-def remove_dups2(head: llist.LinkedList) -> None:
+def remove_dups2(head: llist.LinkedList[Any]) -> None:
     """Removes duplicates from the linked list.
+
+    Uniqueness is determined by the __eq__ of the node data.
 
     Does not use a temporary buffer.
     """

@@ -7,13 +7,15 @@ linked list is the exact same node (by reference) as the jth node of
 the second linked list, then they are intersecting.
 """
 
-from typing import Optional
+from typing import Optional, TypeVar
 
 from chapter2 import llist
 
+T = TypeVar('T')
 
-def find_intersection(head1: llist.LinkedList,
-                      head2: llist.LinkedList) -> Optional[llist.Node]:
+
+def find_intersection(head1: llist.LinkedList[T],
+                      head2: llist.LinkedList[T]) -> Optional[llist.Node[T]]:
     """Determines if and where two linked lists intersect.
 
     Args:

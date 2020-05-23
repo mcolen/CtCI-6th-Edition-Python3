@@ -9,10 +9,12 @@ that the subtree of `n` is identical to `T2`. That is, if you cut off
 the tree at node `n`, the two trees would be identical.
 """
 
+from typing import Any
+
 from chapter4 import tree
 
 
-def is_subtree(T1: tree.Tree, T2: tree.Tree) -> bool:
+def is_subtree(T1: tree.Tree[Any], T2: tree.Tree[Any]) -> bool:
     """Returns True if T2 is a subtree of T1."""
     if T1 is None or T2 is None:
         return T1 is None and T2 is None

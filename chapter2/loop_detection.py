@@ -8,12 +8,14 @@ Input:  A -> B -> C -> D -> E -> C [the same C as earlier]
 Output: C
 """
 
-from typing import Optional
+from typing import Optional, TypeVar
 
 from chapter2 import llist
 
+T = TypeVar('T')
 
-def find_loop_start(head: llist.LinkedList) -> Optional[llist.Node]:
+
+def find_loop_start(head: llist.LinkedList[T]) -> Optional[llist.Node[T]]:
     """Detects loop in a linked list.
 
     Args:

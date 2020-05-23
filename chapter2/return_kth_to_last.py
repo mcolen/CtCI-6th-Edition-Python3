@@ -4,12 +4,14 @@ Implement an algorithm to find the kth to last element of a singly
 linked list.
 """
 
-from typing import Optional
+from typing import Optional, TypeVar
 
 from chapter2 import llist
 
+T = TypeVar('T')
 
-def kth_to_last(head: llist.LinkedList, k: int) -> Optional[llist.Node]:
+
+def kth_to_last(head: llist.LinkedList[T], k: int) -> Optional[llist.Node[T]]:
     """Returns kth to last node of the linked list.
 
     Returns the last node if k is 1. k may not be 0.

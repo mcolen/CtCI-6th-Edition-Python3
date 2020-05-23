@@ -6,10 +6,12 @@ elements into any other data structure (such as an array). The stack
 supports the following operations: `push`, `pop`, `peek`, and `isEmpty`.
 """
 
+from typing import Any
+
 import chapter3.stack
 
 
-def sort_stack(stack: chapter3.stack.Stack) -> None:
+def sort_stack(stack: chapter3.stack.Stack[Any]) -> None:
     """Sorts stack such that the smallest items are on the top.
 
     Data in stack must be comparable.
