@@ -29,7 +29,7 @@ class TestListOfDepths(unittest.TestCase):
         self.assertEqual({8, 9, 10}, _set_of_data(lists[3]))
 
 
-def _set_of_data(node: llist.Node) -> Set[int]:
+def _set_of_data(node: llist.Node[int]) -> Set[int]:
     """Returns the Set of all data in given linked list."""
     ret = {node.data}
     if node.next:
