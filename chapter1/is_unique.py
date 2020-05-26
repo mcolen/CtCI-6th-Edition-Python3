@@ -10,6 +10,10 @@ from typing import MutableSet
 def is_unique1(s: str) -> bool:
     """Returns True if s has all unique characters."""
     seen: MutableSet[str] = set()
+    # Make sure not to loop over all of s, because there are a finite
+    # number of possible unique characters which puts a cap on the
+    # run-time of this function, regardless of how massively long s
+    # might be.
     for c in s:
         if c in seen:
             return False
