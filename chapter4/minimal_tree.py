@@ -29,7 +29,7 @@ def minimal_bst(
     if not array:
         raise ValueError('array is empty')
     mid = len(array) // 2
-    node = tree.NodeWithParent(value=array[mid], parent=parent)
+    node = IntNodeWithParent(value=array[mid], parent=parent)
     if len(array) > 1:
         node.left = minimal_bst(array[:mid], parent=node)
     if len(array) > 2:

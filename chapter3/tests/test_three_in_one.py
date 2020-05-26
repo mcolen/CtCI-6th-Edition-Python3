@@ -5,11 +5,13 @@ import unittest
 import chapter3.stack
 from chapter3 import three_in_one
 
+IntStack = three_in_one.Stack[int]
+
 
 class TestFixedMultiStack(unittest.TestCase):
 
     def test_all_operations(self) -> None:
-        stacks = three_in_one.Stack(num_stacks=3, stack_capacity=4)
+        stacks = IntStack(num_stacks=3, stack_capacity=4)
         stacks.push(0, 10)
         stacks.push(1, 20)
         stacks.push(2, 30)

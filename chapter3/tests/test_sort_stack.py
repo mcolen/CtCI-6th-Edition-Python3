@@ -5,11 +5,13 @@ import unittest
 import chapter3.stack
 from chapter3 import sort_stack
 
+IntStack = chapter3.stack.Stack[int]
+
 
 class TestSortStack(unittest.TestCase):
 
     def test_2_6_1_7_4_3_10_8_9_5(self) -> None:
-        stack = chapter3.stack.Stack()
+        stack = IntStack()
         stack.push(2)
         stack.push(6)
         stack.push(1)
