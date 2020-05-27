@@ -14,8 +14,8 @@ def zero_matrix(matrix: Sequence[MutableSequence[int]]) -> None:
         matrix: A non-empty square 2-D array.
     """
     m, n = len(matrix), len(matrix[0])
-    first_row_zero = 0 in matrix[0]
-    first_col_zero = any(row[0] == 0 for row in matrix)
+    first_row_has_zero = 0 in matrix[0]
+    first_col_has_zero = any(row[0] == 0 for row in matrix)
     # Identify rows with a 0.
     for row in matrix:
         if 0 in row:
@@ -29,9 +29,9 @@ def zero_matrix(matrix: Sequence[MutableSequence[int]]) -> None:
         for j in range(1, n):
             if matrix[i][0] == 0 or matrix[0][j] == 0:
                 matrix[i][j] = 0
-    if first_row_zero:
+    if first_row_has_zero:
         for j in range(n):
             matrix[0][j] = 0
-    if first_col_zero:
+    if first_col_has_zero:
         for i in range(m):
             matrix[i][0] = 0
