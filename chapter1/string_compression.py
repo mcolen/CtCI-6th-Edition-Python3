@@ -27,11 +27,11 @@ def compressed(s: str) -> str:
     """
     if sum(s[i] == s[i + 1] for i in range(len(s) - 1)) <= len(s) // 2:
         return s
-    counts, prev_char, count = [], s[0], 1
+    res, prev_char, count = [], s[0], 1
     for c in itertools.islice(s, 1, None):
         if c == prev_char:
             count += 1
         else:
-            counts.append(prev_char + str(count))
+            res.append(prev_char + str(count))
             prev_char, count = c, 1
-    return ''.join(counts) + prev_char + str(count)
+    return ''.join(res) + prev_char + str(count)
