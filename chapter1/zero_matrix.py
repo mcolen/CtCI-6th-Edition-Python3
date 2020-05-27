@@ -11,7 +11,7 @@ def zero_matrix(matrix: Sequence[MutableSequence[int]]) -> None:
     """Sets entire row and column to 0 for all 0 elements in matrix.
 
     Args:
-        matrix: A square 2-D array.
+        matrix: A non-empty square 2-D array.
     """
     m, n = len(matrix), len(matrix[0])
     first_row_zero = 0 in matrix[0]
