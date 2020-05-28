@@ -1,4 +1,4 @@
-"""Implementation of a basic node for use in chapter 2 solutions."""
+"""Implementation of a basic linked list node."""
 
 from __future__ import annotations
 
@@ -11,7 +11,7 @@ class Node(Generic[T]):
     """Node in a singly linked list.
 
     Attributes:
-        data: A value stored in this node (could be any type).
+        data: Value stored in this node.
         next: The following node in the linked list.
     """
 
