@@ -1,4 +1,4 @@
-"""Tests for 2.5 Sum Lists."""
+"""Tests for chapter2.sum_lists."""
 
 import unittest
 

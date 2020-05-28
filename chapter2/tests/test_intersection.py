@@ -1,4 +1,4 @@
-"""Tests for 2.7 Intersection."""
+"""Tests for chapter2.intersection."""
 
 import unittest
 

@@ -1,4 +1,4 @@
-"""Tests for 2.6 Palindrome."""
+"""Tests for chapter2.palindrome."""
 
 import unittest
 

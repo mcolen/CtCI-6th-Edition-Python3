@@ -1,4 +1,4 @@
-"""Tests for 2.3 Delete Middle Node."""
+"""Tests for chapter2.delete_middle_node."""
 
 import unittest
 

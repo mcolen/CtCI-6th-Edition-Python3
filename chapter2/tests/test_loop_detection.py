@@ -1,4 +1,4 @@
-"""Tests for 2.8 Loop Detection."""
+"""Tests for chapter2.loop_detection."""
 
 import unittest
 
