@@ -10,13 +10,15 @@ from typing import Any
 
 import chapter3.stack
 
+AnyStack = chapter3.stack.Stack[Any]
 
-def sort_stack(stack: chapter3.stack.Stack[Any]) -> None:
+
+def sort_stack(stack: AnyStack) -> None:
     """Sorts stack such that the smallest items are on the top.
 
     Data in stack must be comparable.
     """
-    sorted_stack: chapter3.stack.Stack = chapter3.stack.Stack()
+    sorted_stack = AnyStack()
     while stack:
         curr = stack.pop()
         while sorted_stack and curr < sorted_stack.peek():
