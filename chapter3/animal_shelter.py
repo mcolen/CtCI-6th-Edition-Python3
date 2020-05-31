@@ -26,12 +26,13 @@ class PetType(enum.Enum):
     CAT = 2
 
 
+class _Node(NamedTuple):
+    pet: Any
+    order: int
+
+
 class AnimalShelter:
     """Adoption service for cats and dogs."""
-
-    class _Node(NamedTuple):
-        pet: Any
-        order: int
 
     def __init__(self) -> None:
         self._dogs: collections.deque = collections.deque()
@@ -40,7 +41,7 @@ class AnimalShelter:
 
     def enqueue(self, pet: Any, type_: PetType) -> None:
         """Puts pet of given type_ up for adoption."""
-        node = self._Node(pet, self._num_seen)
+        node = _Node(pet, self._num_seen)
         if type_ == PetType.DOG:
             self._dogs.append(node)
         else:
