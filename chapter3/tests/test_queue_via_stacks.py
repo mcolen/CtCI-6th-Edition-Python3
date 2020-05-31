@@ -21,6 +21,7 @@ class TestMyQueue(unittest.TestCase):
         queue.add(5)
         self.assertEqual(2, queue.remove())
         self.assertEqual(3, queue.remove())
+        self.assertEqual(4, queue.peek())
 
 
 if __name__ == '__main__':
