@@ -48,6 +48,6 @@ class Stack(Generic[T]):
         """Returns minimum item in the stack.
 
         Raises:
-            EmptyStacError: The stack was empty.
+            EmptyStackError: The stack was empty.
         """
         return self.stack.peek().mini
