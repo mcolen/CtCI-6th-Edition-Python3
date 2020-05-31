@@ -15,7 +15,7 @@ class FullStackError(Exception):
 T = TypeVar('T')
 
 
-class Stack(Generic[T]):
+class Stacks(Generic[T]):
     """Multiple stacks implemented with one array."""
 
     def __init__(self, num_stacks: int, stack_capacity: int) -> None:
