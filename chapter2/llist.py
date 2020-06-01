@@ -1,4 +1,4 @@
-"""Implementation of a basic linked list node."""
+"""Basic linked list data structure for use in chapter 2 solutions."""
 
 from __future__ import annotations
 
