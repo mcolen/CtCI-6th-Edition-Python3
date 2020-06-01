@@ -1,4 +1,4 @@
-"""Basic stack for use in chapter 3 solutions."""
+"""Basic stack data structure for use in chapter 3 solutions."""
 
 from typing import Generic, List, TypeVar
 

@@ -1,4 +1,4 @@
-"""Definition of a basic tree node for use in chapter 4 solutions."""
+"""Basic tree data structure for use in chapter 4 solutions."""
 
 from __future__ import annotations
 
