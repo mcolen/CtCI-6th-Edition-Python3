@@ -4,12 +4,12 @@ Write a method to return all subsets of a set.
 """
 
 import itertools
-from typing import FrozenSet, Set, TypeVar
+from typing import AbstractSet, FrozenSet, Set, TypeVar
 
 T = TypeVar('T')
 
 
-def power_set(set_: Set[T]) -> Set[FrozenSet[T]]:
+def power_set(set_: AbstractSet[T]) -> Set[FrozenSet[T]]:
     """Returns the set of all subsets of given set_."""
     subsets = itertools.chain.from_iterable(itertools.combinations(set_, size)
                                             for size in range(len(set_) + 1))
