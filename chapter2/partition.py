@@ -25,8 +25,8 @@ def partition(head: llist.LinkedList[Any], x: Any) -> None:
 
     Args:
         head: Head of linked list to partition.
-        x: Value around which to partition. Must be comparable with all data
-            in given linked list.
+        x: Value around which to partition. Must be orderable with all data in
+            given linked list.
     """
     swap = head
     while head:
