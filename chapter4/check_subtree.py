@@ -18,6 +18,4 @@ def is_subtree(T1: tree.Tree[Any], T2: tree.Tree[Any]) -> bool:
     """Returns True if T2 is a subtree of T1."""
     if T1 is None or T2 is None:
         return T1 is None and T2 is None
-    if T1 == T2:
-        return True
-    return is_subtree(T1.left, T2) or is_subtree(T1.right, T2)
+    return any(subtree == T2 for subtree in T1)

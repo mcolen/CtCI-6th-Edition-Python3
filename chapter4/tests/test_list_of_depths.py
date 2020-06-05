@@ -23,18 +23,14 @@ class TestListOfDepths(unittest.TestCase):
                                          right=tree.Node(7)))
         lists = list_of_depths.depth_lists(root)
         self.assertEqual(4, len(lists))
-        self.assertEqual({1}, _set_of_data(lists[0]))
-        self.assertEqual({2, 3}, _set_of_data(lists[1]))
-        self.assertEqual({4, 5, 6, 7}, _set_of_data(lists[2]))
-        self.assertEqual({8, 9, 10}, _set_of_data(lists[3]))
-
-
-def _set_of_data(node: llist.Node[int]) -> Set[int]:
-    """Returns the Set of all data in given linked list."""
-    ret = {node.data}
-    if node.next:
-        ret |= _set_of_data(node.next)
-    return ret
+        self.assertEqual(1, sum(1 for _ in lists[0]))
+        self.assertEqual({1}, {node.data for node in lists[0]})
+        self.assertEqual(2, sum(1 for _ in lists[0]))
+        self.assertEqual({2, 3}, {node.data for node in lists[1]})
+        self.assertEqual(4, sum(1 for _ in lists[0]))
+        self.assertEqual({4, 5, 6, 7}, {node.data for node in lists[2]})
+        self.assertEqual(3, sum(1 for _ in lists[0]))
+        self.assertEqual({8, 9, 10}, {node.data for node in lists[3]})
 
 
 if __name__ == '__main__':

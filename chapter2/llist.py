@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from typing import Any, Generic, Optional, TypeVar
+from typing import Any, Generic, Iterator, Optional, TypeVar
 
 T = TypeVar('T')
 
@@ -19,8 +19,12 @@ class Node(Generic[T]):
         self.data = data
         self.next = next_
 
-    def __repr__(self) -> str:
-        return repr(self.data) + '->' + repr(self.next)
+    def __iter__(self) -> Iterator[Node[T]]:
+        def traversal(node: Optional[Node[T]]) -> Iterator[Node[T]]:
+            while node:
+                yield node
+                node = node.next
+        return traversal(self)
 
     def __eq__(self, other: Any) -> bool:
         if isinstance(other, Node):

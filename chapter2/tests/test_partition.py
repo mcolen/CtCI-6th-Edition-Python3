@@ -1,5 +1,6 @@
 """Tests for chapter2.partition."""
 
+import itertools
 import unittest
 
 from chapter2 import llist, partition
@@ -17,11 +18,11 @@ class TestPartition(unittest.TestCase):
 
         partition.partition(head, x=5)
         self.assertEqual({1, 2, 3},
-                         {head.data, head.next.data, head.next.next.data})
-        self.assertEqual({5, 8, 10}, {
-            head.next.next.next.data, head.next.next.next.next.data,
-            head.next.next.next.next.next.data
-        })
+                         {node.data for node in
+                          itertools.islice(iter(head), 3)})
+        self.assertEqual({5, 8, 10},
+                         {node.data for node in
+                          itertools.islice(iter(head), 3, None)})
 
 
 if __name__ == '__main__':

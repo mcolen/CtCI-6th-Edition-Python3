@@ -8,10 +8,9 @@ from typing import Any
 from chapter2 import llist
 
 
-def is_palindrome(head: llist.LinkedList[Any]) -> bool:
+def is_palindrome(linked_list: llist.LinkedList[Any]) -> bool:
     """Return True if given linked list is a palindrome."""
-    data = []
-    while head:
-        data.append(head.data)
-        head = head.next
+    if not linked_list:
+        return True
+    data = [node.data for node in linked_list]
     return all(data1 == data2 for data1, data2 in zip(data, reversed(data)))
