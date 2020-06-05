@@ -16,7 +16,7 @@ AnyStack = chapter3.stack.Stack[Any]
 def sort_stack(stack: AnyStack) -> None:
     """Sorts stack such that the smallest items are on the top.
 
-    Data in stack must be comparable.
+    Data in stack must be orderable.
     """
     sorted_stack = AnyStack()
     while stack:
