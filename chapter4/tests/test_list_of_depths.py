@@ -1,9 +1,7 @@
 """ Tests for chapter4.list_of_depths."""
 
-from typing import Set
 import unittest
 
-from chapter2 import llist
 from chapter4 import list_of_depths, tree
 
 
