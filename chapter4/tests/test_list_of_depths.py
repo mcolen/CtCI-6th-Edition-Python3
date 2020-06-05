@@ -23,11 +23,11 @@ class TestListOfDepths(unittest.TestCase):
         self.assertEqual(4, len(lists))
         self.assertEqual(1, sum(1 for _ in lists[0]))
         self.assertEqual({1}, {node.data for node in lists[0]})
-        self.assertEqual(2, sum(1 for _ in lists[0]))
+        self.assertEqual(2, sum(1 for _ in lists[1]))
         self.assertEqual({2, 3}, {node.data for node in lists[1]})
-        self.assertEqual(4, sum(1 for _ in lists[0]))
+        self.assertEqual(4, sum(1 for _ in lists[2]))
         self.assertEqual({4, 5, 6, 7}, {node.data for node in lists[2]})
-        self.assertEqual(3, sum(1 for _ in lists[0]))
+        self.assertEqual(3, sum(1 for _ in lists[3]))
         self.assertEqual({8, 9, 10}, {node.data for node in lists[3]})
 
 
