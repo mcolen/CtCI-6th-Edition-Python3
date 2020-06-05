@@ -22,10 +22,11 @@ def permutations(s: str) -> Set[str]:
 
 
 def _permutations_internal(char_counts: Counter[str]) -> Set[str]:
-    if not char_counts:
+    if not +char_counts:
         return {''}
     ans: Set[str] = set()
-    for c in char_counts:
-        ans.update(c + perm for perm in
-                   _permutations_internal(char_counts - Counter(c)))
+    for c in list(+char_counts):
+        char_counts[c] -= 1
+        ans.update(c + perm for perm in _permutations_internal(char_counts))
+        char_counts[c] += 1
     return ans
