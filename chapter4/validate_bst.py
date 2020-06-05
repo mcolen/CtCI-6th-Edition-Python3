@@ -14,7 +14,7 @@ def is_bst(root: tree.Tree[Any]) -> bool:
 
     Args:
         root: The root node of a binary tree (or None). All the data in
-            the tree must be comparable.
+            the tree must be orderable.
 
     Returns:
         True if the given tree is a binary search tree. Duplicate values
