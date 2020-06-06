@@ -71,12 +71,12 @@ def solve(towers: TowersOfHanoi, N: int) -> None:
             should be on the first tower.
         N: Number of disks in argument towers.
     """
-    _solve_helper(towers, N, start=0, end=2, aux=1)
+    _solve_internal(towers, N, start=0, end=2, aux=1)
 
 
-def _solve_helper(towers: TowersOfHanoi, N: int, start: int,
-                  end: int, aux: int) -> None:
+def _solve_internal(towers: TowersOfHanoi, N: int, start: int,
+                    end: int, aux: int) -> None:
     for i in range(N):
-        _solve_helper(towers, N=i, start=end, end=aux, aux=start)
+        _solve_internal(towers, N=i, start=end, end=aux, aux=start)
         towers.slide_disk(from_tower=start, to_tower=end)
-        _solve_helper(towers, N=i, start=aux, end=end, aux=start)
+        _solve_internal(towers, N=i, start=aux, end=end, aux=start)
