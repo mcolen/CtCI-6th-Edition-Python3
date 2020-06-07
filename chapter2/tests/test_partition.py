@@ -17,12 +17,12 @@ class TestPartition(unittest.TestCase):
         head.next.next.next.next.next = llist.Node(1)
 
         partition.partition(head, x=5)
-        self.assertEqual({1, 2, 3},
-                         {node.data for node in
-                          itertools.islice(iter(head), 3)})
-        self.assertEqual({5, 8, 10},
-                         {node.data for node in
-                          itertools.islice(iter(head), 3, None)})
+        self.assertCountEqual([1, 2, 3],
+                              [node.data for node in
+                               itertools.islice(iter(head), 3)])
+        self.assertCountEqual([5, 8, 10],
+                              [node.data for node in
+                               itertools.islice(iter(head), 3, None)])
 
 
 if __name__ == '__main__':
