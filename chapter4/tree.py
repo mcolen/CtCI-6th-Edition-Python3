@@ -30,17 +30,6 @@ class Node(Generic[T]):
 Tree = Optional[Node[T]]
 
 
-class NodeWithParent(Node[T]):  # pylint: disable=too-few-public-methods
-    """A node in a binary tree with a link to its parent."""
-
-    def __init__(self, value: T,
-                 left: Optional[Node] = None,
-                 right: Optional[Node] = None,
-                 parent: Optional[Node] = None) -> None:
-        super().__init__(value, left, right)
-        self.parent = parent
-
-
 def in_order_traversal(node: Node[T]) -> Iterator[Node[T]]:
     """Returns successive nodes of in-order traversal."""
     if node.left:

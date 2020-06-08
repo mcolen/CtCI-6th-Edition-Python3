@@ -5,15 +5,21 @@ a given node in a binary search tree. You may assume that each node has
 a link to its parent.
 """
 
-from typing import Optional, TypeVar
+from __future__ import annotations
 
-from chapter4 import tree
+import dataclasses
+from typing import Optional
 
-T = TypeVar('T')
+
+@dataclasses.dataclass
+class NodeWithParent:
+    """A node in a binary tree with a link to its parent."""
+    parent: Optional[NodeWithParent]
+    left: Optional[NodeWithParent] = None
+    right: Optional[NodeWithParent] = None
 
 
-def successor(
-        node: tree.NodeWithParent[T]) -> Optional[tree.NodeWithParent[T]]:
+def successor(node: NodeWithParent) -> Optional[NodeWithParent]:
     """Returns the in-order successor of given node in a BST."""
     if node.right:
         return _leftmost_child(node.right)
@@ -23,7 +29,7 @@ def successor(
     return parent
 
 
-def _leftmost_child(node: tree.NodeWithParent[T]) -> tree.NodeWithParent[T]:
+def _leftmost_child(node: NodeWithParent) -> NodeWithParent:
     while node.left:
         node = node.left
     return node
