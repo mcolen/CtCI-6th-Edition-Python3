@@ -31,6 +31,3 @@ def print_valid_combinations(n: int) -> None:
                                         opened=opened + 1, closed=closed))
         nodes = next_nodes
     print(', '.join(node.ending for node in nodes))
-
-
-print_valid_combinations(3)
