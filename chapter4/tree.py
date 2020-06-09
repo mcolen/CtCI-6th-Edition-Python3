@@ -21,10 +21,10 @@ class Node(Generic[T]):
         return in_order_traversal(self)
 
     def __eq__(self, other: Any) -> bool:
-        if isinstance(other, Node):
-            return (self.value == other.value and self.left == other.left
-                    and self.right == other.right)
-        return NotImplemented
+        if not isinstance(other, Node):
+            return NotImplemented
+        return (self.value == other.value and self.left == other.left
+                and self.right == other.right)
 
 
 Tree = Optional[Node[T]]

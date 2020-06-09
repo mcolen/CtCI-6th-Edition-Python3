@@ -27,9 +27,9 @@ class Node(Generic[T]):
         return traversal(self)
 
     def __eq__(self, other: Any) -> bool:
-        if isinstance(other, Node):
-            return self.data == other.data and self.next == other.next
-        return NotImplemented
+        if not isinstance(other, Node):
+            return NotImplemented
+        return self.data == other.data and self.next == other.next
 
 
 LinkedList = Optional[Node[T]]
