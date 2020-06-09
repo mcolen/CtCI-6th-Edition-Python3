@@ -14,7 +14,7 @@ class TestParens(unittest.TestCase):
         parens.print_valid_combinations(n=3)
         self.assertCountEqual(
             ['((()))', '(()())', '(())()', '()(())', '()()()'],
-            set(mock_stdout.getvalue()[:-1].split(', ')))
+            mock_stdout.getvalue()[:-1].split(', '))
 
 
 if __name__ == '__main__':
