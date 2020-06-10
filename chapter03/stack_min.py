@@ -5,14 +5,16 @@ a function `min` which returns the minimum element? `push`, `pop`, and
 `min` should all operate in O(1) time.
 """
 
-from typing import Generic, NamedTuple, TypeVar
+import dataclasses
+from typing import Generic, TypeVar
 
 import chapter03.stack
 
 T = TypeVar('T')
 
 
-class _Node(NamedTuple, Generic[T]):
+@dataclasses.dataclass
+class _Node(Generic[T]):
     item: T
     mini: T
 

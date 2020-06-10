@@ -8,10 +8,12 @@ height of the tallest possible stack. The height of a stack is the sum
 of the heights of each box.
 """
 
-from typing import AbstractSet, NamedTuple
+import dataclasses
+from typing import AbstractSet
 
 
-class Box(NamedTuple):
+@dataclasses.dataclass(frozen=True)
+class Box:
     """A stackable box with dimensions."""
     width: int
     height: int

@@ -12,10 +12,12 @@ countEval("1^0|0|1", false) -> 2
 countEval("0&0&0&1^1|0", true) -> 10
 """
 
-from typing import List, NamedTuple
+import dataclasses
+from typing import List
 
 
-class _Counts(NamedTuple):
+@dataclasses.dataclass
+class _Counts:
     false: int
     true: int
 
@@ -54,12 +56,14 @@ def count_eval(expression: str, result: bool) -> int:
 
 
 def _permute(counts1: _Counts, counts2: _Counts, operator: str) -> _Counts:
+    total = (sum(dataclasses.astuple(counts1)) *
+             sum(dataclasses.astuple(counts2)))
     if operator == '&':
         true = counts1.true * counts2.true
-        false = sum(counts1) * sum(counts2) - true
+        false = total - true
     elif operator == '|':
         false = counts1.false * counts2.false
-        true = sum(counts1) * sum(counts2) - false
+        true = total - false
     elif operator == '^':
         true = counts1.true * counts2.false + counts1.false * counts2.true
         false = counts1.true * counts2.true + counts1.false * counts2.false

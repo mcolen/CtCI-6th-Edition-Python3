@@ -11,8 +11,8 @@ equal). Solve this out logically and then write a computer simulation of
 it.
 """
 
+import dataclasses
 import enum
-from typing import NamedTuple
 import random
 
 
@@ -27,7 +27,8 @@ def simulate_child() -> Gender:
     return random.choice([Gender.BOY, Gender.GIRL])
 
 
-class Family(NamedTuple):
+@dataclasses.dataclass
+class Family:
     """A simulated family with gendered children."""
     num_boys: int
     num_girls: int

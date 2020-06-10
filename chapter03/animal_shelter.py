@@ -12,8 +12,9 @@ data structure.
 """
 
 import collections
+import dataclasses
 import enum
-from typing import Any, NamedTuple
+from typing import Any
 
 
 class NoAvailablePetError(Exception):
@@ -26,7 +27,8 @@ class PetType(enum.Enum):
     CAT = 2
 
 
-class _Node(NamedTuple):
+@dataclasses.dataclass
+class _Node:
     pet: Any
     order: int
 

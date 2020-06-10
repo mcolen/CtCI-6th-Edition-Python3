@@ -6,10 +6,12 @@ diagonal. In this case, "diagonal" means all diagonals, not just the two
 that bisect the board.
 """
 
-from typing import AbstractSet, MutableSet, NamedTuple
+import dataclasses
+from typing import AbstractSet, MutableSet
 
 
-class Square(NamedTuple):
+@dataclasses.dataclass(frozen=True)
+class Square:
     """Coordinates of a square on a chess board."""
     row: int
     column: int

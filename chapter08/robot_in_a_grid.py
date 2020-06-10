@@ -7,8 +7,9 @@ on them. Design an algorithm to find a path for the robot from the top
 left to the bottom right.
 """
 
+import dataclasses
 import enum
-from typing import List, NamedTuple, Optional, Set, Sequence
+from typing import List, Optional, Set, Sequence
 
 
 class Direction(enum.Enum):
@@ -17,7 +18,8 @@ class Direction(enum.Enum):
     RIGHT = 2
 
 
-class _Point(NamedTuple):
+@dataclasses.dataclass(frozen=True)
+class _Point:
     """A point in a grid."""
     row: int
     column: int
