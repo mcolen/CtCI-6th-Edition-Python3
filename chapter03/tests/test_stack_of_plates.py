@@ -1,0 +1,24 @@
+"""Tests for chapter03.stack_of_plates."""
+
+import unittest
+
+import chapter03.stack
+from chapter03 import stack_of_plates
+
+IntStack = stack_of_plates.Stack[int]
+
+
+class TestStackOfPlates(unittest.TestCase):
+
+    def test_34_items_5_capacity(self) -> None:
+        stack = IntStack(capacity=5)
+        for i in range(34):
+            stack.push(i)
+        for i in reversed(range(34)):
+            self.assertEqual(i, stack.pop())
+        with self.assertRaises(chapter03.stack.EmptyStackError):
+            stack.pop()
+
+
+if __name__ == '__main__':
+    unittest.main()
