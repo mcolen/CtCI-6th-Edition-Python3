@@ -27,7 +27,8 @@ def urlify(chars: MutableSequence[str], length: int) -> None:
     """
     num_spaces = sum(char == ' ' for char in itertools.islice(chars, length))
     j = length - 1 + 2 * num_spaces  # last index of urlified chars
-    for char in itertools.islice(reversed(chars), len(chars) - length, None):
+    for i in range(length - 1, -1, -1):
+        char = chars[i]
         if char == ' ':
             chars[j - 2:j + 1] = '%20'
             j -= 3
