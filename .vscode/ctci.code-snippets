@@ -1,0 +1,54 @@
+{
+	// Place your CtCI-6th-Edition-Python3 workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"Solution": {
+		"scope": "python",
+		"prefix": "Sol",
+		"body": [
+			"\"\"\"Solution to ${1:Chapter}.${2:Number} ${3:Name of Question}.",
+			"",
+			"${4:Question}",
+			"\"\"\"",
+			"",
+			"",
+			"$0",
+		],
+		"description": "Solve problem in Cracking the Coding Interview."
+	},
+	"Tests": {
+		"scope": "python",
+		"prefix": "Test",
+		"body": [
+			"\"\"\"Tests for chapter${1:Chapter}.${2:module_name}.\"\"\"",
+			"",
+			"import unittest",
+			"",
+			"from chapter$1 import $2",
+			"",
+			"",
+			"class Test${3:ModuleName}(unittest.TestCase):",
+			"",
+			"    def test_${4:input}(self) -> None:",
+			"        $0",
+			"",
+			"",
+			"if __name__ == '__main__':",
+			"    unittest.main()",
+		],
+		"description": "Test solution to problem in Cracking the Coding Interview."
+	}
+}
