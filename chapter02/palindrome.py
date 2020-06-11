@@ -13,4 +13,4 @@ def is_palindrome(linked_list: llist.LinkedList[Any]) -> bool:
     if not linked_list:
         return True
     data = [node.data for node in linked_list]
-    return all(data1 == data2 for data1, data2 in zip(data, reversed(data)))
+    return data == data[::-1]
