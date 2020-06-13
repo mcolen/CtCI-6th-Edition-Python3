@@ -36,8 +36,8 @@ def missing(file: TextIO,
     """
     bit_vector = bytearray(0 for _ in range((hi - lo) // 8 + 1))
     for line in file:
-        index = int(line) - lo
-        bit_vector[index // 8] |= 1 << index % 8
+        idx = int(line) - lo
+        bit_vector[idx // 8] |= 1 << idx % 8
     for i, byte in enumerate(bit_vector):
         if byte != 0xFF:
             return lo + 8 * i + next(bit for bit in range(8)
@@ -75,8 +75,8 @@ def missing_unique_nonnegative_signed_32_bit(file: TextIO) -> Optional[int]:
     file.seek(0)
     for line in file:
         if range_size * block <= int(line) <= range_size * (block + 1):
-            index = int(line) % range_size
-            bit_vector[index // 8] |= 1 << index % 8
+            idx = int(line) % range_size
+            bit_vector[idx // 8] |= 1 << idx % 8
     i = next(i for i, byte in enumerate(bit_vector) if byte != 0xFF)
     return range_size * block + 8 * i + next(bit for bit in range(8)
                                              if 1 << bit & bit_vector[i] == 0)

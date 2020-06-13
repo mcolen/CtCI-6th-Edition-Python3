@@ -64,12 +64,12 @@ class Stack(Generic[T]):
         except IndexError as e:
             raise chapter03.stack.EmptyStackError() from e
 
-    def pop_at(self, index: int) -> T:
+    def pop_at(self, idx: int) -> T:
         """Removes and returns the top item from stack at given index.
 
         Raises:
             EmptyStackError: The stack at given index was empty.
         """
-        item = self._stacks[index].pop()
+        item = self._stacks[idx].pop()
         self._pop_empty()
         return item

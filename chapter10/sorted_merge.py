@@ -18,15 +18,15 @@ def merge(A: MutableSequence[Any], B: Sequence[Any]) -> None:
         B: Sorted sequence in which all the items must be orderable with
             the items in argument A.
     """
-    index_merged = len(A) - 1  # index of next merged item
-    index_a = len(A) - 1 - len(B)  # index of next item in A
-    index_b = len(B) - 1  # index of next item in B
+    idx_merged = len(A) - 1  # index of next merged item
+    idx_a = len(A) - 1 - len(B)  # index of next item in A
+    idx_b = len(B) - 1  # index of next item in B
     # Just need to finish B. Last items in A are already merged.
-    while index_b >= 0:
-        if index_a >= 0 and A[index_a] > B[index_b]:
-            A[index_merged] = A[index_a]
-            index_a -= 1
+    while idx_b >= 0:
+        if idx_a >= 0 and A[idx_a] > B[idx_b]:
+            A[idx_merged] = A[idx_a]
+            idx_a -= 1
         else:
-            A[index_merged] = B[index_b]
-            index_b -= 1
-        index_merged -= 1
+            A[idx_merged] = B[idx_b]
+            idx_b -= 1
+        idx_merged -= 1
