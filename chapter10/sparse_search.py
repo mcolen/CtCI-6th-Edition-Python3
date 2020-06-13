@@ -40,13 +40,13 @@ def index(sorted_strings: Sequence[str], target: str) -> Optional[int]:
                 lo = right + 1
             elif sorted_strings[right] > target:
                 hi = left if left < right else right - 1
-            else:
+            else:  # sorted_strings[right] == target
                 return right
         else:
             if sorted_strings[left] < target:
                 lo = right + 1
             elif sorted_strings[left] > target:
                 hi = left - 1
-            else:
+            else:  # sorted_strings[left] == target
                 return left
     return None

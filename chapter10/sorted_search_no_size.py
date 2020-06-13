@@ -40,7 +40,7 @@ def index(listy: Listy, target: int) -> Optional[int]:
             hi = mid - 1
         elif listy[mid] < target:
             lo = mid + 1
-        else:
+        else:  # listy[mid] == target
             return mid
     return None
 
