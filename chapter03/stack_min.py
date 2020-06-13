@@ -23,12 +23,12 @@ class Stack(Generic[T]):
     """Stack which gives access to minimum element in constant time."""
 
     def __init__(self) -> None:
-        self.stack = chapter03.stack.Stack[_Node]()
+        self._stack = chapter03.stack.Stack[_Node]()
 
     def push(self, item: T) -> None:
         """Adds given item to the top of the stack."""
-        mini = min(item, self.min()) if self.stack else item
-        self.stack.push(_Node(item, mini))
+        mini = min(item, self.min()) if self._stack else item
+        self._stack.push(_Node(item, mini))
 
     def pop(self) -> T:
         """Removes and returns the top item from the stack.
@@ -36,7 +36,7 @@ class Stack(Generic[T]):
         Raises:
             EmptyStackError: The stack was empty.
         """
-        return self.stack.pop().item
+        return self._stack.pop().item
 
     def peek(self) -> T:
         """Returns (but does not remove) the top item of the stack.
@@ -44,7 +44,7 @@ class Stack(Generic[T]):
         Raises:
             EmptyStackError: The stack was empty.
         """
-        return self.stack.peek().item
+        return self._stack.peek().item
 
     def min(self) -> T:
         """Returns minimum item in the stack.
@@ -52,4 +52,4 @@ class Stack(Generic[T]):
         Raises:
             EmptyStackError: The stack was empty.
         """
-        return self.stack.peek().mini
+        return self._stack.peek().mini
