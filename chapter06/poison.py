@@ -18,6 +18,12 @@ from typing import List
 DAYS_FOR_RESULT = 7
 
 
+@dataclasses.dataclass
+class _TestStrip:
+    has_poison: bool = False
+    day_poisoned: int = -1
+
+
 class World:
     """Timed environment with bottles and test strips.
 
@@ -25,28 +31,45 @@ class World:
 
     Attributes:
         num_bottles: The number of bottles of soda. The bottles are
-            numbered [0, num_bottles). This attribute should not be
-            modified after initialization.
+            numbered [0, num_bottles).
         num_test_strips: The number of test strips. The test strips are
-            numbered [0, num_test_strips). This attribute should not be
-            modified after initialiation.
+            numbered [0, num_test_strips).
         day: The current day. Starts at 0. May be incremented to move
-            time forward, but should never be decremented.
+            time forward, but may never be decremented.
     """
-
-    @dataclasses.dataclass
-    class _TestStrip:
-        has_poison: bool = False
-        day_poisoned: int = -1
 
     def __init__(self, num_test_strips: int, num_bottles: int,
                  poisoned_bottle_num: int) -> None:
-        self.num_test_strips = num_test_strips
-        self._test_strips = [World._TestStrip()
-                             for i in range(num_test_strips)]
-        self.num_bottles = num_bottles
+        self._num_test_strips = num_test_strips
+        self._test_strips = [_TestStrip() for i in range(num_test_strips)]
+        self._num_bottles = num_bottles
         self._poisoned_bottle_num = poisoned_bottle_num
-        self.day = 0
+        self._day = 0
+
+    @property
+    def num_bottles(self) -> int:
+        """Gets the number of bottles of soda in this environment."""
+        return self._num_bottles
+
+    @property
+    def num_test_strips(self) -> int:
+        """Gets the number of test strips in this environment."""
+        return self._num_test_strips
+
+    @property
+    def day(self) -> int:
+        """Gets or sets the current day number in this environment.
+
+        Raises:
+            ValueError: An attempt was made to decrease the day number.
+        """
+        return self._day
+
+    @day.setter
+    def day(self, day: int) -> None:
+        if day < self._day:
+            raise ValueError('day cannot be decreased')
+        self._day = day
 
     def add_drop(self, bottle_num: int, test_strip_num: int) -> None:
         """Adds a drop from given bottle to given test_strip."""
