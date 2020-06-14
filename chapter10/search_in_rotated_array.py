@@ -46,6 +46,7 @@ def index(ints: Sequence[int], target: int) -> Optional[int]:
             lo = mid + 1
         elif ints[mid] > target:
             hi = mid - 1
-        else:  # ints[mid] == target
+        else:
+            assert ints[mid] == target
             return mid
     return None
