@@ -1,9 +1,13 @@
 [BASIC]
 
-# Good variable names which should always be accepted, separated by a comma
-good-names=A,B,c,dp,e,hi,i,j,k,lo,m,M,n,N,r,s,s1,s2,T,T1,T2,x,x1,x2,y
-
 # Regular expression which should only match function or class names that do
 # not require a docstring.
 no-docstring-rgx=^(_|Test|test)
 
+[MESSAGES CONTROL]
+
+# Disable the message, report, category or checker with the given id(s). You
+# can either give multiple identifier separated by comma (,) or put this option
+# multiple time (only on the command line, not in the configuration file where
+# it should appear only once).
+disable=invalid-name
