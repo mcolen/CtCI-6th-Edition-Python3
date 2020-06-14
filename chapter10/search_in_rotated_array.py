@@ -12,41 +12,41 @@ Output: `8` (the index of `5` in the array)
 from typing import Optional, Sequence
 
 
-def index(ints: Sequence[int], target: int) -> Optional[int]:
+def index(nums: Sequence[int], target: int) -> Optional[int]:
     """Finds target in sequence of integers.
 
     Args:
-        ints: Sequence of sorted (ascending) integers that may have been
+        nums: Sequence of sorted (ascending) integers that may have been
             rotated by some amount.
-        target: Element to find in argument ints.
+        target: Element to find in argument nums.
 
     Returns:
-        An index at which target can be found in ints, or None if no
+        An index at which target can be found in nums, or None if no
         such index exists.
     """
-    if not ints:
+    if not nums:
         return None
     # We cannot guarantee better than O(n) if there are duplicates.
-    if ints[0] == ints[-1]:
+    if nums[0] == nums[-1]:
         try:
-            return ints.index(target)
+            return nums.index(target)
         except ValueError:
             return None
 
-    target_left_of_wraparound = target >= ints[0]
-    lo, hi = 0, len(ints) - 1
+    target_left_of_wraparound = target >= nums[0]
+    lo, hi = 0, len(nums) - 1
     while lo <= hi:
         mid = (lo + hi) // 2
-        mid_left_of_wraparound = ints[mid] >= ints[0]
+        mid_left_of_wraparound = nums[mid] >= nums[0]
         if mid_left_of_wraparound and not target_left_of_wraparound:
             lo = mid + 1
         elif not mid_left_of_wraparound and target_left_of_wraparound:
             hi = mid - 1
-        elif ints[mid] < target:
+        elif nums[mid] < target:
             lo = mid + 1
-        elif ints[mid] > target:
+        elif nums[mid] > target:
             hi = mid - 1
         else:
-            assert ints[mid] == target
+            assert nums[mid] == target
             return mid
     return None

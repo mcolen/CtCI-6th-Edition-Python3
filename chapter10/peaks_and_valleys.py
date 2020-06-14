@@ -15,11 +15,11 @@ Output: {5, 1, 3, 2, 3}
 from typing import MutableSequence
 
 
-def sort(ints: MutableSequence[int]) -> None:
+def sort(nums: MutableSequence[int]) -> None:
     """Sorts sequence into alternating peaks and valleys."""
     peaking = True
-    for i in range(len(ints) - 1):
-        if ((peaking and ints[i] < ints[i + 1]) or
-                (not peaking and ints[i] > ints[i + 1])):
-            ints[i], ints[i + 1] = ints[i + 1], ints[i]
+    for i in range(len(nums) - 1):
+        if ((peaking and nums[i] < nums[i + 1]) or
+                (not peaking and nums[i] > nums[i + 1])):
+            nums[i], nums[i + 1] = nums[i + 1], nums[i]
         peaking = not peaking
