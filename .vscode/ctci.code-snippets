@@ -40,7 +40,7 @@
 			"from chapter$1 import $2",
 			"",
 			"",
-			"class Test${3:SystemUnderTestName}(unittest.TestCase):",
+			"class Test${3:SystemUnderTest}(unittest.TestCase):",
 			"",
 			"    def test_${4:input}(self) -> None:",
 			"        $0",
