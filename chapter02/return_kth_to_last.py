@@ -19,7 +19,7 @@ def kth_to_last(head: llist.LinkedList[T], k: int) -> Optional[llist.Node[T]]:
     runner = head
     for _ in range(k):
         if not runner:
-            raise ValueError('Fewer than k nodes in list')
+            raise ValueError('fewer than k nodes in list')
         runner = runner.next
     while runner:
         assert head
