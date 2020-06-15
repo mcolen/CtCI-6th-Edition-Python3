@@ -1,4 +1,4 @@
-"""Solution to 10.12 Peaks and Valleys.
+"""Solution to 10.11 Peaks and Valleys.
 
 In an arary of integers, a "peak" is an element which is greater than or
 equal to the adjacent integers and a "valley" is an element which is
