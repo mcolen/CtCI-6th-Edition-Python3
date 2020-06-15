@@ -5,7 +5,7 @@ import unittest
 from chapter02 import palindrome, llist
 
 
-class TestPalindrome(unittest.TestCase):
+class TestIsPalindrome(unittest.TestCase):
 
     def test_1_2_3_4_5_4_3_2_1(self) -> None:
         head = llist.Node(1)

@@ -5,7 +5,7 @@ import unittest
 from chapter04 import route_between_nodes
 
 
-class TestRouteBetweenNodes(unittest.TestCase):
+class TestExistsRoute(unittest.TestCase):
 
     def test_route_exists(self) -> None:
         node_a = route_between_nodes.Node('a')

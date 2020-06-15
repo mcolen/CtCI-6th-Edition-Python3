@@ -8,7 +8,7 @@ from chapter03 import three_in_one
 IntStacks = three_in_one.Stacks[int]
 
 
-class TestFixedMultiStack(unittest.TestCase):
+class TestStacks(unittest.TestCase):
 
     def test_all_operations(self) -> None:
         stacks = IntStacks(num_stacks=3, stack_capacity=4)

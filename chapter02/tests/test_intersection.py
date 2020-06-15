@@ -5,7 +5,7 @@ import unittest
 from chapter02 import intersection, llist
 
 
-class TestIntersection(unittest.TestCase):
+class TestFindIntersection(unittest.TestCase):
 
     def test_0_1_2_3_4_5_6_7_8_and_12_14_4_5_6_7_8(self) -> None:
         head1 = llist.Node(0)

@@ -7,7 +7,7 @@ import unittest.mock
 from chapter08 import parens
 
 
-class TestParens(unittest.TestCase):
+class TestPrintValidCombinations(unittest.TestCase):
 
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def test_3(self, mock_stdout: io.StringIO) -> None:

@@ -5,7 +5,7 @@ import unittest
 from chapter16 import number_swapper
 
 
-class TestNumberSwapper(unittest.TestCase):
+class TestSwap(unittest.TestCase):
 
     def test_1672_9332(self) -> None:
         num1, num2 = number_swapper.Int(1672), number_swapper.Int(9332)

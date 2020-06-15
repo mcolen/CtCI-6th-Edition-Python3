@@ -5,7 +5,7 @@ import unittest
 from chapter08 import triple_step
 
 
-class TestTripleStep(unittest.TestCase):
+class TestPossibleClimbs(unittest.TestCase):
 
     def test_4_steps(self) -> None:
         self.assertEqual(7, triple_step.possible_climbs(steps=4))

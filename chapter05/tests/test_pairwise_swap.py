@@ -5,7 +5,7 @@ import unittest
 from chapter05 import pairwise_swap
 
 
-class TestPairwiseSwap(unittest.TestCase):
+class TestSwapBits(unittest.TestCase):
 
     def test_0b111001001101010001(self) -> None:
         n = 0b111001001101010001

@@ -8,7 +8,7 @@ from chapter03 import stack_of_plates
 IntStack = stack_of_plates.Stack[int]
 
 
-class TestStackOfPlates(unittest.TestCase):
+class TestStack(unittest.TestCase):
 
     def test_7_items_3_capacity(self) -> None:
         stack = IntStack(capacity=3)

@@ -7,7 +7,7 @@ import unittest.mock
 from chapter08 import eight_queens
 
 
-class TestEightQueens(unittest.TestCase):
+class TestPrintSolutions(unittest.TestCase):
 
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def test_four_queens(self, mock_stdout: io.StringIO) -> None:

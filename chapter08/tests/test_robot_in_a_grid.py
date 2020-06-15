@@ -8,7 +8,7 @@ DOWN = robot_in_a_grid.Direction.DOWN
 RIGHT = robot_in_a_grid.Direction.RIGHT
 
 
-class TestRobotInAGrid(unittest.TestCase):
+class TestFindPath(unittest.TestCase):
 
     def test_exists_path(self) -> None:
         grid = [

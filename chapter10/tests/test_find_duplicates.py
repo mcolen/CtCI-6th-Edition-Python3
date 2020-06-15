@@ -7,7 +7,7 @@ import unittest.mock
 from chapter10 import find_duplicates
 
 
-class TestFindDuplicates(unittest.TestCase):
+class TestPrintDuplicates(unittest.TestCase):
 
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def test_3_2_1_1_2_4_3(self, mock_stdout: io.StringIO) -> None:

@@ -5,7 +5,7 @@ import unittest
 from chapter02 import llist, loop_detection
 
 
-class TestLoopDetection(unittest.TestCase):
+class TestFindLoopStart(unittest.TestCase):
 
     def test_a_b_c_d_e_c(self) -> None:
         head = llist.Node('a')

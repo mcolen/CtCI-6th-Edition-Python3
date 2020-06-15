@@ -7,7 +7,8 @@ import unittest.mock
 from chapter05 import next_number
 
 
-class TestNextNumber(unittest.TestCase):
+class TestPrintSmallerAndLarger(unittest.TestCase):
+
     @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
     def test_0b10110(self, mock_stdout: io.StringIO) -> None:
         next_number.print_smaller_and_larger(0b10110)

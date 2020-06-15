@@ -8,7 +8,7 @@ from chapter03 import stack_min
 IntStack = stack_min.Stack[int]
 
 
-class TestStackWithMin(unittest.TestCase):
+class TestStack(unittest.TestCase):
 
     def test_2_1_3_1(self) -> None:
         stack = IntStack()

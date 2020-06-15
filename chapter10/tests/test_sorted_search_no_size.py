@@ -5,7 +5,7 @@ import unittest
 from chapter10 import sorted_search_no_size
 
 
-class TestSortedSearchNoSize(unittest.TestCase):
+class TestIndex(unittest.TestCase):
 
     def test_find_1_in_1_2_4_5_6_7_9_10_11_12_13_14_16_18(self) -> None:
         listy = sorted_search_no_size.Listy(

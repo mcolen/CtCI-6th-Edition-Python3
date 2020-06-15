@@ -5,7 +5,7 @@ import unittest
 from chapter01 import palindrome_permutation
 
 
-class TestPalindromePermutation(unittest.TestCase):
+class TestIsPalindromePermutation(unittest.TestCase):
 
     def test_rats_live_on_no_evil_star(self) -> None:
         self.assertTrue(

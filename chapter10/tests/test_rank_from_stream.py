@@ -5,7 +5,7 @@ import unittest
 from chapter10 import rank_from_stream
 
 
-class TestRankFromStream(unittest.TestCase):
+class TestStreamRanker(unittest.TestCase):
 
     def test_track_5_1_4_4_5_9_7_13_3_rank_4(self) -> None:
         stream_ranker = rank_from_stream.StreamRanker()

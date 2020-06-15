@@ -8,7 +8,7 @@ RED = tic_tac_win.Piece.RED
 BLUE = tic_tac_win.Piece.BLUE
 
 
-class TestTicTacWin(unittest.TestCase):
+class TestHasWinner(unittest.TestCase):
 
     def test_empty_board(self) -> None:
         self.assertFalse(tic_tac_win.has_winner([

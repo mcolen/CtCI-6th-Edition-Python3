@@ -5,7 +5,7 @@ import unittest
 from chapter10 import group_anagrams
 
 
-class TestGroupAnagrams(unittest.TestCase):
+class TestSort(unittest.TestCase):
 
     def test_apple_ele_papel_eel_lee_elppa(self) -> None:
         strings = ['apple', 'ele', 'papel', 'eel', 'lee', 'elppa']

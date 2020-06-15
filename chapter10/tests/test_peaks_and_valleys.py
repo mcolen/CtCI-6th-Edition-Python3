@@ -5,7 +5,7 @@ import unittest
 from chapter10 import peaks_and_valleys
 
 
-class TestModuleName(unittest.TestCase):
+class TestSort(unittest.TestCase):
 
     def test_5_3_1_2_3(self) -> None:
         nums = [5, 3, 1, 2, 3]

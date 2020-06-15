@@ -12,7 +12,7 @@ Output: 8
 from typing import Iterator
 
 
-def max_length(n: int) -> int:
+def max_1s_sequence(n: int) -> int:
     """Flips a bit in n to create maximal sequence of 1s.
 
     Exactly one bit in n is allowed to be flipped from a 0 to a 1.

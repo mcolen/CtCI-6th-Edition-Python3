@@ -5,7 +5,7 @@ import unittest
 from chapter05 import insertion
 
 
-class TestInsertion(unittest.TestCase):
+class TestInsertBits(unittest.TestCase):
 
     def test_bits_29_through_31(self) -> None:
         N = 0b11111111111111111010010010000000  # 32 bits

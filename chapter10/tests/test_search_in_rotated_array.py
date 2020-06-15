@@ -5,7 +5,7 @@ import unittest
 from chapter10 import search_in_rotated_array
 
 
-class TestSearchInRotatedArray(unittest.TestCase):
+class TestIndex(unittest.TestCase):
 
     def test_find_5_in_15_16_19_20_25_1_3_4_5_7_10_14(self) -> None:
         self.assertEqual(8, search_in_rotated_array.index(

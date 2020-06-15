@@ -5,7 +5,7 @@ import unittest
 from chapter10 import sorted_matrix_search
 
 
-class TestSortedMatrixSearch(unittest.TestCase):
+class TestIndex(unittest.TestCase):
 
     def test_find_23_in_5_by_5(self) -> None:
         matrix = [

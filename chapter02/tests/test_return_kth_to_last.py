@@ -5,7 +5,7 @@ import unittest
 from chapter02 import return_kth_to_last, llist
 
 
-class TestReturnKthToLast(unittest.TestCase):
+class TestKthToLast(unittest.TestCase):
 
     def test_last(self) -> None:
         head = llist.Node(0)

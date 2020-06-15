@@ -5,7 +5,7 @@ import unittest
 from chapter08 import permutations_with_dups
 
 
-class TestPermutationsWithDups(unittest.TestCase):
+class TestPermutations(unittest.TestCase):
 
     def test_abb(self) -> None:
         self.assertEqual({'abb', 'bab', 'bba'},

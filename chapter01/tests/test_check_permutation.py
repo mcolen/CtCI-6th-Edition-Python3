@@ -5,7 +5,7 @@ import unittest
 from chapter01 import check_permutation
 
 
-class TestCheckPermutation(unittest.TestCase):
+class TestArePermutations(unittest.TestCase):
 
     def test_apple_papel(self) -> None:
         self.assertTrue(check_permutation.are_permutations('apple', 'papel'))

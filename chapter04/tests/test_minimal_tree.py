@@ -5,7 +5,7 @@ import unittest
 from chapter04 import minimal_tree, tree, validate_bst
 
 
-class TestMinimalTree(unittest.TestCase):
+class TestMinimalBST(unittest.TestCase):
 
     def test_1_2_3_4_5_6_7_8_9_10(self) -> None:
         root = minimal_tree.minimal_bst([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])

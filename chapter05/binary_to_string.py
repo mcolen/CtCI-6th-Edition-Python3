@@ -9,7 +9,7 @@ represented accurately in binary with at most 32 characters, print
 from typing import List
 
 
-def fraction_to_binary(x: float) -> None:
+def print_fraction_in_binary(x: float) -> None:
     """Prints the binary representation of a fraction.
 
     If the fraction cannot be represented accurately in binary with at

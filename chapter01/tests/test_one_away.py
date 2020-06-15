@@ -5,7 +5,7 @@ import unittest
 from chapter01 import one_away
 
 
-class TestOneAway(unittest.TestCase):
+class TestAreOneAway(unittest.TestCase):
 
     def test_empty_string_d(self) -> None:
         self.assertTrue(one_away.are_one_away('', 'd'))

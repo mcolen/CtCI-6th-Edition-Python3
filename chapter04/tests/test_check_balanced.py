@@ -5,7 +5,7 @@ import unittest
 from chapter04 import check_balanced, tree, validate_bst
 
 
-class TestCheckBalanced(unittest.TestCase):
+class TestIsBalanced(unittest.TestCase):
 
     def test_bst_5_1_0_2_3_8_6_7_9_10(self) -> None:
         root = tree.Node(value=5,

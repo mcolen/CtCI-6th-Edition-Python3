@@ -6,7 +6,7 @@ import unittest
 from chapter04 import random_node
 
 
-class TestRandomNode(unittest.TestCase):
+class TestBinarySearchTree(unittest.TestCase):
 
     def test_1_0_6_2_3_9_4_5_8_7(self) -> None:
         tree = random_node.BinarySearchTree()

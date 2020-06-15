@@ -5,7 +5,7 @@ import unittest
 from chapter08 import stack_of_boxes
 
 
-class TestStackOfBoxes(unittest.TestCase):
+class TestMaxHeight(unittest.TestCase):
 
     def test_three_boxes_two_stackable(self) -> None:
         box1 = stack_of_boxes.Box(width=4, height=1, depth=1)

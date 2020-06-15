@@ -5,10 +5,10 @@ import unittest
 from chapter05 import flip_bit_to_win
 
 
-class TestFlipBitToWin(unittest.TestCase):
+class TestMax1sSequence(unittest.TestCase):
 
     def test_0b11011101111(self) -> None:
-        self.assertEqual(8, flip_bit_to_win.max_length(0b11011101111))
+        self.assertEqual(8, flip_bit_to_win.max_1s_sequence(0b11011101111))
 
 
 if __name__ == "__main__":

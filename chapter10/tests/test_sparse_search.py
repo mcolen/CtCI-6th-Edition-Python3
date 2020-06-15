@@ -5,7 +5,7 @@ import unittest
 from chapter10 import sparse_search
 
 
-class TestSparseSearch(unittest.TestCase):
+class TestIndex(unittest.TestCase):
 
     def test_find_apple_in_apple_banana_carrot_duck_eel_flower(self) -> None:
         self.assertEqual(0,

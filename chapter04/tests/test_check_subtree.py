@@ -5,7 +5,7 @@ import unittest
 from chapter04 import check_subtree, tree
 
 
-class TestCheckSubtree(unittest.TestCase):
+class TestIsSubtree(unittest.TestCase):
 
     def test_is_2_3_1_subtree_of_1_2_1_3_1_1_5(self) -> None:
         tree_2_3_1 = tree.Node(value=2, left=tree.Node(3), right=tree.Node(1))

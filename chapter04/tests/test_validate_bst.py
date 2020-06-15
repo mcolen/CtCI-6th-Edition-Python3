@@ -5,7 +5,7 @@ import unittest
 from chapter04 import tree, validate_bst
 
 
-class TestValidateBST(unittest.TestCase):
+class TestIsBST(unittest.TestCase):
 
     def test_bst_min_3_5_6_10_13_15_max(self) -> None:
         root = tree.Node(value=6,

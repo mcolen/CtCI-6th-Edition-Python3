@@ -5,7 +5,7 @@ import unittest
 from chapter08 import boolean_evaluation
 
 
-class TestBooleanEvaluation(unittest.TestCase):
+class TestCountEval(unittest.TestCase):
 
     def test_1_xor_0_or_0_or_1_false(self) -> None:
         self.assertEqual(

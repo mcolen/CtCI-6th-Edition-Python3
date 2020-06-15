@@ -5,8 +5,7 @@ import unittest
 from chapter04 import successor
 
 
-class TestSuccessorInMinimalBST7(unittest.TestCase):
-    """Tests `successor` using a minimal BST with 7 nodes."""
+class TestSuccessor(unittest.TestCase):
 
     def test_0(self) -> None:
         root = _minimal_bst7()
