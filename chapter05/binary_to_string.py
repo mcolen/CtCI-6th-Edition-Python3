@@ -9,24 +9,25 @@ represented accurately in binary with at most 32 characters, print
 from typing import List
 
 
-def print_fraction_in_binary(x: float) -> None:
-    """Prints the binary representation of a fraction.
-
-    If the fraction cannot be represented accurately in binary with at
-    most 32 characters, prints "ERROR."
+def fraction_to_binary_string(x: float) -> str:
+    """Returns the binary representation of a fraction as a string.
 
     Args:
         x: A real number in the range [0, 1) (e.g. 0.72).
+
+    Returns:
+        A string representation of the fraction e.g. '.72', or 'ERROR'
+        if the fraction cannot be represented accurately in binary with
+        at most 32 characters.
     """
     res: List[str] = []
     while x > 0:
         if len(res) >= 32:
-            print("ERROR.")
-            return
+            return 'ERROR'
         x *= 2
         if x >= 1:
             res.append('1')
             x -= 1
         else:
             res.append('0')
-    print('.' + ''.join(res))
+    return('.' + ''.join(res))

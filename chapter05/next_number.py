@@ -9,8 +9,8 @@ class NoValidSmallerNumberError(Exception):
     """Raised when there does not exist a valid smaller number."""
 
 
-def print_smaller_and_larger(n: int) -> None:
-    """Prints next smaller/larger number with same # of 1s in binary.
+def smaller(n: int) -> int:
+    """Calculates next smaller number with the same # of 1s in binary.
 
     Args:
         n: A positive integer.
@@ -18,6 +18,9 @@ def print_smaller_and_larger(n: int) -> None:
     Raises:
         NoValidSmallerNumberError: There was no smaller number with the
         same # of 1s in binary representation.
+
+    Returns:
+        The next smaller number with the same # of 1s in binary.
     """
     # Catch cases like 0b00111 with no valid smaller number.
     if (n + 1) & n == 0:
@@ -26,18 +29,26 @@ def print_smaller_and_larger(n: int) -> None:
     zeros = ones = 0
     while _bit(n, i=ones):
         ones += 1
-    while not _bit(n, i=ones+zeros):
+    while not _bit(n, i=ones + zeros):
         zeros += 1
-    smaller = n - (1 << ones) - (1 << zeros - 1) + 1
+    return n - (1 << ones) - (1 << zeros - 1) + 1
 
+
+def larger(n: int) -> int:
+    """Calculates next larger number with the same # of 1s in binary.
+
+    Args:
+        n: A positive integer.
+
+    Returns:
+        The next larger number with the same # of 1s in binary.
+    """
     zeros = ones = 0
     while not _bit(n, i=zeros):
         zeros += 1
-    while _bit(n, i=zeros+ones):
+    while _bit(n, i=zeros + ones):
         ones += 1
-    larger = n + (1 << zeros) + (1 << ones - 1) - 1
-
-    print(smaller, larger)
+    return n + (1 << zeros) + (1 << ones - 1) - 1
 
 
 def _bit(n: int, i: int) -> int:
