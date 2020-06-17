@@ -2,6 +2,7 @@
 """Geometric entities for use in chapter 16 solutions."""
 
 import dataclasses
+import fractions
 from typing import Any, Optional
 
 
@@ -10,6 +11,17 @@ class Point:
     """A point in two dimensions."""
     x: float
     y: float
+
+
+@dataclasses.dataclass(frozen=True)
+class Line:
+    """An infinite line defined by slope and y-intercept.
+
+    Slope and y-intercept are stored as exact fractions to facilitate
+    hashing.
+    """
+    slope: Optional[fractions.Fraction]
+    y_intercept: Optional[fractions.Fraction]
 
 
 @dataclasses.dataclass(frozen=True)
@@ -36,3 +48,11 @@ class Segment:
         if not isinstance(other, Segment):
             return False
         return {self.start, self.end} == {other.start, other.end}
+
+    def to_line(self) -> Line:
+        """Returns the line formed by extending this segment."""
+        if self.slope is None:
+            return Line(slope=None, y_intercept=None)
+        assert self.y_intercept is not None
+        return Line(fractions.Fraction(self.slope),
+                    fractions.Fraction(self.y_intercept))
