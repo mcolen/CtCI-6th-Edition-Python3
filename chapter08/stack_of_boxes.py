@@ -9,6 +9,7 @@ of the heights of each box.
 """
 
 import dataclasses
+import operator
 from typing import AbstractSet
 
 
@@ -22,7 +23,7 @@ class Box:
 
 def max_height(boxes: AbstractSet[Box]) -> int:
     """Returns height of tallest possible stack from given boxes."""
-    sorted_boxes = sorted(boxes, key=lambda box: box.height)
+    sorted_boxes = sorted(boxes, key=operator.attrgetter('height'))
     dp = [0] * (len(boxes) + 1)
     for i, base in enumerate(sorted_boxes):
         dp[i + 1] = max(base.height + dp[j] for j in range(i + 1)

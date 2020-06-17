@@ -6,6 +6,7 @@ the square run parallel to the x-axis.
 """
 
 import dataclasses
+import operator
 from typing import Optional
 
 from chapter16 import geometry
@@ -42,8 +43,8 @@ def bisect(square1: Square, square2: Square) -> geometry.Segment:
     edges1 = _draw_line_through_center_to_edges(square1, slope)
     edges2 = _draw_line_through_center_to_edges(square2, slope)
     points = [edges1.start, edges1.end, edges2.start, edges2.end]
-    start = min(points, key=lambda point: (point.x, point.y))
-    end = max(points, key=lambda point: (point.x, point.y))
+    start = min(points, key=operator.attrgetter('x', 'y'))
+    end = max(points, key=operator.attrgetter('x', 'y'))
     return geometry.Segment(start, end)
 
 
