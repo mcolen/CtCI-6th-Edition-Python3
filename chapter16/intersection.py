@@ -4,39 +4,13 @@ Given two straight line segments (represented as a start point and an
 end point), compute the point of intersection, if any.
 """
 
-import dataclasses
 from typing import Optional, Tuple
 
-
-@dataclasses.dataclass
-class Point:
-    """A point in two dimensions."""
-    x: float
-    y: float
+from chapter16 import geometry
 
 
-@dataclasses.dataclass
-class Segment:
-    "A line segment represented by two distinct points."
-    start: Point
-    end: Point
-
-    @property
-    def slope(self) -> Optional[float]:
-        """The slope of this line segment."""
-        if self.start.x == self.end.x:
-            return None
-        return (self.end.y - self.start.y) / (self.end.x - self.start.x)
-
-    @property
-    def y_intercept(self) -> Optional[float]:
-        """The y-intercept of this line segment."""
-        if self.slope is None:
-            return None
-        return self.start.y - self.slope * self.start.x
-
-
-def intersection(segment1: Segment, segment2: Segment) -> Optional[Point]:
+def intersection(segment1: geometry.Segment,
+                 segment2: geometry.Segment) -> Optional[geometry.Point]:
     """Computes point of intersection between segment1 and segment2.
 
     Returns:
@@ -60,14 +34,15 @@ def intersection(segment1: Segment, segment2: Segment) -> Optional[Point]:
         assert b1 is not None and b2 is not None
         x = (b2 - b1) / (m1 - m2)
         y = m1 * x + b1
-    point = Point(x, y)
+    point = geometry.Point(x, y)
     if (_point_is_between(point, (segment1.start, segment1.end)) and
             _point_is_between(point, (segment2.start, segment2.end))):
         return point
     return None
 
 
-def _parallel_helper(segment1: Segment, segment2: Segment) -> Optional[Point]:
+def _parallel_helper(segment1: geometry.Segment,
+                     segment2: geometry.Segment) -> Optional[geometry.Point]:
     if segment1.y_intercept != segment2.y_intercept:
         return None
     bounds = (segment1.start, segment1.end)
@@ -78,7 +53,8 @@ def _parallel_helper(segment1: Segment, segment2: Segment) -> Optional[Point]:
     return None
 
 
-def _point_is_between(point: Point, bounds: Tuple[Point, Point]) -> bool:
+def _point_is_between(point: geometry.Point,
+                      bounds: Tuple[geometry.Point, geometry.Point]) -> bool:
     return (_val_is_between(point.x, (bounds[0].x, bounds[1].x)) and
             _val_is_between(point.y, (bounds[0].y, bounds[1].y)))
 
