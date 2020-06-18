@@ -10,9 +10,9 @@ class TestBSTSequences(unittest.TestCase):
     def test_2_1_3(self) -> None:
         root = tree.Node(value=2, left=tree.Node(1), right=tree.Node(3))
 
-        sequences = bst_sequences.bst_sequences(root)
+        res = bst_sequences.bst_sequences(root)
 
-        self.assertCountEqual([[2, 1, 3], [2, 3, 1]], sequences)
+        self.assertCountEqual([[2, 1, 3], [2, 3, 1]], res)
 
 
 if __name__ == '__main__':
