@@ -20,7 +20,10 @@ class TestPaintFill(unittest.TestCase):
             ['G', 'G', 'B', 'B', 'G', 'B', 'G', 'B', 'G', 'B'],
             ['G', 'B', 'B', 'G', 'G', 'G', 'G', 'B', 'B', 'G'],
         ]
-        filled_w_at_2_2 = [
+
+        paint_fill.paint_fill(screen, r=2, c=2, color='W')
+
+        self.assertEqual([
             ['W', 'W', 'W', 'W', 'B', 'W', 'B', 'W', 'W', 'W'],
             ['B', 'B', 'W', 'W', 'B', 'W', 'W', 'W', 'W', 'W'],
             ['B', 'B', 'W', 'W', 'W', 'W', 'W', 'B', 'W', 'W'],
@@ -31,9 +34,7 @@ class TestPaintFill(unittest.TestCase):
             ['W', 'B', 'B', 'B', 'B', 'G', 'B', 'B', 'G', 'B'],
             ['W', 'W', 'B', 'B', 'G', 'B', 'G', 'B', 'G', 'B'],
             ['W', 'B', 'B', 'G', 'G', 'G', 'G', 'B', 'B', 'G'],
-        ]
-        paint_fill.paint_fill(screen, r=2, c=2, color='W')
-        self.assertEqual(filled_w_at_2_2, screen)
+        ], screen)
 
 
 if __name__ == '__main__':

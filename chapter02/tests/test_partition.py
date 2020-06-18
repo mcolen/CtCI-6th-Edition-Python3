@@ -17,6 +17,7 @@ class TestPartition(unittest.TestCase):
         head.next.next.next.next.next = llist.Node(1)
 
         partition.partition(head, x=5)
+
         self.assertCountEqual([1, 2, 3],
                               [node.data for node in
                                itertools.islice(iter(head), 3)])

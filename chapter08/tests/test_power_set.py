@@ -10,6 +10,9 @@ class TestPowerSet(unittest.TestCase):
 
     def test_three_elements(self) -> None:
         set_ = {1, 2, 3}
+
+        res = power_set.power_set(set_)
+
         subsets: Set[FrozenSet[int]] = set()
         subsets.add(frozenset())
         subsets.add(frozenset({1}))
@@ -19,7 +22,7 @@ class TestPowerSet(unittest.TestCase):
         subsets.add(frozenset({1, 3}))
         subsets.add(frozenset({2, 3}))
         subsets.add(frozenset({1, 2, 3}))
-        self.assertEqual(subsets, power_set.power_set(set_))
+        self.assertEqual(subsets, res)
 
 
 if __name__ == '__main__':

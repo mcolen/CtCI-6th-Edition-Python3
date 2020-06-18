@@ -23,6 +23,7 @@ class TestEncode(unittest.TestCase):
                     value='Some Message',
                 )
             ])
+
         self.assertEqual('0 1 mcdowell 2 CA 0 4 5 Gayle 0 Some Message 0 0',
                          xml_encoding.encode(family))
 

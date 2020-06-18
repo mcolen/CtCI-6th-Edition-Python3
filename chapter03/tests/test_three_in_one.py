@@ -18,7 +18,9 @@ class TestStacks(unittest.TestCase):
         stacks.push(1, 21)
         stacks.push(0, 11)
         stacks.push(0, 12)
+
         self.assertEqual(12, stacks.pop(stack_num=0))
+
         stacks.push(2, 31)
         stacks.push(0, 13)
         stacks.push(1, 22)

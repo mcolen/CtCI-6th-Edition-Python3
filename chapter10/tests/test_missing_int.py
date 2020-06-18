@@ -18,6 +18,7 @@ class TestMissingUniqueNonNegativeSigned32Bit(unittest.TestCase):
     def test_0_1_2_3_4_5_8_9_6(self) -> None:
         res = missing_int.missing_unique_nonnegative_signed_32_bit(
             io.StringIO('0\n1\n2\n3\n4\n5\n8\n9\n6\n'))
+
         self.assertNotIn(res, {0, 1, 2, 3, 4, 5, 8, 9, 6}, res)
         self.assertGreaterEqual(res, 0)
         self.assertLessEqual(res, missing_int.MAX_SIGNED_32_BIT_INT)

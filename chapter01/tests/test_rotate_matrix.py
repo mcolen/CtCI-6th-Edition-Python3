@@ -15,15 +15,16 @@ class TestRotateMatrix(unittest.TestCase):
             [16, 17, 18, 19, 20],
             [21, 22, 23, 24, 25],
         ]
-        rotated = [
+
+        rotate_matrix.rotate_matrix(matrix)
+
+        self.assertEqual([
             [21, 16, 11, 6, 1],
             [22, 17, 12, 7, 2],
             [23, 18, 13, 8, 3],
             [24, 19, 14, 9, 4],
             [25, 20, 15, 10, 5],
-        ]
-        rotate_matrix.rotate_matrix(matrix)
-        self.assertEqual(rotated, matrix)
+        ], matrix)
 
 
 if __name__ == '__main__':

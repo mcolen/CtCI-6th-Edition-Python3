@@ -9,7 +9,9 @@ class TestRemoveDups1(unittest.TestCase):
 
     def test_01010101(self) -> None:
         head = _linked_list_01010101()
+
         remove_dups.remove_dups1(head)
+
         self.assertEqual(_linked_list_01(), head)
 
 
@@ -17,7 +19,9 @@ class TestRemoveDups2(unittest.TestCase):
 
     def test_01010101(self) -> None:
         head = _linked_list_01010101()
+
         remove_dups.remove_dups2(head)
+
         self.assertEqual(_linked_list_01(), head)
 
 

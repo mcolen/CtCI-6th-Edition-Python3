@@ -15,7 +15,10 @@ class TestIndex(unittest.TestCase):
             [16, 17, 18, 19, 20],
             [21, 22, 23, 24, 25],
         ]
-        self.assertEqual((4, 2), sorted_matrix_search.index(matrix, target=23))
+
+        res = sorted_matrix_search.index(matrix, target=23)
+
+        self.assertEqual((4, 2), res)
 
 
 if __name__ == '__main__':

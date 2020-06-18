@@ -15,15 +15,16 @@ class TestZeroMatrix(unittest.TestCase):
             [16, 0, 18, 19, 20],
             [21, 22, 23, 24, 25],
         ]
-        zeroed = [
+
+        zero_matrix.zero_matrix(matrix)
+
+        self.assertEqual([
             [0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0],
             [11, 0, 13, 14, 0],
             [0, 0, 0, 0, 0],
             [21, 0, 23, 24, 0],
-        ]
-        zero_matrix.zero_matrix(matrix)
-        self.assertEqual(zeroed, matrix)
+        ], matrix)
 
 
 if __name__ == '__main__':

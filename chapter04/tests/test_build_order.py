@@ -23,7 +23,9 @@ class TestBuildOrder(unittest.TestCase):
             ('i', 'j'),
             ('g', 'j'),
         ]
+
         order = build_order.build_order(projects, dependencies)
+
         self.assertCountEqual(projects, order)
         for dependency, dependant in dependencies:
             self.assertLess(order.index(dependency), order.index(dependant))

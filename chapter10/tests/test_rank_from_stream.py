@@ -11,6 +11,7 @@ class TestStreamRanker(unittest.TestCase):
         stream_ranker = rank_from_stream.StreamRanker()
         for x in [5, 1, 4, 4, 5, 9, 7, 13, 3]:
             stream_ranker.track(x)
+
         self.assertEqual(3, stream_ranker.get_rank_of_number(4))
 
 

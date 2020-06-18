@@ -14,7 +14,6 @@ class TestExistsRoute(unittest.TestCase):
         node_d = route_between_nodes.Node('d')
         node_e = route_between_nodes.Node('e')
         node_f = route_between_nodes.Node('f')
-
         node_a.neighbors.append(node_b)
         node_a.neighbors.append(node_c)
         node_a.neighbors.append(node_d)

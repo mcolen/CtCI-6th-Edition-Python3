@@ -19,6 +19,7 @@ class TestStack(unittest.TestCase):
         stack.push(4)
         stack.push(5)
         stack.push(6)
+
         self.assertEqual(6, stack.pop())
         self.assertEqual(5, stack.pop())
         self.assertEqual(4, stack.pop())

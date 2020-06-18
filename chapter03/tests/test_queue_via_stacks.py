@@ -14,11 +14,14 @@ class TestMyQueue(unittest.TestCase):
         queue.add(0)
         queue.add(1)
         queue.add(2)
+
         self.assertEqual(0, queue.remove())
         self.assertEqual(1, queue.remove())
+
         queue.add(3)
         queue.add(4)
         queue.add(5)
+
         self.assertEqual(2, queue.remove())
         self.assertEqual(3, queue.remove())
         self.assertEqual(4, queue.peek())

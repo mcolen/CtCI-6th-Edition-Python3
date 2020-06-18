@@ -19,7 +19,9 @@ class TestListOfDepths(unittest.TestCase):
                          right=tree.Node(value=3,
                                          left=tree.Node(6),
                                          right=tree.Node(7)))
+
         lists = list_of_depths.depth_lists(root)
+
         self.assertEqual(4, len(lists))
         self.assertCountEqual([1], [node.data for node in lists[0]])
         self.assertCountEqual([2, 3], [node.data for node in lists[1]])

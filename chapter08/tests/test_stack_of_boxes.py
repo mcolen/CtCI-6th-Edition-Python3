@@ -11,7 +11,10 @@ class TestMaxHeight(unittest.TestCase):
         box1 = stack_of_boxes.Box(width=4, height=1, depth=1)
         box2 = stack_of_boxes.Box(width=7, height=4, depth=4)
         box3 = stack_of_boxes.Box(width=1, height=3, depth=1)
-        self.assertEqual(7, stack_of_boxes.max_height({box1, box2, box3}))
+
+        res = stack_of_boxes.max_height({box1, box2, box3})
+
+        self.assertEqual(7, res)
 
 
 if __name__ == '__main__':

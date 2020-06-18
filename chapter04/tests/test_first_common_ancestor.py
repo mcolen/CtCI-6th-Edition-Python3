@@ -11,6 +11,7 @@ class TestFirstCommonAncestor(unittest.TestCase):
         bst1 = minimal_tree.minimal_bst(range(7))
         bst2 = minimal_tree.minimal_bst(range(7))
         assert bst1.left and bst2.right
+
         self.assertIsNone(
             first_common_ancestor.first_common_ancestor(root=bst1,
                                                         node1=bst1.left,
@@ -19,6 +20,7 @@ class TestFirstCommonAncestor(unittest.TestCase):
     def test_same_depth(self) -> None:
         bst = minimal_tree.minimal_bst(range(7))
         assert bst.left and bst.left.left and bst.left.right
+
         self.assertIs(
             bst.left,
             first_common_ancestor.first_common_ancestor(root=bst,
@@ -28,6 +30,7 @@ class TestFirstCommonAncestor(unittest.TestCase):
     def test_different_depth(self) -> None:
         bst = minimal_tree.minimal_bst(range(7))
         assert bst.left and bst.right and bst.right.right
+
         self.assertIs(
             bst,
             first_common_ancestor.first_common_ancestor(root=bst,

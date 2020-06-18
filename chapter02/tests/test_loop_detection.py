@@ -14,7 +14,10 @@ class TestFindLoopStart(unittest.TestCase):
         head.next.next.next = llist.Node('d')
         head.next.next.next.next = llist.Node('e')
         head.next.next.next.next.next = head.next.next
-        self.assertIs(head.next.next, loop_detection.find_loop_start(head))
+
+        res = loop_detection.find_loop_start(head)
+
+        self.assertIs(head.next.next, res)
 
 
 if __name__ == '__main__':

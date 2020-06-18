@@ -18,6 +18,7 @@ class TestIsBST(unittest.TestCase):
                                                          left=None,
                                                          right=tree.Node(
                                                              float('inf')))))
+
         self.assertTrue(validate_bst.is_bst(root))
 
     def test_non_bst_min_6_5_6_10_13_15_max(self) -> None:
@@ -31,6 +32,7 @@ class TestIsBST(unittest.TestCase):
                                                          left=None,
                                                          right=tree.Node(
                                                              float('inf')))))
+
         self.assertFalse(validate_bst.is_bst(root))
 
 

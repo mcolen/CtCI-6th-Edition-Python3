@@ -17,8 +17,10 @@ class TestFindPath(unittest.TestCase):
             [True, True, True, True, True],
             [True, True, True, False, True],
         ]
-        self.assertEqual([DOWN, DOWN, RIGHT, RIGHT, RIGHT, RIGHT, DOWN],
-                         robot_in_a_grid.find_path(grid))
+
+        res = robot_in_a_grid.find_path(grid)
+
+        self.assertEqual([DOWN, DOWN, RIGHT, RIGHT, RIGHT, RIGHT, DOWN], res)
 
     def test_no_path(self) -> None:
         grid = [
@@ -27,7 +29,10 @@ class TestFindPath(unittest.TestCase):
             [True, True, False, True, True],
             [True, True, True, False, True],
         ]
-        self.assertIsNone(robot_in_a_grid.find_path(grid))
+
+        res = robot_in_a_grid.find_path(grid)
+
+        self.assertIsNone(res)
 
 
 if __name__ == '__main__':

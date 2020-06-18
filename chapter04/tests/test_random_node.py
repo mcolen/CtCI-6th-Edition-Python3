@@ -25,6 +25,7 @@ class TestBinarySearchTree(unittest.TestCase):
         random.seed(0)
         for _ in range(100_000):
             counts[tree.get_random_node().value] += 1
+
         self.assertEqual(
             [9994, 10104, 10128, 9953, 10128, 9929, 10086, 10027, 9857, 9794],
             counts)

@@ -15,13 +15,13 @@ class TestDeleteMiddleNode(unittest.TestCase):
         head.next.next.next.next = llist.Node('e')
         head.next.next.next.next.next = llist.Node('f')
 
+        delete_middle_node.delete_middle_node(head.next.next)
+
         head_deleted_c = llist.Node('a')
         head_deleted_c.next = llist.Node('b')
         head_deleted_c.next.next = llist.Node('d')
         head_deleted_c.next.next.next = llist.Node('e')
         head_deleted_c.next.next.next.next = llist.Node('f')
-
-        delete_middle_node.delete_middle_node(head.next.next)
         self.assertEqual(head_deleted_c, head)
 
 

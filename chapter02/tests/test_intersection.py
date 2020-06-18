@@ -17,13 +17,13 @@ class TestFindIntersection(unittest.TestCase):
         head1.next.next.next.next.next.next = llist.Node(6)
         head1.next.next.next.next.next.next.next = llist.Node(7)
         head1.next.next.next.next.next.next.next.next = llist.Node(8)
-
         head2 = llist.Node(12)
         head2.next = llist.Node(14)
         head2.next.next = head1.next.next.next.next
 
-        self.assertIs(head1.next.next.next.next,
-                      intersection.find_intersection(head1, head2))
+        res = intersection.find_intersection(head1, head2)
+
+        self.assertIs(head1.next.next.next.next, res)
 
 
 if __name__ == '__main__':
