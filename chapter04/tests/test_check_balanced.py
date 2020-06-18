@@ -2,7 +2,7 @@
 
 import unittest
 
-from chapter04 import check_balanced, tree, validate_bst
+from chapter04 import check_balanced, tree
 
 
 class TestIsBalanced(unittest.TestCase):
@@ -23,7 +23,6 @@ class TestIsBalanced(unittest.TestCase):
                                          right=tree.Node(value=9,
                                                          left=None,
                                                          right=tree.Node(10))))
-        assert validate_bst.is_bst(root)
         self.assertTrue(check_balanced.is_balanced(root))
 
     def test_bst_5_1_0_2_3_4_8_6_7_9_10(self) -> None:
@@ -45,7 +44,6 @@ class TestIsBalanced(unittest.TestCase):
                                          right=tree.Node(value=9,
                                                          left=None,
                                                          right=tree.Node(10))))
-        assert validate_bst.is_bst(root)
         self.assertFalse(check_balanced.is_balanced(root))
 
 
