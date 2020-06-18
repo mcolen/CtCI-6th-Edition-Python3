@@ -3,8 +3,7 @@
 import fractions
 import unittest
 
-from chapter16 import best_line
-from chapter16 import geometry
+from chapter16 import best_line, geometry
 
 
 class TestBestLine(unittest.TestCase):

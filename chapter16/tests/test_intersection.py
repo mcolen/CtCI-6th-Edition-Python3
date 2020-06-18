@@ -2,8 +2,7 @@
 
 import unittest
 
-from chapter16 import geometry
-from chapter16 import intersection
+from chapter16 import geometry, intersection
 
 
 class TestIntersection(unittest.TestCase):

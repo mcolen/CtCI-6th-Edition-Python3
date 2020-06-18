@@ -2,8 +2,7 @@
 
 import unittest
 
-from chapter16 import bisect_squares
-from chapter16 import geometry
+from chapter16 import bisect_squares, geometry
 
 
 class TestBisect(unittest.TestCase):
