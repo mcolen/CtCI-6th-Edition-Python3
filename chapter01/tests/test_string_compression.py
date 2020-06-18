@@ -1,4 +1,4 @@
-"""Tests for chapter 01.string_compression."""
+"""Tests for chapter01.string_compression."""
 
 import unittest
 

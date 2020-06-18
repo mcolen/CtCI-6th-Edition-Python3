@@ -1,4 +1,4 @@
-"""Tests for chapter 01.is_unique."""
+"""Tests for chapter01.is_unique."""
 
 import unittest
 
