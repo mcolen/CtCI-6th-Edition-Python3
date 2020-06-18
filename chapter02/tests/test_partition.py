@@ -18,12 +18,11 @@ class TestPartition(unittest.TestCase):
 
         partition.partition(head, x=5)
 
+        self.assertCountEqual([3, 5, 8, 10, 2, 1],
+                              [node.data for node in head])
         self.assertCountEqual([1, 2, 3],
                               [node.data for node in
                                itertools.islice(iter(head), 3)])
-        self.assertCountEqual([5, 8, 10],
-                              [node.data for node in
-                               itertools.islice(iter(head), 3, None)])
 
 
 if __name__ == '__main__':
