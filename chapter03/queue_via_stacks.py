@@ -40,7 +40,6 @@ class MyQueue(Generic[T]):
         Raises:
             EmptyQueueError: The queue was empty.
         """
-        foo = 'test'
         if not self._old_items:
             self._shift_stacks()
         try:
