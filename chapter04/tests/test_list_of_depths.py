@@ -23,10 +23,16 @@ class TestListOfDepths(unittest.TestCase):
         lists = list_of_depths.depth_lists(root)
 
         self.assertEqual(4, len(lists))
-        self.assertCountEqual([1], [node.data for node in lists[0]])
-        self.assertCountEqual([2, 3], [node.data for node in lists[1]])
-        self.assertCountEqual([4, 5, 6, 7], [node.data for node in lists[2]])
-        self.assertCountEqual([8, 9, 10], [node.data for node in lists[3]])
+        with self.subTest(depth=0):
+            self.assertCountEqual([1], [node.data for node in lists[0]])
+        with self.subTest(depth=1):
+            self.assertCountEqual([2, 3], [node.data for node in lists[1]])
+        with self.subTest(depth=2):
+            self.assertCountEqual([4, 5, 6, 7],
+                                  [node.data for node in lists[2]])
+        with self.subTest(depth=3):
+            self.assertCountEqual([8, 9, 10],
+                                  [node.data for node in lists[3]])
 
 
 if __name__ == '__main__':
