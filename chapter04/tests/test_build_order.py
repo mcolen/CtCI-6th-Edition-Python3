@@ -1,5 +1,6 @@
 """Tests for chapter04.build_order."""
 
+from typing import Sequence, Tuple
 import unittest
 
 from chapter04 import build_order
@@ -27,8 +28,14 @@ class TestBuildOrder(unittest.TestCase):
         order = build_order.build_order(projects, dependencies)
 
         self.assertCountEqual(projects, order)
+        self.assertBuildable(order, dependencies)
+
+    def assertBuildable(self, order: Sequence[str],
+                        dependencies: Sequence[Tuple[str, str]]) -> None:
+        """Fails if order cannot be built subject to dependencies."""
         for dependency, dependant in dependencies:
-            self.assertLess(order.index(dependency), order.index(dependant))
+            if order.index(dependency) > order.index(dependant):
+                self.fail(dependency + ' must be built before ' + dependant)
 
 
 if __name__ == '__main__':
