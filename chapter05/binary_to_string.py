@@ -30,4 +30,4 @@ def fraction_to_binary_string(x: float) -> str:
             x -= 1
         else:
             res.append('0')
-    return('.' + ''.join(res))
+    return '.' + ''.join(res)
