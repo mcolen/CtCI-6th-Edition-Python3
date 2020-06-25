@@ -1,17 +1,18 @@
 """Tests for chapter08.eight_queens."""
 
+import contextlib
 import io
 import unittest
-import unittest.mock
 
 from chapter08 import eight_queens
 
 
 class TestPrintSolutions(unittest.TestCase):
 
-    @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
-    def test_4_queens(self, mock_stdout: io.StringIO) -> None:
-        eight_queens.print_solutions(n=4)
+    def test_4_queens(self) -> None:
+        mock_stdout = io.StringIO()
+        with contextlib.redirect_stdout(mock_stdout):
+            eight_queens.print_solutions(n=4)
 
         solutions = mock_stdout.getvalue()[:-2].split('\n\n')
         self.assertCountEqual([
@@ -26,9 +27,10 @@ class TestPrintSolutions(unittest.TestCase):
             '- Q - -',
         ], solutions)
 
-    @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
-    def test_8_queens(self, mock_stdout: io.StringIO) -> None:
-        eight_queens.print_solutions(n=8)
+    def test_8_queens(self) -> None:
+        mock_stdout = io.StringIO()
+        with contextlib.redirect_stdout(mock_stdout):
+            eight_queens.print_solutions(n=8)
 
         solutions = mock_stdout.getvalue()[:-1].split('\n\n')
         # https://en.wikipedia.org/wiki/Eight_queens_puzzle#Solutions
